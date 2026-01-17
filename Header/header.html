@@ -78,12 +78,33 @@
         #mobileMenu {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        
+        /* Hamburger and Cross icon transitions */
+        #hamburgerIcon {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        #closeIcon {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.8);
+            position: absolute;
+        }
+        
+        .hamburger-open #hamburgerIcon {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.8);
+        }
+        
+        .hamburger-open #closeIcon {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
     </style>
 </head>
-<body class="pt-24">
-
+<body>
     <!-- Header -->
-    <header class="fixed inset-x-0 top-0 z-50 bg-gray-100 backdrop-blur-md shadow-sm mx-6 mt-6 rounded-2xl border border-gray-100">
+    <header class="fixed inset-x-0 top-0 z-50 bg-gray-300 backdrop-blur-md shadow-sm mx-6 mt-6 rounded-2xl border border-gray-100">
         <div class="px-6 py-4 flex items-center justify-between">
             
             <!-- Logo -->
@@ -128,7 +149,7 @@
                                         </div>
                                         <a href="/accelerometer.html" class="block py-2 text-gray-600 hover:text-orange-500 text-sm">Accelerometer</a>
                                         <a href="/Impact-Hammer/hammer.html" class="block py-2 text-gray-600 hover:text-orange-500 text-sm">Impact Hammer</a>
-                                        <a href="#" class="block py-2 text-gray-600 hover:text-orange-500 text-sm">Pressure Sensor</a>
+                                        <!-- <a href="#" class="block py-2 text-gray-600 hover:text-orange-500 text-sm">Pressure Sensor</a> -->
                                         <a href="/Weighing-Scales/scale.html" class="block py-2 text-gray-600 hover:text-orange-500 text-sm">Weighing Scales</a>
                                     </div>
                                 </div>
@@ -145,10 +166,16 @@
                 <a href="/contact.html" class="contact-btn">Contact Us</a>
             </div>
 
-            <!-- Mobile Hamburger -->
-            <button id="mobileBtn" class="lg:hidden p-4 rounded-xl hover:bg-gray-200 transition-colors z-50">
-                <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <!-- Mobile Hamburger/Close Button -->
+            <button id="mobileBtn" class="lg:hidden p-4 rounded-xl hover:bg-gray-200 transition-colors z-50 relative w-12 h-12 flex items-center justify-center">
+                <!-- Hamburger Icon -->
+                <svg id="hamburgerIcon" class="w-8 h-8 text-gray-700 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                
+                <!-- Close Icon (X) -->
+                <svg id="closeIcon" class="w-8 h-8 text-gray-700 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
         </div>
@@ -210,54 +237,103 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
+    <!-- JavaScript for Header -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        // Header functionality
+        function initHeader() {
+            console.log('Initializing header functionality...');
+            
             const mobileBtn = document.getElementById('mobileBtn');
             const closeBtn = document.getElementById('closeBtn');
             const mobileMenu = document.getElementById('mobileMenu');
             const productsToggle = document.getElementById('productsToggle');
             const productsDropdown = document.getElementById('productsDropdown');
             const productsArrow = document.getElementById('productsArrow');
+            const hamburgerIcon = document.getElementById('hamburgerIcon');
+            const closeIcon = document.getElementById('closeIcon');
+
+            if (!mobileBtn || !closeBtn || !mobileMenu) {
+                console.error('Header elements not found');
+                return;
+            }
+
+            // Toggle hamburger/cross icons
+            function toggleHamburgerIcon(isOpen) {
+                if (isOpen) {
+                    mobileBtn.classList.add('hamburger-open');
+                } else {
+                    mobileBtn.classList.remove('hamburger-open');
+                }
+            }
 
             // Prevent body scroll when menu is open
             function lockScroll() {
                 document.body.style.overflow = 'hidden';
             }
+            
             function unlockScroll() {
                 document.body.style.overflow = '';
             }
 
-            // Open menu
-            mobileBtn.addEventListener('click', () => {
+            // Open mobile menu
+            function openMobileMenu() {
                 mobileMenu.classList.remove('translate-x-full');
                 mobileMenu.classList.add('translate-x-0');
+                toggleHamburgerIcon(true);
                 lockScroll();
-            });
+            }
 
-            // Close menu
-            closeBtn.addEventListener('click', () => {
+            // Close mobile menu
+            function closeMobileMenu() {
                 mobileMenu.classList.remove('translate-x-0');
                 mobileMenu.classList.add('translate-x-full');
+                toggleHamburgerIcon(false);
                 unlockScroll();
-            });
+            }
 
-            // Close when clicking on the overlay (outside content)
-            mobileMenu.addEventListener('click', (e) => {
-                if (e.target === mobileMenu) {
-                    mobileMenu.classList.remove('translate-x-0');
-                    mobileMenu.classList.add('translate-x-full');
-                    unlockScroll();
+            // Open menu when clicking hamburger button
+            mobileBtn.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('translate-x-full')) {
+                    openMobileMenu();
+                } else {
+                    closeMobileMenu();
                 }
             });
 
-            // Products dropdown toggle
-            productsToggle.addEventListener('click', () => {
-                productsDropdown.classList.toggle('hidden');
-                productsArrow.classList.toggle('rotate-180');
-            });
-        });
-    </script>
+            // Close menu when clicking close button inside menu
+            closeBtn.addEventListener('click', closeMobileMenu);
 
+            // Close menu when clicking on overlay (outside content)
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Close menu when clicking any link inside mobile menu
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // Products dropdown toggle for mobile
+            if (productsToggle && productsDropdown && productsArrow) {
+                productsToggle.addEventListener('click', () => {
+                    productsDropdown.classList.toggle('hidden');
+                    productsArrow.classList.toggle('rotate-180');
+                });
+            }
+
+            // Initialize hamburger icon state
+            toggleHamburgerIcon(false);
+        }
+
+        // Initialize header when DOM is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initHeader);
+        } else {
+            initHeader();
+        }
+    </script>
 </body>
 </html>

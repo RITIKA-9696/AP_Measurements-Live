@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Header/header.css">
     <link rel="stylesheet" href="../Footer/footer.css">
-    
+
     <style>
         /* Dark blue background */
         body {
@@ -22,7 +23,7 @@
             color: #e6f1ff;
             font-family: 'Inter', sans-serif;
         }
-        
+
         /* Animated orange square boxes - simplified for mobile */
         .background-boxes {
             position: fixed;
@@ -33,53 +34,96 @@
             z-index: -1;
             overflow: hidden;
         }
-        
+
         .box {
             position: absolute;
             border: 2px solid rgba(209, 98, 8, 0.511);
             border-radius: 4px;
             pointer-events: none;
-            display: none; /* Hide on mobile by default */
+            display: none;
+            /* Hide on mobile by default */
         }
-        
+
         /* Show only a few boxes on mobile */
         @media (min-width: 768px) {
             .box {
                 display: block;
             }
         }
-        
+
         /* Box animations */
         @keyframes float1 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(30px, -30px) rotate(180deg); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(30px, -30px) rotate(180deg);
+            }
         }
-        
+
         @keyframes float2 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-40px, 20px) rotate(-180deg); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-40px, 20px) rotate(-180deg);
+            }
         }
-        
+
         @keyframes float3 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(20px, 40px) scale(1.2); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(20px, 40px) scale(1.2);
+            }
         }
-        
+
         @keyframes float4 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-30px, -40px) rotate(90deg); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-30px, -40px) rotate(90deg);
+            }
         }
-        
+
         @keyframes float5 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(40px, -20px) scale(0.8); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(40px, -20px) scale(0.8);
+            }
         }
-        
+
         @keyframes pulse {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.4; }
+
+            0%,
+            100% {
+                opacity: 0.1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
         }
-        
+
         /* Custom animations for content */
         .fade-in {
             animation: fadeIn 1s ease-out forwards;
@@ -102,8 +146,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideUp {
@@ -111,6 +160,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -122,6 +172,7 @@
                 opacity: 0;
                 transform: translateX(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -133,12 +184,13 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
-        
+
         /* Feature dropdown animation */
         .lawyer-feature-content {
             max-height: 0;
@@ -158,59 +210,59 @@
         .lawyer-feature-arrow.open {
             transform: rotate(180deg);
         }
-        
+
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
-        
+
         /* Adjust text colors for dark background */
         .text-gray-800 {
             color: #e6f1ff;
         }
-        
+
         .text-gray-600 {
             color: #a8b2d1;
         }
-        
+
         .text-gray-900 {
             color: #ffffff;
         }
-        
+
         /* Section backgrounds */
         .bg-gray-50 {
             background-color: #112240;
         }
-        
+
         .bg-white {
             background-color: #112240;
             border: 1px solid #233554;
         }
-        
+
         .bg-gray-900 {
             background-color: #0a192f;
             border-top: 1px solid #233554;
             border-bottom: 1px solid #233554;
         }
-        
+
         /* Table adjustments */
         table tbody tr:hover {
             background-color: #1a2d4d !important;
         }
-        
-        .divide-gray-200 > * + * {
+
+        .divide-gray-200>*+* {
             border-color: #233554;
         }
-        
+
         /* Card hover effects */
         .hover-shadow-lg:hover {
             box-shadow: 0 10px 25px rgba(251, 146, 60, 0.15) !important;
         }
-        
+
         .shadow-md {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
         }
-        
+
         /* Responsive utility classes */
         .container-responsive {
             width: 100%;
@@ -219,21 +271,21 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
-        
+
         @media (min-width: 640px) {
             .container-responsive {
                 padding-left: 1.5rem;
                 padding-right: 1.5rem;
             }
         }
-        
+
         @media (min-width: 768px) {
             .container-responsive {
                 padding-left: 2rem;
                 padding-right: 2rem;
             }
         }
-        
+
         @media (min-width: 1024px) {
             .container-responsive {
                 padding-left: 3rem;
@@ -241,151 +293,177 @@
                 max-width: 1280px;
             }
         }
-        
+
         /* Animation delays */
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-        .delay-400 { animation-delay: 400ms; }
-        .delay-500 { animation-delay: 500ms; }
-        .delay-600 { animation-delay: 600ms; }
-        .delay-700 { animation-delay: 700ms; }
-        .delay-800 { animation-delay: 800ms; }
-        
+        .delay-100 {
+            animation-delay: 100ms;
+        }
+
+        .delay-200 {
+            animation-delay: 200ms;
+        }
+
+        .delay-300 {
+            animation-delay: 300ms;
+        }
+
+        .delay-400 {
+            animation-delay: 400ms;
+        }
+
+        .delay-500 {
+            animation-delay: 500ms;
+        }
+
+        .delay-600 {
+            animation-delay: 600ms;
+        }
+
+        .delay-700 {
+            animation-delay: 700ms;
+        }
+
+        .delay-800 {
+            animation-delay: 800ms;
+        }
+
         /* Responsive typography */
         .text-responsive-title {
-            font-size: 1.875rem; /* 3xl */
+            font-size: 1.875rem;
+            /* 3xl */
         }
-        
+
         @media (min-width: 768px) {
             .text-responsive-title {
-                font-size: 2.25rem; /* 4xl */
+                font-size: 2.25rem;
+                /* 4xl */
             }
         }
-        
+
         @media (min-width: 1024px) {
             .text-responsive-title {
-                font-size: 3rem; /* 5xl */
+                font-size: 3rem;
+                /* 5xl */
             }
         }
-        
+
         /* Button responsive sizes */
         .btn-responsive {
             padding: 0.75rem 1.5rem;
             font-size: 0.875rem;
         }
-        
+
         @media (min-width: 640px) {
             .btn-responsive {
                 padding: 0.875rem 1.75rem;
                 font-size: 1rem;
             }
         }
-        
+
         /* Image responsive */
         .img-responsive {
             width: 100%;
             height: auto;
             max-width: 100%;
         }
-        
+
         /* Table responsive */
         .table-responsive {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
-        
+
         /* Section spacing */
         .section-padding {
             padding-top: 3rem;
             padding-bottom: 3rem;
         }
-        
+
         @media (min-width: 768px) {
             .section-padding {
                 padding-top: 4rem;
                 padding-bottom: 4rem;
             }
         }
-        
+
         @media (min-width: 1024px) {
             .section-padding {
                 padding-top: 5rem;
                 padding-bottom: 5rem;
             }
         }
-        
+
         /* Grid responsive */
         .grid-responsive {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
         }
-        
+
         @media (min-width: 768px) {
             .grid-responsive-2 {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .grid-responsive-3 {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-        
+
         /* Mobile menu and navigation adjustments */
         @media (max-width: 768px) {
             body {
                 margin-top: 4rem;
             }
-            
+
             .mobile-margin-top {
                 margin-top: 1rem;
             }
-            
+
             .mobile-padding {
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
-            
+
             .mobile-text-center {
                 text-align: center;
             }
         }
-        
+
         /* Fix for small screens */
         @media (max-width: 640px) {
             .text-3xl {
                 font-size: 1.75rem;
             }
-            
+
             .text-2xl {
                 font-size: 1.5rem;
             }
-            
+
             .text-xl {
                 font-size: 1.25rem;
             }
-            
+
             .text-lg {
                 font-size: 1.125rem;
             }
-            
+
             .px-8 {
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
-            
+
             .py-3 {
                 padding-top: 0.75rem;
                 padding-bottom: 0.75rem;
             }
         }
-        
+
         /* Prevent horizontal overflow */
         .overflow-x-hidden {
             overflow-x: hidden;
         }
-        
+
         /* Ensure images don't overflow */
         img {
             max-width: 100%;
@@ -398,36 +476,52 @@
     <!-- Animated Background Boxes - Simplified for mobile -->
     <div class="background-boxes">
         <!-- Orange square boxes with different sizes and animations -->
-        <div class="box box-1 hidden md:block" style="width: 60px; height: 60px; top: 10%; left: 5%; animation: float1 20s infinite ease-in-out, pulse 8s infinite;"></div>
-        <div class="box box-2" style="width: 80px; height: 80px; top: 30%; right: 10%; animation: float2 25s infinite ease-in-out, pulse 10s infinite 1s;"></div>
-        <div class="box box-3 hidden sm:block" style="width: 40px; height: 40px; bottom: 20%; left: 15%; animation: float3 18s infinite ease-in-out, pulse 7s infinite 2s;"></div>
-        <div class="box box-4 hidden lg:block" style="width: 100px; height: 100px; top: 15%; right: 20%; animation: float4 22s infinite ease-in-out, pulse 9s infinite 0.5s;"></div>
-        <div class="box box-5 hidden xl:block" style="width: 70px; height: 70px; bottom: 30%; right: 5%; animation: float5 30s infinite ease-in-out, pulse 12s infinite 1.5s;"></div>
+        <div class="box box-1 hidden md:block"
+            style="width: 60px; height: 60px; top: 10%; left: 5%; animation: float1 20s infinite ease-in-out, pulse 8s infinite;">
+        </div>
+        <div class="box box-2"
+            style="width: 80px; height: 80px; top: 30%; right: 10%; animation: float2 25s infinite ease-in-out, pulse 10s infinite 1s;">
+        </div>
+        <div class="box box-3 hidden sm:block"
+            style="width: 40px; height: 40px; bottom: 20%; left: 15%; animation: float3 18s infinite ease-in-out, pulse 7s infinite 2s;">
+        </div>
+        <div class="box box-4 hidden lg:block"
+            style="width: 100px; height: 100px; top: 15%; right: 20%; animation: float4 22s infinite ease-in-out, pulse 9s infinite 0.5s;">
+        </div>
+        <div class="box box-5 hidden xl:block"
+            style="width: 70px; height: 70px; bottom: 30%; right: 5%; animation: float5 30s infinite ease-in-out, pulse 12s infinite 1.5s;">
+        </div>
     </div>
 
     <!-- Custom Navigation (replaces problematic include) -->
     <div data-include="/Header/header.html"></div>
 
     <!-- Hero Section -->
-    <section class="mobile-margin-top" id="home">
+    <section class="mobile-margin-top mt-32" id="home">
         <div class="container-responsive mx-auto mb-8 bg-white rounded-xl shadow-2xl border border-orange-500/30">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center py-8 md:py-12">
                 <div class="slide-left px-4 md:px-6 order-2 lg:order-1">
-                    <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-500 uppercase tracking-wide leading-tight mb-3 md:mb-4">
+                    <h1
+                        class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-500 uppercase tracking-wide leading-tight mb-3 md:mb-4">
                         Automatic Spring Tester
                     </h1>
                     <h2 class="text-xl md:text-2xl font-semibold text-gray-600 mb-4 md:mb-6 leading-snug">
                         for Any Spring
                     </h2>
                     <p class="text-gray-500 text-sm md:text-base mb-6 md:mb-8 leading-relaxed">
-                        Our fully automatic spring rate tester measures fork and shock absorber spring rates with precision.
-                        Monitor test results instantly with wireless data transmission and real-time performance analytics.
+                        Our fully automatic spring rate tester measures fork and shock absorber spring rates with
+                        precision.
+                        Monitor test results instantly with wireless data transmission and real-time performance
+                        analytics.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3 md:gap-4">
-                        <button class="inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-orange-500 text-white font-semibold uppercase tracking-wider rounded-md hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 btn-responsive">
+                        <a href="https://www.youtube.com/watch?v=SgoqqOnYvLI" target="_blank"
+                            class="inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-orange-500 text-white font-semibold uppercase tracking-wider rounded-md hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 btn-responsive">
                             <i class="fas fa-play-circle mr-2"></i> Watch Demo
-                        </button>
-                        <button class="inline-flex items-center justify-center px-4 sm:px-6 py-3 border-2 border-orange-500 text-orange-500 font-semibold uppercase tracking-wider rounded-md hover:bg-orange-500 hover:text-white transition-all duration-300 btn-responsive">
+                        </a>
+
+                        <button
+                            class="inline-flex items-center justify-center px-4 sm:px-6 py-3 border-2 border-orange-500 text-orange-500 font-semibold uppercase tracking-wider rounded-md hover:bg-orange-500 hover:text-white transition-all duration-300 btn-responsive">
                             View Products
                         </button>
                     </div>
@@ -441,64 +535,83 @@
     </section>
 
     <!-- Products Section -->
-    <section class="relative py-8 md:py-12 lg:py-16 bg-gradient-to-b from-gray-900 to-gray-950 rounded-lg mb-6 md:mb-8" id="products">
+    <section class="relative py-8 md:py-12 lg:py-16 bg-gradient-to-b from-gray-900 to-gray-950 rounded-lg mb-6 md:mb-8"
+        id="products">
         <div class="container-responsive mx-auto">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-500 text-center mb-4 slide-up uppercase tracking-wide relative">
+            <h2
+                class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-500 text-center mb-4 slide-up uppercase tracking-wide relative">
                 Our Products
                 <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-orange-500"></span>
             </h2>
             <p class="text-lg md:text-xl text-white text-center mb-8 md:mb-12 slide-up delay-200">
                 Professional spring testing solutions for every need
             </p>
-            
-           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-8 md:mt-12 mb-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-8 md:mt-12 mb-8">
                 <!-- MINI Product Card -->
-                <div class="rounded-xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 slide-up delay-100 border border-orange-500/20 group hover:border-orange-500/50 hover:scale-[1.02]">
+                <div
+                    class="rounded-xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 slide-up delay-100 border border-orange-500/20 group hover:border-orange-500/50 hover:scale-[1.02]">
                     <div class="relative overflow-hidden">
                         <div class="relative h-48 md:h-56 flex items-center justify-center p-4">
-                            <img src="../assets/spring1.jpg" alt="Spring Tester MINI" 
-                                 class="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <img src="../assets/spring1.jpg" alt="Spring Tester MINI"
+                                class="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-gray-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
                         </div>
                     </div>
                     <div class="p-4 md:p-5">
-                        <h3 class="text-base md:text-lg font-semibold text-center mt-4 text-white mb-3 group-hover:text-orange-600 transition-colors duration-300">Spring rate tester MINI</h3>
+                        <h3
+                            class="text-base md:text-lg font-semibold text-center mt-4 text-white mb-3 group-hover:text-orange-600 transition-colors duration-300">
+                            Spring rate tester MINI</h3>
                     </div>
                 </div>
 
                 <!-- DAILY Product Card -->
-                <div class="rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 slide-up delay-200 border border-orange-500/20 group hover:border-orange-500/50 hover:scale-[1.02]">
+                <div
+                    class="rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 slide-up delay-200 border border-orange-500/20 group hover:border-orange-500/50 hover:scale-[1.02]">
                     <div class="relative overflow-hidden">
                         <div class="relative h-48 md:h-56 flex items-center justify-center p-4">
-                            <img src="../assets/spring2.png" alt="Spring Tester DAILY" 
-                                 class="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <img src="../assets/spring2.png" alt="Spring Tester DAILY"
+                                class="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-gray-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
                         </div>
                     </div>
                     <div class="p-4 md:p-5">
-                        <h3 class="text-base md:text-lg font-semibold text-center mt-4 text-white mb-3 group-hover:text-orange-600 transition-colors duration-300">Spring rate tester DAILY</h3>
+                        <h3
+                            class="text-base md:text-lg font-semibold text-center mt-4 text-white mb-3 group-hover:text-orange-600 transition-colors duration-300">
+                            Spring rate tester DAILY</h3>
                     </div>
                 </div>
 
                 <!-- PRO Product Card -->
-                <div class="rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 slide-up delay-300 border border-orange-500/20 group hover:border-orange-500/50 hover:scale-[1.02]">
+                <div
+                    class="rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 slide-up delay-300 border border-orange-500/20 group hover:border-orange-500/50 hover:scale-[1.02]">
                     <div class="relative overflow-hidden">
                         <div class="relative h-48 md:h-56 flex items-center justify-center p-4">
-                            <img src="../assets/spring3.png" alt="Spring Tester PRO" 
-                                 class="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <img src="../assets/spring3.png" alt="Spring Tester PRO"
+                                class="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-gray-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
                         </div>
                     </div>
                     <div class="p-4 md:p-5">
-                        <h3 class="text-base md:text-lg font-semibold text-center mt-4 text-white mb-3 group-hover:text-orange-600 transition-colors duration-300">Spring rate tester PRO</h3>
+                        <h3
+                            class="text-base md:text-lg font-semibold text-center mt-4 text-white mb-3 group-hover:text-orange-600 transition-colors duration-300">
+                            Spring rate tester PRO</h3>
                     </div>
                 </div>
             </div>
 
             <!-- Technical Specifications Table -->
-            <div class="overflow-x-auto slide-up delay-400 bg-gray-900 p-3 md:p-4 rounded-xl border border-orange-500/30 mt-8">
+            <div
+                class="overflow-x-auto slide-up delay-400 bg-gray-900 p-3 md:p-4 rounded-xl border border-orange-500/30 mt-8">
                 <div class="table-responsive">
-                    <table class="w-full rounded-xl overflow-hidden shadow-lg border border-orange-500/30 min-w-[600px]">
+                    <table
+                        class="w-full rounded-xl overflow-hidden shadow-lg border border-orange-500/30 min-w-[600px]">
                         <tbody class="divide-y divide-gray-700">
                             <tr class="hover:bg-blue-900/30 transition-colors">
                                 <td class="p-3 md:p-5 font-semibold text-white">Automatic tests</td>
@@ -511,7 +624,8 @@
                             <tr class="hover:bg-blue-900/30 transition-colors">
                                 <td class="p-3 md:p-5 font-semibold text-white">Dimensions WxDxH</td>
                                 <td colspan="4" class="p-3 md:p-5 text-center text-gray-300">
-                                    Sine, Triangle, Square, Pulse, Pink noise, Sweep, Chirp, and Direct track data import.
+                                    Sine, Triangle, Square, Pulse, Pink noise, Sweep, Chirp, and Direct track data
+                                    import.
                                 </td>
                             </tr>
                             <tr class="hover:bg-blue-900/30 transition-colors">
@@ -542,9 +656,23 @@
                                 </td>
                             </tr>
                             <tr class="hover:bg-blue-900/30 transition-colors">
-                                <td class="p-3 md:p-5 font-semibold text-white">Free rear spring length</td>
-                                <td colspan="4" class="p-3 md:p-5 text-center text-gray-300">50 nanometers</td>
+                                <td class="p-3 md:p-5 font-semibold text-white">
+                                    Free rear spring length
+                                </td>
+
+                                <td class="p-3 md:p-5 text-center text-gray-300 border-l border-gray-600">
+                                   305 mm (easy to customize)
+                                </td>
+
+                                <td class="p-3 md:p-5 text-center text-gray-300 border-l border-gray-600">
+                                    374 mm (easy to customize)
+                                </td>
+
+                                <td class="p-3 md:p-5 text-center text-gray-300 border-l border-gray-600">
+                                    -
+                                </td>
                             </tr>
+
                             <tr class="hover:bg-blue-900/30 transition-colors">
                                 <td class="p-3 md:p-5 font-semibold text-white">Free front spring length</td>
                                 <td colspan="4" class="p-3 md:p-5 text-center text-gray-300">
@@ -554,7 +682,8 @@
                             <tr class="hover:bg-blue-900/30 transition-colors">
                                 <td class="p-3 md:p-5 font-semibold text-white">Spring length</td>
                                 <td colspan="4" class="p-3 md:p-5 text-center text-sm leading-tight text-gray-300">
-                                    3-phase 380/400 VAC 16 A. Can be optimized for 1-phase 220/240 VAC or other configurations.
+                                    3-phase 380/400 VAC 16 A. Can be optimized for 1-phase 220/240 VAC or other
+                                    configurations.
                                     Contact us to learn more.
                                 </td>
                             </tr>
@@ -565,7 +694,8 @@
                             <tr class="hover:bg-blue-900/30 transition-colors">
                                 <td class="p-3 md:p-5 font-semibold text-white">Dimensions WxDxH</td>
                                 <td colspan="4" class="p-3 md:p-5 text-center text-gray-300">
-                                    Sine, Triangle, Square, Pulse, Pink noise, Sweep, Chirp, and Direct track data import.
+                                    Sine, Triangle, Square, Pulse, Pink noise, Sweep, Chirp, and Direct track data
+                                    import.
                                 </td>
                             </tr>
                             <tr class="hover:bg-blue-900/30 transition-colors">
@@ -575,13 +705,15 @@
                             <tr class="hover:bg-blue-900/30 transition-colors">
                                 <td class="p-3 md:p-5 font-semibold text-white">Software</td>
                                 <td colspan="4" class="p-3 md:p-5 text-center text-gray-300">
-                                    LABA7 Spring dyno software, no extra cost. 1-on-1 personalized online onboarding and training.
+                                    LABA7 Spring dyno software, no extra cost. 1-on-1 personalized online onboarding and
+                                    training.
                                 </td>
                             </tr>
                             <tr class="hover:bg-blue-900/30 transition-colors">
                                 <td class="p-3 md:p-5 font-semibold text-white">Technical support</td>
                                 <td colspan="4" class="p-3 md:p-5 text-center text-gray-300">
-                                    Typical resolution time is less than 24 hours. Spare parts are in stock for quick dispatch.
+                                    Typical resolution time is less than 24 hours. Spare parts are in stock for quick
+                                    dispatch.
                                 </td>
                             </tr>
                         </tbody>
@@ -592,62 +724,77 @@
     </section>
 
     <!-- Adapters Section -->
-    <section class="mb-6 md:mb-12 bg-white rounded-lg shadow-xl border border-gray-200 p-4 md:p-6 mt-4 md:mt-6" id="adapters">
+    <section class="mb-6 md:mb-12 bg-white rounded-lg shadow-xl border border-gray-200 p-4 md:p-6 mt-4 md:mt-6"
+        id="adapters">
         <div class="container-responsive mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold text-blue-500 text-center mb-4 slide-up uppercase tracking-wide relative">
+            <h2
+                class="text-2xl md:text-3xl font-bold text-blue-500 text-center mb-4 slide-up uppercase tracking-wide relative">
                 No More Limits
                 <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-orange-500"></span>
             </h2>
-            <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-600 text-center mb-8 md:mb-12 slide-up delay-200">
+            <h3
+                class="text-lg md:text-xl lg:text-2xl font-medium text-gray-600 text-center mb-8 md:mb-12 slide-up delay-200">
                 Spring Dyno Adapters for Spring Testers
             </h3>
-    
-            <p class="bg-blue-100 rounded-lg p-4 border border-orange-500 text-gray-600 text-center mx-auto mb-8 md:mb-12 slide-up delay-300 leading-relaxed">
+
+            <p
+                class="bg-blue-100 rounded-lg p-4 border border-orange-500 text-gray-600 text-center mx-auto mb-8 md:mb-12 slide-up delay-300 leading-relaxed">
                 Focusing on versatility, we supply a range of adapters for our spring rate testers.
-                Their range covers any type of vehicle from MTBs to 4x4s: motorcycles, circuit racing, and dirt track racing
+                Their range covers any type of vehicle from MTBs to 4x4s: motorcycles, circuit racing, and dirt track
+                racing
                 vehicles.
             </p>
-    
+
             <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 mb-8 md:mb-12 slide-up delay-400">
-                <button class="inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-3 bg-orange-500 text-white font-semibold uppercase tracking-wider rounded-md hover:bg-orange-600 transition-all duration-300 btn-responsive">
+                <button
+                    class="inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-3 bg-orange-500 text-white font-semibold uppercase tracking-wider rounded-md hover:bg-orange-600 transition-all duration-300 btn-responsive">
                     MTB Adapters
                 </button>
-                <button class="inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-3 border-2 border-orange-500 text-orange-500 font-semibold uppercase tracking-wider rounded-md hover:bg-orange-500 hover:text-white transition-all duration-300 btn-responsive">
+                <button
+                    class="inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-3 border-2 border-orange-500 text-orange-500 font-semibold uppercase tracking-wider rounded-md hover:bg-orange-500 hover:text-white transition-all duration-300 btn-responsive">
                     MOTO And AUTO Adapters
                 </button>
             </div>
-    
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 slide-up delay-500 justify-items-center">
-                <div class="rounded-xl w-full max-w-xs overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 border border-orange-500/20 group bg-gray-300">
+
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 slide-up delay-500 justify-items-center">
+                <div
+                    class="rounded-xl w-full max-w-xs overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 border border-orange-500/20 group bg-gray-300">
                     <div class="relative h-48 md:h-56 flex items-center justify-center p-4">
                         <img src="../assets/spring4.png" alt="Spring Adapter 1"
                             class="max-w-[80%] max-h-[80%] object-contain transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
                     </div>
                 </div>
-    
-                <div class="rounded-xl w-full max-w-xs overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 border border-orange-500/20 group bg-gray-300">
+
+                <div
+                    class="rounded-xl w-full max-w-xs overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 border border-orange-500/20 group bg-gray-300">
                     <div class="relative h-48 md:h-56 flex items-center justify-center p-4">
                         <img src="../assets/spring5.png" alt="Spring Adapter 2"
                             class="max-w-[80%] max-h-[80%] object-contain transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
                     </div>
                 </div>
-    
-                <div class="rounded-xl w-full max-w-xs overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 border border-orange-500/20 group bg-gray-300 sm:col-span-2 lg:col-span-1">
+
+                <div
+                    class="rounded-xl w-full max-w-xs overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 border border-orange-500/20 group bg-gray-300 sm:col-span-2 lg:col-span-1">
                     <div class="relative h-48 md:h-56 flex items-center justify-center p-4">
                         <img src="../assets/spring6.png" alt="Spring Adapter 3"
                             class="max-w-[80%] max-h-[80%] object-contain transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
                     </div>
                 </div>
             </div>
-    
+
             <div class="mt-8 md:mt-12 lg:mt-16 text-center slide-up delay-600">
-                <h2 class="text-2xl md:text-3xl font-bold text-blue-500 mb-8 md:mb-12 uppercase tracking-wide relative inline-block">
+                <h2
+                    class="text-2xl md:text-3xl font-bold text-blue-500 mb-8 md:mb-12 uppercase tracking-wide relative inline-block">
                     Shock Spring Testers for
                     <span class="text-orange-500">Workshops</span>
                     <span class="absolute -bottom-3 left-0 w-full h-1 bg-orange-500"></span>
@@ -660,7 +807,8 @@
                     <p class="text-gray-600 leading-relaxed text-sm md:text-base">
                         Our equipment makes spring rate testing simple and accurate. Each spring rate tester is
                         designed to be very easy to use and provides the most accurate results immediately on
-                        the screen of your device, whether testing fork springs, air springs, bump stops, or gas pressure
+                        the screen of your device, whether testing fork springs, air springs, bump stops, or gas
+                        pressure
                         systems.
                     </p>
                 </div>
@@ -669,132 +817,162 @@
     </section>
 
     <!-- Features Section -->
-    <section class="relative py-8 md:py-12 lg:py-16 bg-gradient-to-b from-gray-900 to-gray-950 rounded-lg mb-6 md:mb-12" id="features">
+    <section class="relative py-8 md:py-12 lg:py-16 bg-gradient-to-b from-gray-900 to-gray-950 rounded-lg mb-6 md:mb-12"
+        id="features">
         <div class="container-responsive mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold text-blue-500 text-center mb-4 slide-up uppercase tracking-wide relative">
+            <h2
+                class="text-2xl md:text-3xl font-bold text-blue-500 text-center mb-4 slide-up uppercase tracking-wide relative">
                 Key Features & Benefits
                 <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-orange-500"></span>
             </h2>
-            <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-white text-center mb-8 md:mb-12 slide-up delay-200">
-                AP Measurements Spring Testing Machines
+            <h3
+                class="text-lg md:text-xl lg:text-2xl font-medium text-white text-center mb-8 md:mb-12 slide-up delay-200">
+                LABA7 Spring Testing Machines
             </h3>
-            
+
             <div class="space-y-4 md:space-y-6">
                 <!-- Fully Automatic -->
-                <div class="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 slide-up delay-300 border border-orange-500/20">
-                    <div class="p-4 md:p-6 flex justify-between items-center cursor-pointer rounded-lg transition-colors" onclick="toggleFeature('automatic')">
+                <div
+                    class="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 slide-up delay-300 border border-orange-500/20">
+                    <div class="p-4 md:p-6 flex justify-between items-center cursor-pointer rounded-lg transition-colors"
+                        onclick="toggleFeature('automatic')">
                         <div class="flex items-center gap-3 md:gap-4">
-                            <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
                                 <i class="fas fa-robot"></i>
                             </div>
                             <h4 class="text-base md:text-lg lg:text-xl font-semibold text-white">Fully Automatic</h4>
                         </div>
-                        <i class="fas fa-chevron-down text-orange-500 lawyer-feature-arrow text-sm md:text-base" id="arrow-automatic"></i>
+                        <i class="fas fa-chevron-down text-orange-500 lawyer-feature-arrow text-sm md:text-base"
+                            id="arrow-automatic"></i>
                     </div>
                     <div class="lawyer-feature-content bg-orange-500 rounded-lg" id="content-automatic">
                         <p class="text-white leading-relaxed p-4 md:p-6 text-sm md:text-base">
-                            As with all LABA7 equipment, our spring testers are built with simplicity in mind. 
-                            Place a spring, fork, or bump stop into the machine, select the settings, and the 
-                            test will run automatically. Analyze performance through the force-displacement 
+                            As with all LABA7 equipment, our spring testers are built with simplicity in mind.
+                            Place a spring, fork, or bump stop into the machine, select the settings, and the
+                            test will run automatically. Analyze performance through the force-displacement
                             graph and spring progressiveness measurements.
                         </p>
                     </div>
                 </div>
 
                 <!-- Wireless Connectivity -->
-                <div class="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 slide-up delay-400 border border-orange-500/20">
-                    <div class="p-4 md:p-6 flex justify-between items-center cursor-pointer rounded-lg transition-colors" onclick="toggleFeature('wireless')">
+                <div
+                    class="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 slide-up delay-400 border border-orange-500/20">
+                    <div class="p-4 md:p-6 flex justify-between items-center cursor-pointer rounded-lg transition-colors"
+                        onclick="toggleFeature('wireless')">
                         <div class="flex items-center gap-3 md:gap-4">
-                            <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
                                 <i class="fas fa-wifi"></i>
                             </div>
-                            <h4 class="text-base md:text-lg lg:text-xl font-semibold text-white">Wireless Connectivity</h4>
+                            <h4 class="text-base md:text-lg lg:text-xl font-semibold text-white">Wireless Connectivity
+                            </h4>
                         </div>
-                        <i class="fas fa-chevron-down text-orange-500 lawyer-feature-arrow text-sm md:text-base" id="arrow-wireless"></i>
+                        <i class="fas fa-chevron-down text-orange-500 lawyer-feature-arrow text-sm md:text-base"
+                            id="arrow-wireless"></i>
                     </div>
                     <div class="lawyer-feature-content bg-orange-500 rounded-lg" id="content-wireless">
                         <p class="text-white leading-relaxed p-4 md:p-6 text-sm md:text-base">
-                            Connect the spring rate tester to your device via local Wi-Fi network or USB cable. 
+                            Connect the spring rate tester to your device via local Wi-Fi network or USB cable.
                             Both options allow you to track performance data in real-time.
                         </p>
                     </div>
                 </div>
 
                 <!-- Safety -->
-                <div class="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 slide-up delay-500 border border-orange-500/20">
-                    <div class="p-4 md:p-6 flex justify-between items-center cursor-pointer rounded-lg transition-colors" onclick="toggleFeature('safety')">
+                <div
+                    class="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 slide-up delay-500 border border-orange-500/20">
+                    <div class="p-4 md:p-6 flex justify-between items-center cursor-pointer rounded-lg transition-colors"
+                        onclick="toggleFeature('safety')">
                         <div class="flex items-center gap-3 md:gap-4">
-                            <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
                             <h4 class="text-base md:text-lg lg:text-xl font-semibold text-white">Safety</h4>
                         </div>
-                        <i class="fas fa-chevron-down text-orange-500 lawyer-feature-arrow text-sm md:text-base" id="arrow-safety"></i>
+                        <i class="fas fa-chevron-down text-orange-500 lawyer-feature-arrow text-sm md:text-base"
+                            id="arrow-safety"></i>
                     </div>
                     <div class="lawyer-feature-content bg-orange-500 rounded-lg" id="content-safety">
                         <p class="text-white leading-relaxed p-4 md:p-6 text-sm md:text-base">
-                            During the spring rate test, springs are subjected to tremendous force. In case of 
-                            spring failure, the outcome can be dire. To protect operators and workshops, LABA7 
+                            During the spring rate test, springs are subjected to tremendous force. In case of
+                            spring failure, the outcome can be dire. To protect operators and workshops, LABA7
                             spring rate dynos feature Plexiglass shields and steel casings for maximum safety.
                         </p>
                     </div>
                 </div>
 
                 <!-- MTB and Motorcycle Fork Adapters -->
-                <div class="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 slide-up delay-600 border border-orange-500/20">
-                    <div class="p-4 md:p-6 flex justify-between items-center cursor-pointer rounded-lg transition-colors" onclick="toggleFeature('technical')">
+                <div
+                    class="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 slide-up delay-600 border border-orange-500/20">
+                    <div class="p-4 md:p-6 flex justify-between items-center cursor-pointer rounded-lg transition-colors"
+                        onclick="toggleFeature('technical')">
                         <div class="flex items-center gap-3 md:gap-4">
-                            <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
                                 <i class="fas fa-cogs"></i>
                             </div>
-                            <h4 class="text-base md:text-lg lg:text-xl font-semibold text-white">MTB and Motorcycle Fork Adapters</h4>
+                            <h4 class="text-base md:text-lg lg:text-xl font-semibold text-white">MTB and Motorcycle Fork
+                                Adapters</h4>
                         </div>
-                        <i class="fas fa-chevron-down text-orange-500 lawyer-feature-arrow text-sm md:text-base" id="arrow-technical"></i>
+                        <i class="fas fa-chevron-down text-orange-500 lawyer-feature-arrow text-sm md:text-base"
+                            id="arrow-technical"></i>
                     </div>
                     <div class="lawyer-feature-content bg-orange-500 rounded-lg" id="content-technical">
                         <p class="text-white leading-relaxed p-4 md:p-6 text-sm md:text-base">
-                            To meet diverse customer needs, LABA7 spring testers come equipped with special 
-                            adapters for MTB and motorcycle forks. Self-preload clevis and U-shaped mounts for 
+                            To meet diverse customer needs, LABA7 spring testers come equipped with special
+                            adapters for MTB and motorcycle forks. Self-preload clevis and U-shaped mounts for
                             rear shocks feature protective plastic heads to prevent damage to tested units.
                         </p>
                     </div>
                 </div>
 
                 <!-- Custom Mounting Solutions -->
-                <div class="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 slide-up delay-700 border border-orange-500/20">
-                    <div class="p-4 md:p-6 flex justify-between items-center cursor-pointer rounded-lg transition-colors" onclick="toggleFeature('mounting')">
+                <div
+                    class="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 slide-up delay-700 border border-orange-500/20">
+                    <div class="p-4 md:p-6 flex justify-between items-center cursor-pointer rounded-lg transition-colors"
+                        onclick="toggleFeature('mounting')">
                         <div class="flex items-center gap-3 md:gap-4">
-                            <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
                                 <i class="fas fa-tools"></i>
                             </div>
-                            <h4 class="text-base md:text-lg lg:text-xl font-semibold text-white">Custom Mounting Solutions</h4>
+                            <h4 class="text-base md:text-lg lg:text-xl font-semibold text-white">Custom Mounting
+                                Solutions</h4>
                         </div>
-                        <i class="fas fa-chevron-down text-orange-500 lawyer-feature-arrow text-sm md:text-base" id="arrow-mounting"></i>
+                        <i class="fas fa-chevron-down text-orange-500 lawyer-feature-arrow text-sm md:text-base"
+                            id="arrow-mounting"></i>
                     </div>
                     <div class="lawyer-feature-content bg-orange-500 rounded-lg" id="content-mounting">
                         <p class="text-white leading-relaxed p-4 md:p-6 text-sm md:text-base">
-                            Testing springs, forks, or coils of unconventional sizes? We develop custom mounts 
+                            Testing springs, forks, or coils of unconventional sizes? We develop custom mounts
                             for specialized applications. Contact us for more information.
                         </p>
                     </div>
                 </div>
 
                 <!-- Seal Drag Testing -->
-                <div class="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 slide-up delay-800 border border-orange-500/20">
-                    <div class="p-4 md:p-6 flex justify-between items-center cursor-pointer rounded-lg transition-colors" onclick="toggleFeature('seal')">
+                <div
+                    class="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 slide-up delay-800 border border-orange-500/20">
+                    <div class="p-4 md:p-6 flex justify-between items-center cursor-pointer rounded-lg transition-colors"
+                        onclick="toggleFeature('seal')">
                         <div class="flex items-center gap-3 md:gap-4">
-                            <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
                                 <i class="fas fa-compress-arrows-alt"></i>
                             </div>
                             <h4 class="text-base md:text-lg lg:text-xl font-semibold text-white">Seal Drag Testing</h4>
                         </div>
-                        <i class="fas fa-chevron-down text-orange-500 lawyer-feature-arrow text-sm md:text-base" id="arrow-seal"></i>
+                        <i class="fas fa-chevron-down text-orange-500 lawyer-feature-arrow text-sm md:text-base"
+                            id="arrow-seal"></i>
                     </div>
                     <div class="lawyer-feature-content bg-orange-500 rounded-lg" id="content-seal">
                         <p class="text-white leading-relaxed p-4 md:p-6 text-sm md:text-base">
-                            Our spring compression testers also function as spring tension testers for seal drag 
-                            testing. This test measures the force required to move suspension components while 
-                            maintaining proper sealing to prevent contamination – a crucial factor in ensuring the 
+                            Our spring compression testers also function as spring tension testers for seal drag
+                            testing. This test measures the force required to move suspension components while
+                            maintaining proper sealing to prevent contamination – a crucial factor in ensuring the
                             longevity and proper function of the suspension system.
                         </p>
                     </div>
@@ -806,25 +984,31 @@
     <!-- Benefits Section -->
     <section class="bg-white rounded-lg p-4 md:p-6 border border-gray-200 mb-6 md:mb-12" id="benefits">
         <div class="container-responsive mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold text-blue-500 text-center mb-4 slide-up uppercase tracking-wide relative">
+            <h2
+                class="text-2xl md:text-3xl font-bold text-blue-500 text-center mb-4 slide-up uppercase tracking-wide relative">
                 Benefits of the LABA7
                 <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-orange-500"></span>
             </h2>
-            <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-600 text-center mb-8 md:mb-12 slide-up delay-200">
+            <h3
+                class="text-lg md:text-xl lg:text-2xl font-medium text-gray-600 text-center mb-8 md:mb-12 slide-up delay-200">
                 Spring Rate Tester
             </h3>
-    
-            <p class="text-gray-600 bg-blue-100 rounded-lg p-4 text-center mx-auto mb-8 md:mb-12 slide-up delay-300 leading-relaxed text-sm md:text-base">
-                Discover how our spring rate tester improves performance, safety, and efficiency in suspension testing and
+
+            <p
+                class="text-gray-600 bg-blue-100 rounded-lg p-4 text-center mx-auto mb-8 md:mb-12 slide-up delay-300 leading-relaxed text-sm md:text-base">
+                Discover how our spring rate tester improves performance, safety, and efficiency in suspension testing
+                and
                 maintenance.
             </p>
-    
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 md:mt-8 slide-up delay-400">
                 <!-- Know Your Springs -->
-                <div class="bg-orange-500 p-4 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden border border-blue-500/20">
+                <div
+                    class="bg-orange-500 p-4 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden border border-blue-500/20">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-blue-400"></div>
                     <div class="flex items-center gap-3 mb-3 md:mb-4">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-lg md:text-xl">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-lg md:text-xl">
                             <i class="fas fa-search"></i>
                         </div>
                         <h4 class="text-base md:text-lg font-semibold text-white">Know Your Springs</h4>
@@ -835,12 +1019,14 @@
                         don't – causing declared spring rates to vary...
                     </p>
                 </div>
-    
+
                 <!-- Test Bump Stops -->
-                <div class="p-4 bg-orange-500 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden slide-up delay-500 border border-orange-500/20">
+                <div
+                    class="p-4 bg-orange-500 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden slide-up delay-500 border border-orange-500/20">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-blue-400"></div>
                     <div class="flex items-center gap-3 mb-3 md:mb-4">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-lg md:text-xl">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-lg md:text-xl">
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <h4 class="text-base md:text-lg font-semibold text-white">Test Bump Stops</h4>
@@ -850,12 +1036,14 @@
                         damage, maintain consistent handling, and absorb vibrations for smoother operation.
                     </p>
                 </div>
-    
+
                 <!-- Measure Air Springs -->
-                <div class="p-4 bg-orange-500 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden slide-up delay-600 border border-orange-500/20">
+                <div
+                    class="p-4 bg-orange-500 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden slide-up delay-600 border border-orange-500/20">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-blue-400"></div>
                     <div class="flex items-center gap-3 mb-3 md:mb-4">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-lg md:text-xl">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-lg md:text-xl">
                             <i class="fas fa-wind"></i>
                         </div>
                         <h4 class="text-base md:text-lg font-semibold text-white">Measure Air Springs</h4>
@@ -865,12 +1053,14 @@
                         measurements for air spring performance and optimize your suspension setup.
                     </p>
                 </div>
-    
+
                 <!-- Measure Bearing Friction -->
-                <div class="p-4 bg-orange-500 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden slide-up delay-700 border border-orange-500/20">
+                <div
+                    class="p-4 bg-orange-500 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden slide-up delay-700 border border-orange-500/20">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-blue-400"></div>
                     <div class="flex items-center gap-3 mb-3 md:mb-4">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-lg md:text-xl">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-lg md:text-xl">
                             <i class="fas fa-sliders-h"></i>
                         </div>
                         <h4 class="text-base md:text-lg font-semibold text-white">Measure Bearing Friction</h4>
@@ -881,12 +1071,14 @@
                         to friction because it creates an unwanted and uncontrolled force...
                     </p>
                 </div>
-                
+
                 <!-- Reports and Labels -->
-                <div class="p-4 bg-orange-500 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden slide-up delay-700 border border-orange-500/20">
+                <div
+                    class="p-4 bg-orange-500 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden slide-up delay-700 border border-orange-500/20">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-blue-400"></div>
                     <div class="flex items-center gap-3 mb-3 md:mb-4">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-lg md:text-xl">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-lg md:text-xl">
                             <i class="fas fa-sliders-h"></i>
                         </div>
                         <h4 class="text-base md:text-lg font-semibold text-white">Reports and Labels</h4>
@@ -896,12 +1088,14 @@
                         Mark springs quickly when working with many different units.
                     </p>
                 </div>
-    
+
                 <!-- Accurate by Design -->
-                <div class="p-4 bg-orange-500 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden slide-up delay-700 border border-orange-500/20">
+                <div
+                    class="p-4 bg-orange-500 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden slide-up delay-700 border border-orange-500/20">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-blue-400"></div>
                     <div class="flex items-center gap-3 mb-3 md:mb-4">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-lg md:text-xl">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-lg md:text-xl">
                             <i class="fas fa-ruler-combined"></i>
                         </div>
                         <h4 class="text-base md:text-lg font-semibold text-white">Accurate by Design</h4>
@@ -918,32 +1112,39 @@
     <!-- Software Section -->
     <section class="bg-white rounded-lg p-4 md:p-6 border border-gray-200 mb-6 md:mb-12" id="software">
         <div class="container-responsive mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold text-blue-500 text-center mb-4 slide-up uppercase tracking-wide relative">
+            <h2
+                class="text-2xl md:text-3xl font-bold text-blue-500 text-center mb-4 slide-up uppercase tracking-wide relative">
                 AP Measurements
                 <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-orange-500"></span>
             </h2>
-            <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-600 text-center mb-8 md:mb-12 slide-up delay-200">
+            <h3
+                class="text-lg md:text-xl lg:text-2xl font-medium text-gray-600 text-center mb-8 md:mb-12 slide-up delay-200">
                 Spring Dyno Software
             </h3>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="space-y-6 slide-left delay-300 order-2 lg:order-1">
                     <!-- Force vs Displacement Graph -->
-                    <div class="flex items-start gap-3 md:gap-4 bg-gray-200 rounded-lg p-3 md:p-4 border border-orange-500">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
+                    <div
+                        class="flex items-start gap-3 md:gap-4 bg-gray-200 rounded-lg p-3 md:p-4 border border-orange-500">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <div class="">
                             <h4 class="text-lg md:text-xl font-bold mb-2 text-blue-500">Force vs Displacement Graph</h4>
                             <p class="text-gray-600 text-sm md:text-base">
-                                Visualize spring behavior throughout the compression cycle with detailed real-time graphs.
+                                Visualize spring behavior throughout the compression cycle with detailed real-time
+                                graphs.
                             </p>
                         </div>
                     </div>
 
                     <!-- Average Spring Rate -->
-                    <div class="flex items-start gap-3 md:gap-4 bg-gray-200 rounded-lg p-3 md:p-4 border border-orange-500">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
+                    <div
+                        class="flex items-start gap-3 md:gap-4 bg-gray-200 rounded-lg p-3 md:p-4 border border-orange-500">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
                             <i class="fas fa-calculator"></i>
                         </div>
                         <div>
@@ -955,12 +1156,15 @@
                     </div>
 
                     <!-- Comparison of Different Runs -->
-                    <div class="flex items-start gap-3 md:gap-4 bg-gray-200 rounded-lg p-3 md:p-4 border border-orange-500">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
+                    <div
+                        class="flex items-start gap-3 md:gap-4 bg-gray-200 rounded-lg p-3 md:p-4 border border-orange-500">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
                             <i class="fas fa-layer-group"></i>
                         </div>
                         <div>
-                            <h4 class="text-lg md:text-xl font-bold mb-2 text-blue-500">Comparison of Different Runs</h4>
+                            <h4 class="text-lg md:text-xl font-bold mb-2 text-blue-500">Comparison of Different Runs
+                            </h4>
                             <p class="text-gray-600 text-sm md:text-base">
                                 Overlay multiple tests to ensure consistency and identify variations.
                             </p>
@@ -968,12 +1172,15 @@
                     </div>
 
                     <!-- Print-ready Reports and Labels -->
-                    <div class="flex items-start gap-3 md:gap-4 bg-gray-200 rounded-lg p-3 md:p-4 border border-orange-500">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
+                    <div
+                        class="flex items-start gap-3 md:gap-4 bg-gray-200 rounded-lg p-3 md:p-4 border border-orange-500">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
                             <i class="fas fa-print"></i>
                         </div>
                         <div>
-                            <h4 class="text-lg md:text-xl font-bold mb-2 text-blue-500">Print-ready Reports and Labels</h4>
+                            <h4 class="text-lg md:text-xl font-bold mb-2 text-blue-500">Print-ready Reports and Labels
+                            </h4>
                             <p class="text-gray-600 text-sm md:text-base">
                                 Generate professional documentation for clients with custom branding options.
                             </p>
@@ -981,8 +1188,10 @@
                     </div>
 
                     <!-- Simple Wi-Fi Setup -->
-                    <div class="flex items-start gap-3 md:gap-4 bg-gray-200 rounded-lg p-3 md:p-4 border border-orange-500">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
+                    <div
+                        class="flex items-start gap-3 md:gap-4 bg-gray-200 rounded-lg p-3 md:p-4 border border-orange-500">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white text-base md:text-lg">
                             <i class="fas fa-wifi"></i>
                         </div>
                         <div>
@@ -994,9 +1203,8 @@
                     </div>
                 </div>
                 <div class="slide-right delay-400 flex justify-center items-center order-1 lg:order-2 mb-6 lg:mb-0">
-                    <img src="../assets/laba7-spring-dyno-software-1.png" 
-                         alt="Spring Dyno Software Interface" 
-                         class="w-full lg:w-4/5 rounded-lg shadow-xl border border-orange-500/20 img-responsive">
+                    <img src="../assets/laba7-spring-dyno-software-1.png" alt="Spring Dyno Software Interface"
+                        class="w-full lg:w-4/5 rounded-lg shadow-xl border border-orange-500/20 img-responsive">
                 </div>
             </div>
         </div>
@@ -1010,26 +1218,26 @@
         function toggleFeature(featureId) {
             const content = document.getElementById(`content-${featureId}`);
             const arrow = document.getElementById(`arrow-${featureId}`);
-            
+
             // Close all other feature contents
             document.querySelectorAll('.lawyer-feature-content').forEach(item => {
                 if (item.id !== `content-${featureId}`) {
                     item.classList.remove('open');
                 }
             });
-            
+
             // Reset all other arrows
             document.querySelectorAll('.lawyer-feature-arrow').forEach(item => {
                 if (item.id !== `arrow-${featureId}`) {
                     item.classList.remove('open');
                 }
             });
-            
+
             // Toggle current feature
             content.classList.toggle('open');
             arrow.classList.toggle('open');
         }
-        
+
         // Intersection Observer for animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1051,15 +1259,15 @@
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         });
-        
+
         // Observe animated elements
         document.querySelectorAll('.slide-up, .slide-left, .slide-right, .fade-in').forEach(el => {
             el.style.opacity = '0';
             observer.observe(el);
         });
-        
+
         // Initialize animations for elements in viewport on load
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             document.querySelectorAll('.slide-up, .slide-left, .slide-right, .fade-in').forEach(el => {
                 const rect = el.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -1067,15 +1275,15 @@
                 }
             });
         });
-        
+
         // Fix image paths to prevent errors
         document.querySelectorAll('img').forEach(img => {
-            img.onerror = function() {
+            img.onerror = function () {
                 // If image fails to load, replace with placeholder
                 this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23112240"/><rect width="400" height="300" fill="%230a192f" opacity="0.7"/><text x="200" y="150" text-anchor="middle" fill="%23fb923c" font-family="Arial" font-size="16">Image</text></svg>';
             }
         });
-        
+
         // Create more boxes for the background on larger screens
         function createMoreBoxes() {
             if (window.innerWidth >= 768) {
@@ -1089,7 +1297,7 @@
                     const animationDuration = Math.random() * 20 + 20;
                     const animationDelay = Math.random() * 5;
                     const pulseDuration = Math.random() * 10 + 5;
-                    
+
                     box.style.cssText = `
                         width: ${size}px;
                         height: ${size}px;
@@ -1103,42 +1311,43 @@
                 }
             }
         }
-        
+
         // Initialize more boxes on larger screens
         if (window.innerWidth >= 768) {
             setTimeout(createMoreBoxes, 1000);
         }
-        
+
         // Re-initialize on resize
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
             // Clear existing boxes beyond first 5
             const boxes = document.querySelectorAll('.box');
             for (let i = 5; i < boxes.length; i++) {
                 if (boxes[i]) boxes[i].remove();
             }
-            
+
             // Create new boxes if screen is large enough
             if (window.innerWidth >= 768) {
                 createMoreBoxes();
             }
         });
-        
+
         // Mobile menu toggle (if you add a mobile menu)
         function setupMobileMenu() {
             const menuToggle = document.querySelector('.mobile-menu-toggle');
             const mobileMenu = document.querySelector('.mobile-menu');
-            
+
             if (menuToggle && mobileMenu) {
-                menuToggle.addEventListener('click', function() {
+                menuToggle.addEventListener('click', function () {
                     mobileMenu.classList.toggle('hidden');
                 });
             }
         }
-        
+
         // Initialize on load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             setupMobileMenu();
         });
     </script>
 </body>
+
 </html>

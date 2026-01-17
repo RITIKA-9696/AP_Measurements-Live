@@ -285,9 +285,9 @@
                 <button data-tab="specifications" class="tab-button px-6 py-3 font-semibold text-gray-500 hover:text-blue-500 border-b-2 border-transparent hover:border-blue-500 transition-all focus:outline-none">
                     Specifications
                 </button>
-                <button data-tab="downloads" class="tab-button px-6 py-3 font-semibold text-gray-500 hover:text-blue-500 border-b-2 border-transparent hover:border-blue-500 transition-all focus:outline-none">
+                <!-- <button data-tab="downloads" class="tab-button px-6 py-3 font-semibold text-gray-500 hover:text-blue-500 border-b-2 border-transparent hover:border-blue-500 transition-all focus:outline-none">
                     Downloads
-                </button>
+                </button> -->
             </div>
             
             <!-- Tab Contents -->
@@ -311,7 +311,7 @@
                 </div>
                 
                 <!-- Downloads Tab Content -->
-                <div id="downloads-content" class="tab-content hidden">
+                <!-- <div id="downloads-content" class="tab-content hidden">
                     <div class="text-center py-8">
                         <a href="#" id="download-brochure" class="inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 focus:outline-none">
                             <i class="fas fa-file-pdf mr-3"></i> Download Datasheet (PDF)
@@ -323,7 +323,7 @@
                             </a>
                         </p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -440,6 +440,19 @@
             tempRange: "-40~120°C",
             connector: "Side",
             mount: "10-32/M5 Female"
+        },
+        { 
+            code: "B06H46", 
+            name: "Seat Cushion IEPE Accelerometer", 
+            type: "Triaxial", 
+            category: "General Purpose", 
+            img: "./assets/accelerometer/B06H46.png.webp", 
+            sensitivity: "100mV/g",
+            range: "±50g",
+            frequency: "1-4kHz",
+            tempRange: "-40~120°C",
+            connector: "1/4-28 4pin",
+            mount: "-"
         }
     ],
     "miniature": [
@@ -902,6 +915,49 @@ const productSpecs = {
             { icon: "fa-wave-square", label: "Frequency (5%)", value: "5-5k Hz" },
             { icon: "fa-thermometer-half", label: "Temp Range", value: "-20~80°C" }
         ]
+    },
+     "B06H46": {
+        description: "IEPE cushion type accelerometer with specially installed seat cushion and elastic base. Features memory alloy fasteners, shear structure, and broadband frequency response. Ideal for seat vibration measurement applications.",
+        specifications: {
+            "Sensitivity (mV/g)": "100",
+            "Measurement Range (g peak)": "±50",
+            "Broadband Resolution (ms)": "0.0001",
+            "Non-Linearity": "1%",
+            "Frequency (±5%) (Hz)": "1-4000",
+            "Frequency (±10%) (Hz)": "0.5-5000",
+            "Resonance Frequency (kHz)": ">20",
+            "Discharge Time Constant (s)": "<1",
+            "Transverse Sensitivity": "<5%",
+            "Excitation Voltage (VDC)": "20-30",
+            "Constant Current Excitation (mA)": "2-20",
+            "Output Impedance (Ω)": "≤100",
+            "Output Bias Voltage (V)": "8-12",
+            "Max Acceleration (g)": "400",
+            "Shock Limit (g peak)": "2000",
+            "Temperature Range (°C)": "-40~120",
+            "Min Temperature (°C)": "-40",
+            "Max Temperature (°C)": "120",
+            "Sensitivity Temperature Coefficient (%/℃)": "-0.07",
+            "Sealing": "Laser welding Pb8",
+            "Housing Material": "Titanium alloy",
+            "Output Connector": "1/4-28 4pin",
+            "Mounting Thread": "540",
+            "Mounting": "Adhesive",
+            "weight": "340 g",
+            "Sensor Type": "Seat Cushion",
+            "Output Type": "IEPE",
+            "Axis": "Triaxial",
+            "TEDS Optional": "No"
+        },
+        highlights: [
+            { icon: "fa-bullseye", label: "Sensitivity", value: "100mV/g" },
+            { icon: "fa-arrows-alt-h", label: "Range", value: "±50g peak" },
+            { icon: "fa-wave-square", label: "Frequency Range", value: "1-4kHz (±5%)" },
+            { icon: "fa-thermometer-half", label: "Temp Range", value: "-40~120°C" },
+            { icon: "fa-couch", label: "Type", value: "Seat Cushion IEPE" },
+            { icon: "fa-plug", label: "Connector", value: "BNCCS / MIL-C-5015 2pin" },
+            { icon: "fa-bolt", label: "Shock Limit", value: "2000g peak" }
+        ]
     }
 };
 
@@ -960,7 +1016,7 @@ const defaultSpecs = {
         const datasheetName = document.getElementById('datasheet-name');
         const manufacturerLink = document.getElementById('manufacturer-link');
         const relatedProductsGrid = document.getElementById('related-products-grid');
-        const downloadBrochureBtn = document.getElementById('download-brochure');
+        // const downloadBrochureBtn = document.getElementById('download-brochure');
         const tabButtons = document.querySelectorAll('.tab-button');
         const tabContents = document.querySelectorAll('.tab-content');
 
@@ -1093,10 +1149,7 @@ descriptionText.innerHTML = `
         specificationsTable.appendChild(row);
     }
     
-    // Update downloads section
-    datasheetName.textContent = `Datasheet: ${productCode}_specifications.pdf`;
-    manufacturerLink.href = `#`;
-    manufacturerLink.textContent = "Contact for detailed datasheet";
+    
     
     // Load related products
     loadRelatedProducts(category, productCode);
@@ -1234,26 +1287,7 @@ function getCategoryName(categoryKey) {
     return categoryNames[categoryKey] || categoryKey;
 }
 
-        // Download brochure functionality
-        downloadBrochureBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Create a dummy PDF download
-            const fileName = `${productCode}_datasheet.pdf`;
-            
-            // Create a temporary link element
-            const link = document.createElement('a');
-            link.href = '#';
-            link.download = fileName;
-            
-            // Trigger download
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Show a success message
-            alert(`Downloading ${fileName}...\n\nNote: This is a demo. In a real application, this would download the actual datasheet.`);
-        });
+       
 
         // Initialize page
         loadProductData();

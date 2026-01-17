@@ -176,7 +176,7 @@
             </div>
             
             <!-- Map -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover opacity-0 animate-fade-in-up" style="animation-delay: 0.3s">
+            <!-- <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover opacity-0 animate-fade-in-up" style="animation-delay: 0.3s">
               <div class="p-5">
                 <h4 class="font-semibold text-gray-800 mb-3">Our Location</h4>
                 <div class="h-48 rounded-lg overflow-hidden">
@@ -191,7 +191,7 @@
                   </iframe>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           
           <!-- Right Column - Form -->
@@ -264,7 +264,7 @@
         </div>
         
         <!-- Floating Icons -->
-        <div class="fixed right-6 bottom-6 flex flex-col gap-3 z-10">
+        <!-- <div class="fixed right-6 bottom-6 flex flex-col gap-3 z-10">
           <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg animate-float cursor-pointer" 
                onclick="window.location.href='tel:+918793505677'">
             <i class="fas fa-phone text-sm"></i>
@@ -274,7 +274,7 @@
                onclick="window.location.href='mailto:ashish@apmeasurements.com'">
             <i class="fas fa-envelope text-sm"></i>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
   </main>
@@ -284,133 +284,29 @@
 
   <!-- JavaScript -->
   <script>
-    // Initialize EmailJS
-    (function() {
-      emailjs.init("TgaIf0ESXRV4KNMfK");
-    })();
+  emailjs.init("nASjWWcC4ExTn0he6");
 
-    // Form handling
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('contact-form');
-      const submitBtn = document.getElementById('submit-btn');
-      const submitText = document.getElementById('submit-text');
-      const loadingSpinner = document.getElementById('loading-spinner');
-      const formMessage = document.getElementById('form-message');
-      
-      // Input animations
-      const inputs = document.querySelectorAll('input, textarea');
-      inputs.forEach(input => {
-        input.addEventListener('focus', () => {
-          input.classList.add('ring-2', 'ring-blue-200');
-        });
-        input.addEventListener('blur', () => {
-          input.classList.remove('ring-2', 'ring-blue-200');
-        });
-      });
-      
-      // Form submission
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Show loading
-        submitText.textContent = 'Sending...';
-        loadingSpinner.classList.remove('hidden');
-        submitBtn.disabled = true;
-        
-        try {
-          // Collect data
-          const formData = {
-            name: form.name.value,
-            email: form.email.value,
-            phone: form.phone.value,
-            company: form.company.value || 'Not provided',
-            message: form.message.value,
-            timestamp: new Date().toLocaleString()
-          };
-          
-          // Send email
-          const response = await emailjs.send(
-            'service_yybe2rq',
-            'template_yavp5wa',
-            formData
-          );
-          
-          if (response.status === 200) {
-            // Success animation
-            formMessage.innerHTML = `
-              <div class="bg-green-50 border border-green-200 rounded-lg p-4 success-bounce">
-                <div class="flex items-center">
-                  <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                    <i class="fas fa-check text-green-600"></i>
-                  </div>
-                  <div>
-                    <p class="font-medium text-green-800">Message Sent!</p>
-                    <p class="text-xs text-green-600 mt-1">We'll reply within 24 hours.</p>
-                  </div>
-                </div>
-              </div>
-            `;
-            
-            // Clear form
-            form.reset();
-            
-            // Add celebration
-            submitBtn.classList.add('bg-gradient-to-r', 'from-green-500', 'to-green-600');
-            setTimeout(() => {
-              submitBtn.classList.remove('bg-gradient-to-r', 'from-green-500', 'to-green-600');
-              submitBtn.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-blue-800');
-            }, 1000);
-            
-          } else {
-            throw new Error('Send failed');
-          }
-          
-        } catch (error) {
-          console.error('Error:', error);
-          formMessage.innerHTML = `
-            <div class="bg-red-50 border border-red-200 rounded-lg p-4">
-              <div class="flex items-center">
-                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3">
-                  <i class="fas fa-exclamation text-red-600"></i>
-                </div>
-                <div>
-                  <p class="font-medium text-red-800">Send Failed</p>
-                  <p class="text-xs text-red-600 mt-1">Please try again or contact directly.</p>
-                </div>
-              </div>
-            </div>
-          `;
-        } finally {
-          // Reset button
-          submitText.textContent = 'Send Message';
-          loadingSpinner.classList.add('hidden');
-          submitBtn.disabled = false;
-          formMessage.classList.remove('hidden');
-          
-          // Hide message after 5s
-          setTimeout(() => {
-            formMessage.classList.add('hidden');
-          }, 5000);
-        }
-      });
-      
-      // Animate cards on scroll
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.animationPlayState = 'running';
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      // Observe all animated elements
-      document.querySelectorAll('.animate-fade-in-up').forEach(el => {
-        el.style.opacity = '0';
-        observer.observe(el);
-      });
-    });
-  </script>
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_0it78tp",
+      "template_qq3lgby",
+      this
+    ).then(
+      function () {
+        alert("✅ Message sent successfully!");
+        form.reset();
+      },
+      function (error) {
+        console.error("FAILED...", error);
+        alert("❌ Failed to send message: " + error.text);
+      }
+    );
+  });
+</script>
+
 </body>
 </html>

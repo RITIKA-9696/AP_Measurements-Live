@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/Header/header.css">
   <link rel="stylesheet" href="/Footer/footer.css">
-  
+
   <script>
     tailwind.config = {
       theme: {
@@ -61,31 +62,31 @@
               'to': { opacity: '1' }
             },
             fadeInUp: {
-              'from': { 
+              'from': {
                 opacity: '0',
                 transform: 'translateY(20px)'
               },
-              'to': { 
+              'to': {
                 opacity: '1',
                 transform: 'translateY(0)'
               }
             },
             fadeInRight: {
-              'from': { 
+              'from': {
                 opacity: '0',
                 transform: 'translateX(30px)'
               },
-              'to': { 
+              'to': {
                 opacity: '1',
                 transform: 'translateX(0)'
               }
             },
             fadeInLeft: {
-              'from': { 
+              'from': {
                 opacity: '0',
                 transform: 'translateX(-30px)'
               },
-              'to': { 
+              'to': {
                 opacity: '1',
                 transform: 'translateX(0)'
               }
@@ -111,11 +112,11 @@
               'to': { transform: 'rotate(360deg)' }
             },
             loadingDot: {
-              '0%, 100%': { 
+              '0%, 100%': {
                 transform: 'scale(1)',
                 opacity: '1'
               },
-              '50%': { 
+              '50%': {
                 transform: 'scale(0.7)',
                 opacity: '0.5'
               }
@@ -156,36 +157,36 @@
       }
     }
   </script>
-  
+
   <style>
     * {
       font-family: 'Inter', sans-serif;
     }
-    
+
     body {
       background-color: #0A1929;
       color: #E1E8F0;
       overflow-x: hidden;
     }
-    
+
     html {
       scroll-behavior: smooth;
     }
-    
+
     /* Custom scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
-    
+
     ::-webkit-scrollbar-track {
       background: #0A1929;
     }
-    
+
     ::-webkit-scrollbar-thumb {
       background: linear-gradient(to bottom, #1E3A8A, #3B82F6);
       border-radius: 4px;
     }
-    
+
     ::-webkit-scrollbar-thumb:hover {
       background: linear-gradient(to bottom, #3B82F6, #60A5FA);
     }
@@ -196,6 +197,7 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -207,6 +209,7 @@
         opacity: 0;
         transform: translateX(-20px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
@@ -218,6 +221,7 @@
         opacity: 0;
         transform: translateX(20px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
@@ -229,10 +233,12 @@
         opacity: 0;
         transform: scale(0.8);
       }
+
       50% {
         opacity: 0.5;
         transform: scale(1.05);
       }
+
       100% {
         opacity: 1;
         transform: scale(1);
@@ -244,6 +250,7 @@
         opacity: 0;
         transform: scale(0.9);
       }
+
       to {
         opacity: 1;
         transform: scale(1);
@@ -251,18 +258,24 @@
     }
 
     @keyframes float {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(-5px);
       }
     }
 
     @keyframes gradientShift {
-      0%, 100% {
+
+      0%,
+      100% {
         background-position: 0% 50%;
       }
+
       50% {
         background-position: 100% 50%;
       }
@@ -273,7 +286,9 @@
         transform: scale(1);
         opacity: 1;
       }
-      75%, 100% {
+
+      75%,
+      100% {
         transform: scale(1.5);
         opacity: 0;
       }
@@ -283,18 +298,23 @@
       from {
         transform: rotate(0deg);
       }
+
       to {
         transform: rotate(360deg);
       }
     }
 
     @keyframes wave {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: translateX(0);
       }
+
       25% {
         transform: translateX(-2px);
       }
+
       75% {
         transform: translateX(2px);
       }
@@ -305,6 +325,7 @@
         opacity: 0;
         transform: translateY(10px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -315,9 +336,11 @@
       0% {
         transform: scale(0);
       }
+
       50% {
         transform: scale(1.2);
       }
+
       100% {
         transform: scale(1);
       }
@@ -382,23 +405,51 @@
     }
 
     @keyframes floatSlow {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
     }
 
     @keyframes gradient {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
     }
 
     @keyframes borderPulse {
-      0%, 100% { border-color: rgba(59, 130, 246, 0.5); }
-      50% { border-color: rgba(59, 130, 246, 0.8); }
+
+      0%,
+      100% {
+        border-color: rgba(59, 130, 246, 0.5);
+      }
+
+      50% {
+        border-color: rgba(59, 130, 246, 0.8);
+      }
     }
 
     @keyframes pulseSlow {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.5; }
+
+      0%,
+      100% {
+        opacity: 0.3;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
     }
 
     /* Animation classes */
@@ -448,12 +499,29 @@
     }
 
     /* Delays */
-    .delay-200 { animation-delay: 0.2s; }
-    .delay-300 { animation-delay: 0.3s; }
-    .delay-400 { animation-delay: 0.4s; }
-    .delay-500 { animation-delay: 0.5s; }
-    .delay-700 { animation-delay: 0.7s; }
-    .delay-1000 { animation-delay: 1s; }
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-400 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-500 {
+      animation-delay: 0.5s;
+    }
+
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+
+    .delay-1000 {
+      animation-delay: 1s;
+    }
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
@@ -461,17 +529,17 @@
         padding-left: 1rem;
         padding-right: 1rem;
       }
-      
+
       .feature-tag {
         padding: 0.375rem 0.5rem;
         font-size: 0.75rem;
       }
-      
+
       /* Adjust floating boxes for mobile */
       .fixed.inset-0.z-\[-1\] .absolute {
         display: none;
       }
-      
+
       .fixed.inset-0.z-\[-1\] .absolute:nth-child(1),
       .fixed.inset-0.z-\[-1\] .absolute:nth-child(2),
       .fixed.inset-0.z-\[-1\] .absolute:nth-child(3) {
@@ -485,23 +553,23 @@
       .grid-cols-2 {
         grid-template-columns: 1fr;
       }
-      
+
       .grid-cols-3 {
         grid-template-columns: 1fr;
       }
-      
+
       .grid-cols-4 {
         grid-template-columns: 1fr;
       }
-      
+
       .md\:grid-cols-2 {
         grid-template-columns: 1fr;
       }
-      
+
       .md\:grid-cols-3 {
         grid-template-columns: 1fr;
       }
-      
+
       .md\:grid-cols-4 {
         grid-template-columns: 1fr;
       }
@@ -511,28 +579,28 @@
       h1 {
         font-size: 1.75rem;
       }
-      
+
       h2 {
         font-size: 1.5rem;
       }
-      
+
       h3 {
         font-size: 1.25rem;
       }
-      
+
       .text-3xl {
         font-size: 1.5rem;
       }
-      
+
       .text-4xl {
         font-size: 1.75rem;
       }
-      
+
       .px-6 {
         padding-left: 1rem;
         padding-right: 1rem;
       }
-      
+
       .py-3 {
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
@@ -545,22 +613,23 @@
         max-width: 95%;
         max-height: 80vh;
       }
-      
+
       #closeModal {
         top: 1rem;
         right: 1rem;
         font-size: 2rem;
       }
-      
-      #prevBtn, #nextBtn {
+
+      #prevBtn,
+      #nextBtn {
         padding: 0.5rem;
         font-size: 1.5rem;
       }
-      
+
       #prevBtn {
         left: 0.5rem;
       }
-      
+
       #nextBtn {
         right: 0.5rem;
       }
@@ -571,7 +640,7 @@
       .overflow-x-auto {
         overflow-x: auto;
       }
-      
+
       table {
         min-width: 800px;
       }
@@ -582,11 +651,11 @@
       .hero-content {
         text-align: center;
       }
-      
+
       .hero-buttons {
         justify-content: center;
       }
-      
+
       .hero-image {
         margin-top: 2rem;
       }
@@ -598,7 +667,7 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
-    
+
     @media (max-width: 640px) {
       .adapter-buttons-grid {
         grid-template-columns: 1fr;
@@ -611,26 +680,26 @@
   <!-- Animated Background Boxes -->
   <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
     <!-- Orange square boxes with different sizes and animations -->
-    <div class="absolute w-20 h-20 top-[10%] left-[5%] border-2 border-orange-500/50 rounded hidden sm:block" 
-         style="animation: float1 20s infinite ease-in-out, pulse 8s infinite;"></div>
-    <div class="absolute w-32 h-32 top-[30%] right-[10%] border-2 border-orange-500/50 rounded hidden sm:block" 
-         style="animation: float2 25s infinite ease-in-out, pulse 10s infinite 1s;"></div>
-    <div class="absolute w-16 h-16 bottom-[20%] left-[15%] border-2 border-orange-500/50 rounded hidden sm:block" 
-         style="animation: float3 18s infinite ease-in-out, pulse 7s infinite 2s;"></div>
-    <div class="absolute w-24 h-24 top-[15%] right-[20%] border-2 border-orange-500/50 rounded hidden sm:block" 
-         style="animation: float4 22s infinite ease-in-out, pulse 9s infinite 0.5s;"></div>
-    <div class="absolute w-16 h-16 bottom-[30%] right-[5%] border-2 border-orange-500/50 rounded hidden sm:block" 
-         style="animation: float5 30s infinite ease-in-out, pulse 12s infinite 1.5s;"></div>
-    <div class="absolute w-24 h-24 top-[60%] left-[5%] border-2 border-orange-500/50 rounded hidden sm:block" 
-         style="animation: float1 24s infinite ease-in-out reverse, pulse 11s infinite 0.8s;"></div>
-    <div class="absolute w-24 h-24 bottom-[10%] right-[20%] border-2 border-orange-500/50 rounded hidden sm:block" 
-         style="animation: float2 28s infinite ease-in-out, pulse 13s infinite 2.5s;"></div>
-    <div class="absolute w-12 h-12 top-[40%] left-[20%] border-2 border-orange-500/50 rounded hidden sm:block" 
-         style="animation: float3 16s infinite ease-in-out, pulse 6s infinite 3s;"></div>
-    <div class="absolute w-32 h-32 bottom-[40%] left-[30%] border-2 border-orange-500/50 rounded hidden sm:block" 
-         style="animation: float4 32s infinite ease-in-out, pulse 14s infinite 0.3s;"></div>
-    <div class="absolute w-20 h-20 top-[70%] right-[15%] border-2 border-orange-500/50 rounded hidden sm:block" 
-         style="animation: float5 26s infinite ease-in-out, pulse 15s infinite 1.8s;"></div>
+    <div class="absolute w-20 h-20 top-[10%] left-[5%] border-2 border-orange-500/50 rounded hidden sm:block"
+      style="animation: float1 20s infinite ease-in-out, pulse 8s infinite;"></div>
+    <div class="absolute w-32 h-32 top-[30%] right-[10%] border-2 border-orange-500/50 rounded hidden sm:block"
+      style="animation: float2 25s infinite ease-in-out, pulse 10s infinite 1s;"></div>
+    <div class="absolute w-16 h-16 bottom-[20%] left-[15%] border-2 border-orange-500/50 rounded hidden sm:block"
+      style="animation: float3 18s infinite ease-in-out, pulse 7s infinite 2s;"></div>
+    <div class="absolute w-24 h-24 top-[15%] right-[20%] border-2 border-orange-500/50 rounded hidden sm:block"
+      style="animation: float4 22s infinite ease-in-out, pulse 9s infinite 0.5s;"></div>
+    <div class="absolute w-16 h-16 bottom-[30%] right-[5%] border-2 border-orange-500/50 rounded hidden sm:block"
+      style="animation: float5 30s infinite ease-in-out, pulse 12s infinite 1.5s;"></div>
+    <div class="absolute w-24 h-24 top-[60%] left-[5%] border-2 border-orange-500/50 rounded hidden sm:block"
+      style="animation: float1 24s infinite ease-in-out reverse, pulse 11s infinite 0.8s;"></div>
+    <div class="absolute w-24 h-24 bottom-[10%] right-[20%] border-2 border-orange-500/50 rounded hidden sm:block"
+      style="animation: float2 28s infinite ease-in-out, pulse 13s infinite 2.5s;"></div>
+    <div class="absolute w-12 h-12 top-[40%] left-[20%] border-2 border-orange-500/50 rounded hidden sm:block"
+      style="animation: float3 16s infinite ease-in-out, pulse 6s infinite 3s;"></div>
+    <div class="absolute w-32 h-32 bottom-[40%] left-[30%] border-2 border-orange-500/50 rounded hidden sm:block"
+      style="animation: float4 32s infinite ease-in-out, pulse 14s infinite 0.3s;"></div>
+    <div class="absolute w-20 h-20 top-[70%] right-[15%] border-2 border-orange-500/50 rounded hidden sm:block"
+      style="animation: float5 26s infinite ease-in-out, pulse 15s infinite 1.8s;"></div>
   </div>
 
   <!-- Header -->
@@ -641,18 +710,21 @@
     <!-- Animated background elements -->
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-900/5 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+      <div
+        class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-900/5 rounded-full blur-3xl animate-pulse-slow delay-1000">
+      </div>
     </div>
-    
+
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="flex flex-col lg:flex-row items-center min-h-[50vh] gap-8 lg:gap-12">
-        
+
         <!-- Left Column - Content -->
         <div class="lg:w-1/2 w-full px-4 lg:px-0">
           <div class="space-y-6 hero-content">
             <!-- Animated badge -->
             <div class="animate-slide-in-left opacity-0">
-              <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-900/20 rounded-full border border-blue-800/30 text-blue-500 text-sm">
+              <div
+                class="inline-flex items-center gap-2 px-4 py-2 bg-blue-900/20 rounded-full border border-blue-800/30 text-blue-500 text-sm">
                 <div class="flex gap-1">
                   <div class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></div>
                   <div class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse delay-150"></div>
@@ -661,29 +733,30 @@
                 Advanced Testing Tech
               </div>
             </div>
-            
+
             <!-- Animated headline -->
             <div class="animate-slide-in-left delay-200 opacity-0">
               <h1 class="text-2xl xs:text-3xl md:text-4xl font-bold">
                 <span class="block text-gray-700">Electromagnetic</span>
-                <span class="block text-blue-500 mt-2 bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent animate-gradient">
+                <span
+                  class="block text-blue-500 mt-2 bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent animate-gradient">
                   Shock Dyno
                 </span>
               </h1>
             </div>
-            
+
             <!-- Animated description -->
             <div class="animate-slide-in-left delay-300 opacity-0">
               <p class="text-gray-500 leading-relaxed max-w-md text-sm sm:text-base">
-                High-precision suspension testing with electromagnetic actuation. Unmatched accuracy in damper validation.
+                High-precision suspension testing with electromagnetic actuation. Unmatched accuracy in damper
+                validation.
               </p>
             </div>
-            
+
             <!-- Animated buttons -->
             <div class="animate-slide-in-left delay-400 opacity-0 pt-4 hero-buttons">
               <div class="flex flex-wrap gap-4 justify-start lg:justify-start">
-                <a href="#specifications" 
-                   class="group px-4 sm:px-6 py-3 bg-gradient-to-r from-blue-900 to-blue-600 text-white font-medium rounded-lg 
+                <a href="#specifications" class="group px-4 sm:px-6 py-3 bg-gradient-to-r from-blue-900 to-blue-600 text-white font-medium rounded-lg 
                           hover:from-blue-800 hover:to-blue-500 transition-all duration-300 
                           transform hover:scale-[1.02] shadow-lg hover:shadow-xl text-sm relative overflow-hidden">
                   <span class="relative z-10 flex items-center">
@@ -691,18 +764,16 @@
                     <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
                   </span>
                 </a>
-                
-                <a href="/contact.html" 
-                   class="px-4 sm:px-6 py-3 border border-orange-700 text-white bg-orange-500 font-medium rounded-lg 
-                          hover:bg-blue-900 transition-all duration-300 transform hover:scale-[1.02] text-sm
-                          animate-border-pulse">
-                  Request Demo
+
+                <a href="https://www.youtube.com/watch?v=SgoqqOnYvLI" target="_blank"
+                  class="inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-orange-500 text-white font-semibold uppercase tracking-wider rounded-md hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 btn-responsive">
+                  <i class="fas fa-play-circle mr-2"></i> Watch Demo
                 </a>
               </div>
             </div>
-            
+
             <!-- Animated features -->
-            <div class="animate-slide-in-left delay-500 opacity-0 pt-6">
+            <!-- <div class="animate-slide-in-left delay-500 opacity-0 pt-6">
               <div class="grid grid-cols-2 gap-3 max-w-xs">
                 <div class="feature-tag text-blue-500">
                   <i class="fas fa-bolt text-blue-500 text-sm"></i>
@@ -713,20 +784,20 @@
                   50 nm Res
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
-        
+
         <!-- Right Column - Animated Image -->
         <div class="lg:w-1/2 w-full mt-8 lg:mt-0 px-4 lg:px-0 hero-image">
           <div class="relative animate-float delay-700 max-w-lg mx-auto">
             <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-blue-900/30 to-gray-900 p-[2px]">
               <div class="relative rounded-lg overflow-hidden bg-gray-900">
-                <img src="../assets/electromagnetic shock dyno(product).jpg" 
-                     alt="Electromagnetic Shock Dyno"
-                     class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105">
-                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-50"></div>
-                
+                <img src="../assets/electromagnetic shock dyno(product).jpg" alt="Electromagnetic Shock Dyno"
+                  class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-50">
+                </div>
+
                 <!-- Floating accuracy badge -->
                 <div class="absolute bottom-4 right-4 animate-float-slow">
                   <div class="bg-gray-900/80 backdrop-blur-sm border border-blue-700/30 rounded-lg px-3 py-2">
@@ -736,7 +807,7 @@
                 </div>
               </div>
             </div>
-            
+
             <!-- Glow effect -->
             <div class="absolute -inset-4 bg-blue-500/10 blur-xl rounded-full -z-10 animate-pulse"></div>
           </div>
@@ -749,7 +820,9 @@
   <section class="relative py-12 md:py-16" id="specifications">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
-      <div class="text-center mb-8 md:mb-12 animate-fade-in-up opacity-0 bg-blue-100 max-w-6xl mx-auto p-4 md:p-5 rounded-lg" style="animation-play-state: paused;">
+      <div
+        class="text-center mb-8 md:mb-12 animate-fade-in-up opacity-0 bg-blue-100 max-w-6xl mx-auto p-4 md:p-5 rounded-lg"
+        style="animation-play-state: paused;">
         <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
           <span class="text-gray-700">Power & Performance</span>
           <span class="block text-blue-500 mt-1">Specifications</span>
@@ -761,11 +834,14 @@
       </div>
 
       <!-- Power Selection -->
-      <div class="mx-auto grid grid-cols-2 md:grid-cols-4 bg-gray-100 p-4 md:p-6 rounded-lg gap-3 md:gap-4 mb-8 md:mb-12 max-w-5xl animate-fade-in-up delay-200 opacity-0" style="animation-play-state: paused;">
+      <div
+        class="mx-auto grid grid-cols-2 md:grid-cols-4 bg-gray-100 p-4 md:p-6 rounded-lg gap-3 md:gap-4 mb-8 md:mb-12 max-w-5xl animate-fade-in-up delay-200 opacity-0"
+        style="animation-play-state: paused;">
         <div class="text-center p-3 md:p-4 rounded-lg">
           <div class="text-lg md:text-xl font-semibold text-blue-500 mb-1">30 kW</div>
           <p class="text-xs text-gray-400 mb-2 md:mb-3">Entry Level</p>
-          <a href="/contact.html" class="px-3 md:px-4 py-1 md:py-1.5 bg-blue-900 text-white rounded text-xs hover:bg-blue-500 transition-colors inline-block">
+          <a href="/contact.html"
+            class="px-3 md:px-4 py-1 md:py-1.5 bg-blue-900 text-white rounded text-xs hover:bg-blue-500 transition-colors inline-block">
             Get Quote
           </a>
         </div>
@@ -773,7 +849,8 @@
         <div class="text-center p-3 md:p-4 rounded-lg">
           <div class="text-lg md:text-xl font-semibold text-blue-500 mb-1">60 kW</div>
           <p class="text-xs text-gray-400 mb-2 md:mb-3">Standard</p>
-          <a href="/contact.html" class="px-3 md:px-4 py-1 md:py-1.5 bg-blue-900 text-white rounded text-xs hover:bg-blue-500 transition-colors inline-block">
+          <a href="/contact.html"
+            class="px-3 md:px-4 py-1 md:py-1.5 bg-blue-900 text-white rounded text-xs hover:bg-blue-500 transition-colors inline-block">
             Get Quote
           </a>
         </div>
@@ -781,7 +858,8 @@
         <div class="text-center p-3 md:p-4 rounded-lg">
           <div class="text-lg md:text-xl font-semibold text-blue-500 mb-1">90 kW</div>
           <p class="text-xs text-gray-400 mb-2 md:mb-3">Professional</p>
-          <a href="/contact.html" class="px-3 md:px-4 py-1 md:py-1.5 bg-blue-900 text-white rounded text-xs hover:bg-blue-500 transition-colors inline-block">
+          <a href="/contact.html"
+            class="px-3 md:px-4 py-1 md:py-1.5 bg-blue-900 text-white rounded text-xs hover:bg-blue-500 transition-colors inline-block">
             Get Quote
           </a>
         </div>
@@ -789,86 +867,112 @@
         <div class="text-center p-3 md:p-4 rounded-lg">
           <div class="text-lg md:text-xl font-semibold text-blue-500 mb-1">120 kW</div>
           <p class="text-xs text-gray-400 mb-2 md:mb-3">Industrial</p>
-          <a href="/contact.html" class="px-3 md:px-4 py-1 md:py-1.5 bg-blue-900 text-white rounded text-xs hover:bg-blue-500 transition-colors inline-block">
+          <a href="/contact.html"
+            class="px-3 md:px-4 py-1 md:py-1.5 bg-blue-900 text-white rounded text-xs hover:bg-blue-500 transition-colors inline-block">
             Get Quote
           </a>
         </div>
       </div>
 
       <!-- Specifications Table -->
-      <div class="overflow-x-auto rounded-lg border border-blue-900/30 bg-[#2D3C59] backdrop-blur-sm p-2 md:p-4 animate-fade-in-up delay-400 opacity-0" style="animation-play-state: paused;">
+      <div
+        class="overflow-x-auto rounded-lg border border-blue-900/30 bg-[#2D3C59] backdrop-blur-sm p-2 md:p-4 animate-fade-in-up delay-400 opacity-0"
+        style="animation-play-state: paused;">
         <table class="w-full min-w-[800px]">
           <thead>
             <tr class="bg-gradient-to-r from-blue-900/20 to-blue-500/20">
               <th class="text-left py-3 px-4 md:py-4 md:px-6 text-white font-semibold text-sm">Specification</th>
               <th class="text-center py-3 px-4 md:py-4 md:px-6 text-white font-semibold text-sm">30 kW</th>
-              <th class="text-center py-3 px-4 md:py-4 md:px-6 text-white font-semibold text-sm bg-blue-900/10">60 kW</th>
+              <th class="text-center py-3 px-4 md:py-4 md:px-6 text-white font-semibold text-sm bg-blue-900/10">60 kW
+              </th>
               <th class="text-center py-3 px-4 md:py-4 md:px-6 text-white font-semibold text-sm">90 kW</th>
-              <th class="text-center py-3 px-4 md:py-4 md:px-6 text-white font-semibold text-sm bg-blue-900/10">120 kW</th>
+              <th class="text-center py-3 px-4 md:py-4 md:px-6 text-white font-semibold text-sm bg-blue-900/10">120 kW
+              </th>
             </tr>
           </thead>
           <tbody>
-            <tr class="animate-fade-in-up delay-100 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-100 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Actuator Power</td>
               <td class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">30 kW</td>
               <td class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm bg-blue-900/10">60 kW</td>
               <td class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">90 kW</td>
               <td class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm bg-blue-900/10">120 kW</td>
             </tr>
-            <tr class="animate-fade-in-up delay-150 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-150 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Peak Force @ 2 m/s</td>
-              <td class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">10 kN <span class="text-gray-400 text-xs">(2248 lbf)</span></td>
-              <td class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm bg-blue-900/10">20 kN <span class="text-gray-400 text-xs">(4496 lbf)</span></td>
-              <td class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">30 kN <span class="text-gray-400 text-xs">(6744 lbf)</span></td>
-              <td class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm bg-blue-900/10">40 kN <span class="text-gray-400 text-xs">(8992 lbf)</span></td>
+              <td class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">10 kN <span
+                  class="text-gray-400 text-xs">(2248 lbf)</span></td>
+              <td class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm bg-blue-900/10">20 kN <span
+                  class="text-gray-400 text-xs">(4496 lbf)</span></td>
+              <td class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">30 kN <span
+                  class="text-gray-400 text-xs">(6744 lbf)</span></td>
+              <td class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm bg-blue-900/10">40 kN <span
+                  class="text-gray-400 text-xs">(8992 lbf)</span></td>
             </tr>
-            <tr class="animate-fade-in-up delay-200 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-200 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Max Velocity</td>
-              <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">7,000 mm/s <span class="text-gray-400 text-xs">(276 in/s)</span></td>
+              <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">7,000 mm/s <span
+                  class="text-gray-400 text-xs">(276 in/s)</span></td>
             </tr>
-            <tr class="animate-fade-in-up delay-250 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-250 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Min Velocity</td>
-              <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">0.1 mm/s <span class="text-gray-400 text-xs">(0.04 in/s)</span></td>
+              <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">0.1 mm/s <span
+                  class="text-gray-400 text-xs">(0.04 in/s)</span></td>
             </tr>
-            <tr class="animate-fade-in-up delay-300 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-300 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Max Test Frequency</td>
               <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">150 Hz</td>
             </tr>
-            <tr class="animate-fade-in-up delay-350 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-350 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Max Acceleration</td>
               <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">100 G</td>
             </tr>
-            <tr class="animate-fade-in-up delay-400 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-400 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Data Sampling Frequency</td>
               <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-xs">
                 Digital position sampling 20 kHz<br>
                 Synchronized analog load cell sampling 20 kHz, 20-bit resolution
               </td>
             </tr>
-            <tr class="animate-fade-in-up delay-450 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-450 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Additional ADC Channels</td>
-              <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">8 synchronized channels, up to 10 kHz sampling rate</td>
+              <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">8 synchronized channels,
+                up to 10 kHz sampling rate</td>
             </tr>
-            <tr class="animate-fade-in-up delay-500 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-500 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Position Resolution</td>
               <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">50 nanometers</td>
             </tr>
-            <tr class="animate-fade-in-up delay-550 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-550 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Stroke</td>
-              <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">250 mm <span class="text-gray-400 text-xs">(9.85 in)</span></td>
+              <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">250 mm <span
+                  class="text-gray-400 text-xs">(9.85 in)</span></td>
             </tr>
-            <tr class="animate-fade-in-up delay-600 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-600 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Power Requirement</td>
               <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-xs">
                 3-phase 380/400 VAC 16 A<br>
                 Configurable for 1-phase 220/240 VAC
               </td>
             </tr>
-            <tr class="animate-fade-in-up delay-650 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-650 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Cooling System</td>
               <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-center text-white text-sm">Compressed Air</td>
             </tr>
-            <tr class="animate-fade-in-up delay-700 opacity-0 hover:bg-blue-900/5 transition-colors" style="animation-play-state: paused;">
+            <tr class="animate-fade-in-up delay-700 opacity-0 hover:bg-blue-900/5 transition-colors"
+              style="animation-play-state: paused;">
               <td class="py-3 px-4 md:py-4 md:px-6 text-white text-sm">Supported Waveforms</td>
               <td colspan="4" class="py-3 px-4 md:py-4 md:px-6 text-white text-center text-sm">
                 Sine, Triangle, Square, Pulse, Pink noise, Sweep, Chirp, Track data import
@@ -879,8 +983,10 @@
       </div>
 
       <!-- Tech Note -->
-      <div class="mt-6 md:mt-8 text-center text-gray-600 text-xs animate-fade-in-up delay-800 opacity-0" style="animation-play-state: paused;">
-        <p><i class="fas fa-info-circle mr-2"></i>All specifications are subject to manufacturing tolerances. Contact us for detailed datasheets.</p>
+      <div class="mt-6 md:mt-8 text-center text-gray-600 text-xs animate-fade-in-up delay-800 opacity-0"
+        style="animation-play-state: paused;">
+        <p><i class="fas fa-info-circle mr-2"></i>All specifications are subject to manufacturing tolerances. Contact us
+          for detailed datasheets.</p>
       </div>
     </div>
   </section>
@@ -889,7 +995,9 @@
   <section class="relative py-12 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
-      <div class="text-center mb-12 md:mb-16 animate-fade-in-up opacity-0 bg-blue-100 p-4 md:p-5 max-w-6xl mx-auto rounded-lg" style="animation-play-state: paused;">
+      <div
+        class="text-center mb-12 md:mb-16 animate-fade-in-up opacity-0 bg-blue-100 p-4 md:p-5 max-w-6xl mx-auto rounded-lg"
+        style="animation-play-state: paused;">
         <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
           <span class="text-gray-700">Standard Features</span>
           <span class="block text-blue-500 mt-1">of All EMA's</span>
@@ -900,13 +1008,16 @@
       </div>
 
       <!-- Feature 1: Sampling Rate -->
-      <div class="grid md:grid-cols-2 gap-8 items-center mb-12 md:mb-16 animate-fade-in-up opacity-0" style="animation-delay: 0.1s">
+      <div class="grid md:grid-cols-2 gap-8 items-center mb-12 md:mb-16 animate-fade-in-up opacity-0"
+        style="animation-delay: 0.1s">
         <!-- Text Content -->
         <div class="order-2 md:order-1">
-          <div class="inline-flex items-center mb-4 bg-blue-100 px-3 py-1 rounded-full border border-blue-800/20 text-blue-800 font-medium text-xs animate-pulse">
+          <div
+            class="inline-flex items-center mb-4 bg-blue-100 px-3 py-1 rounded-full border border-blue-800/20 text-blue-800 font-medium text-xs animate-pulse">
             Ultimate Precision
           </div>
-          <h3 class="text-lg md:text-xl font-semibold mb-4 text-blue-500 animate-slide-in-right" style="animation-delay: 0.2s">Sampling Rate & Accuracy</h3>
+          <h3 class="text-lg md:text-xl font-semibold mb-4 text-blue-500 animate-slide-in-right"
+            style="animation-delay: 0.2s">Sampling Rate & Accuracy</h3>
           <p class="text-gray-600 leading-relaxed mb-6 text-sm animate-fade-in" style="animation-delay: 0.3s">
             20 kHz sampling with 50 nm accuracy. No phase shift.
           </p>
@@ -929,14 +1040,15 @@
         <!-- Graphic -->
         <div class="flex justify-center order-1 md:order-2 mb-8 md:mb-0 animate-scale-in" style="animation-delay: 0.7s">
           <div class="relative max-w-md w-full">
-            <div class="relative rounded-lg p-[1px] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 animate-gradient-shift">
+            <div
+              class="relative rounded-lg p-[1px] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 animate-gradient-shift">
               <div class="rounded-lg bg-gray-900 p-3">
-                <img src="../assets/sampling-removebg-preview.png" 
-                     alt="Sampling Visualization" 
-                     class="w-full h-auto animate-float">
+                <img src="../assets/sampling-rate.webp" alt="Sampling Visualization"
+                  class="w-full h-auto animate-float">
               </div>
             </div>
-            <div class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 bg-blue-900 rounded-full flex items-center justify-center animate-ping-slow">
+            <div
+              class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 bg-blue-900 rounded-full flex items-center justify-center animate-ping-slow">
               <i class="fas fa-bolt text-white text-xs"></i>
             </div>
           </div>
@@ -944,18 +1056,20 @@
       </div>
 
       <!-- Feature 2: Analog Inputs -->
-      <div class="grid md:grid-cols-2 gap-8 items-center mb-12 md:mb-16 animate-fade-in-up opacity-0" style="animation-delay: 0.2s">
+      <div class="grid md:grid-cols-2 gap-8 items-center mb-12 md:mb-16 animate-fade-in-up opacity-0"
+        style="animation-delay: 0.2s">
         <!-- Graphic -->
         <div class="flex justify-center order-1 md:order-1 mb-8 md:mb-0 animate-scale-in" style="animation-delay: 0.7s">
           <div class="relative max-w-md w-full">
-            <div class="relative rounded-lg p-[1px] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 animate-gradient-shift">
+            <div
+              class="relative rounded-lg p-[1px] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 animate-gradient-shift">
               <div class="rounded-lg bg-gray-900 p-3">
-                <img src="../assets/products12.png" 
-                     alt="Analog Inputs" 
-                     class="w-full h-auto animate-float" style="animation-delay: 0.3s">
+                <img src="../assets/products12.png" alt="Analog Inputs" class="w-full h-auto animate-float"
+                  style="animation-delay: 0.3s">
               </div>
             </div>
-            <div class="absolute -bottom-2 -left-2 w-8 h-8 md:w-10 md:h-10 bg-blue-900 rounded-full flex items-center justify-center animate-pulse">
+            <div
+              class="absolute -bottom-2 -left-2 w-8 h-8 md:w-10 md:h-10 bg-blue-900 rounded-full flex items-center justify-center animate-pulse">
               <i class="fas fa-microchip text-white text-xs"></i>
             </div>
           </div>
@@ -963,27 +1077,37 @@
 
         <!-- Text Content -->
         <div class="order-2 md:order-2">
-          <div class="inline-flex items-center mb-4 bg-blue-900 px-3 py-1 rounded-full border border-blue-800/20 text-blue-400 font-medium text-xs animate-pulse">
+          <div
+            class="inline-flex items-center mb-4 bg-blue-900 px-3 py-1 rounded-full border border-blue-800/20 text-blue-400 font-medium text-xs animate-pulse">
             Multi-Channel Input
           </div>
-          <h3 class="text-lg md:text-xl font-semibold mb-4 text-blue-500 animate-slide-in-left" style="animation-delay: 0.3s">Sensor Integration</h3>
+          <h3 class="text-lg md:text-xl font-semibold mb-4 text-blue-500 animate-slide-in-left"
+            style="animation-delay: 0.3s">Sensor Integration</h3>
           <p class="text-gray-500 leading-relaxed mb-6 text-sm animate-fade-in" style="animation-delay: 0.4s">
             3 analog inputs for pressure, temp, acceleration at 20 kHz.
           </p>
           <div class="grid grid-cols-2 gap-3">
-            <div class="p-3 rounded-lg bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-bounce-in" style="animation-delay: 0.5s">
+            <div
+              class="p-3 rounded-lg bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-bounce-in"
+              style="animation-delay: 0.5s">
               <i class="fas fa-thermometer-half text-blue-500 text-xs mb-2 animate-spin-slow"></i>
               <p class="font-medium text-xs text-white">Temperature</p>
             </div>
-            <div class="p-3 rounded-lg bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-bounce-in" style="animation-delay: 0.6s">
+            <div
+              class="p-3 rounded-lg bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-bounce-in"
+              style="animation-delay: 0.6s">
               <i class="fas fa-tachometer-alt text-blue-500 text-xs mb-2 animate-bounce"></i>
               <p class="font-medium text-xs text-white">Acceleration</p>
             </div>
-            <div class="p-3 rounded-lg bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-bounce-in" style="animation-delay: 0.7s">
+            <div
+              class="p-3 rounded-lg bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-bounce-in"
+              style="animation-delay: 0.7s">
               <i class="fas fa-compress-arrows-alt text-blue-500 text-xs mb-2 animate-bounce"></i>
               <p class="font-medium text-xs text-white">Pressure</p>
             </div>
-            <div class="p-3 rounded-lg bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-bounce-in" style="animation-delay: 0.8s">
+            <div
+              class="p-3 rounded-lg bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-bounce-in"
+              style="animation-delay: 0.8s">
               <i class="fas fa-wave-square text-blue-500 text-xs mb-2 animate-wave"></i>
               <p class="font-medium text-xs text-white">Noise Analysis</p>
             </div>
@@ -995,23 +1119,31 @@
       <div class="grid md:grid-cols-2 gap-8 items-center animate-fade-in-up opacity-0" style="animation-delay: 0.3s">
         <!-- Text Content -->
         <div class="order-2 md:order-1">
-          <div class="inline-flex items-center mb-4 bg-blue-900 px-3 py-1 rounded-full border border-blue-800/20 text-white font-medium text-xs animate-pulse">
+          <div
+            class="inline-flex items-center mb-4 bg-blue-900 px-3 py-1 rounded-full border border-blue-800/20 text-white font-medium text-xs animate-pulse">
             Silent Operation
           </div>
-          <h3 class="text-lg md:text-xl font-semibold mb-4 text-blue-500 animate-slide-in-right" style="animation-delay: 0.4s">Minimal Noise</h3>
+          <h3 class="text-lg md:text-xl font-semibold mb-4 text-blue-500 animate-slide-in-right"
+            style="animation-delay: 0.4s">Minimal Noise</h3>
           <p class="text-gray-500 leading-relaxed mb-6 text-sm animate-fade-in" style="animation-delay: 0.5s">
             55 dB standby, 60-75 dB active. Ideal for EV testing.
           </p>
           <div class="space-y-4">
-            <div class="flex items-center justify-between p-3 rounded-lg border border-blue-900 bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-slide-in-right" style="animation-delay: 0.6s">
+            <div
+              class="flex items-center justify-between p-3 rounded-lg border border-blue-900 bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-slide-in-right"
+              style="animation-delay: 0.6s">
               <span class="text-xs text-white">Standby</span>
               <span class="text-blue-500 font-semibold text-xs animate-count-up">55 dB</span>
             </div>
-            <div class="flex items-center justify-between p-3 rounded-lg border border-blue-900 bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-slide-in-right" style="animation-delay: 0.7s">
+            <div
+              class="flex items-center justify-between p-3 rounded-lg border border-blue-900 bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-slide-in-right"
+              style="animation-delay: 0.7s">
               <span class="text-xs text-white">Active Range</span>
               <span class="text-blue-500 font-semibold text-xs animate-count-up">60-75 dB</span>
             </div>
-            <div class="flex items-center justify-between p-3 rounded-lg border border-blue-900 bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-slide-in-right" style="animation-delay: 0.8s">
+            <div
+              class="flex items-center justify-between p-3 rounded-lg border border-blue-900 bg-gray-900/30 hover:bg-gray-800/50 transition-all duration-300 animate-slide-in-right"
+              style="animation-delay: 0.8s">
               <span class="text-xs text-white">EV Certified</span>
               <span class="text-blue-500 font-semibold text-xs">
                 <i class="fas fa-check animate-checkmark"></i> Yes
@@ -1021,7 +1153,7 @@
         </div>
 
         <!-- Graphic -->
-        <div class="flex justify-center order-1 md:order-2 mb-8 md:mb-0 animate-scale-in" style="animation-delay: 0.7s">
+        <!-- <div class="flex justify-center order-1 md:order-2 mb-8 md:mb-0 animate-scale-in" style="animation-delay: 0.7s">
           <div class="relative max-w-md w-full">
             <div class="relative rounded-lg p-[1px] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 animate-gradient-shift">
               <div class="rounded-lg bg-gray-900 p-3">
@@ -1034,7 +1166,7 @@
               <i class="fas fa-volume-down text-white text-xs"></i>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -1054,9 +1186,11 @@
       </div>
 
       <!-- Data Logger -->
-      <div class="max-w-4xl mx-auto mb-12 md:mb-20 animate-fade-in-up delay-200 opacity-0" style="animation-play-state: paused;">
+      <div class="max-w-4xl mx-auto mb-12 md:mb-20 animate-fade-in-up delay-200 opacity-0"
+        style="animation-play-state: paused;">
         <div class="text-center mb-8 md:mb-12">
-          <div class="inline-flex items-center mb-4 bg-blue-900/15 px-4 py-2 rounded-full border border-blue-800/20 text-blue-400 font-medium text-sm">
+          <div
+            class="inline-flex items-center mb-4 bg-blue-900/15 px-4 py-2 rounded-full border border-blue-800/20 text-blue-400 font-medium text-sm">
             <i class="fas fa-database mr-2"></i>Data Acquisition System
           </div>
           <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mb-6 md:mb-8 text-gray-300">Data Logger</h3>
@@ -1087,7 +1221,7 @@
         </div>
 
         <p class="text-gray-400 text-sm text-center max-w-3xl mx-auto leading-relaxed">
-          Engineered to detect the most minute force variations in damper performance, our data logger represents 
+          Engineered to detect the most minute force variations in damper performance, our data logger represents
           the pinnacle of measurement technology with multi-channel analog support for maximum versatility.
         </p>
       </div>
@@ -1096,13 +1230,14 @@
       <div class="mb-12 md:mb-20 animate-fade-in-up delay-400 opacity-0" style="animation-play-state: paused;">
         <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div class="order-2 md:order-1">
-            <div class="inline-flex items-center mb-4 md:mb-6 bg-blue-900/15 px-4 py-2 rounded-full border border-blue-800/20 text-blue-400 font-medium text-sm">
+            <div
+              class="inline-flex items-center mb-4 md:mb-6 bg-blue-900/15 px-4 py-2 rounded-full border border-blue-800/20 text-blue-400 font-medium text-sm">
               Integrated Control
             </div>
             <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mb-4 md:mb-6 text-gray-300">Control Unit</h3>
             <p class="text-gray-400 leading-relaxed mb-6 md:mb-8 text-sm">
-              Our integrated control unit combines data logging and system control on a single board, 
-              featuring state-of-the-art silicon carbide (SiC) MOSFET technology for enhanced power efficiency 
+              Our integrated control unit combines data logging and system control on a single board,
+              featuring state-of-the-art silicon carbide (SiC) MOSFET technology for enhanced power efficiency
               and reduced operational costs.
             </p>
             <div class="space-y-4">
@@ -1127,11 +1262,11 @@
             </div>
           </div>
           <div class="flex justify-center order-1 md:order-2 mb-8 md:mb-0">
-            <div class="relative rounded-lg p-[1px] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 max-w-md w-full">
+            <div
+              class="relative rounded-lg p-[1px] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 max-w-md w-full">
               <div class="rounded-lg bg-gray-900 p-4">
-                <img src="../assets/control-unit.png" 
-                     alt="Control Unit" 
-                     class="w-full h-auto rounded-lg transform transition-transform duration-700 hover:scale-[1.02]">
+                <img src="../assets/control-unit.png" alt="Control Unit"
+                  class="w-full h-auto rounded-lg transform transition-transform duration-700 hover:scale-[1.02]">
               </div>
             </div>
           </div>
@@ -1142,37 +1277,42 @@
       <div class="mb-12 md:mb-20 animate-fade-in-up delay-600 opacity-0" style="animation-play-state: paused;">
         <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div class="flex justify-center order-1 md:order-1 mb-8 md:mb-0">
-            <div class="relative rounded-lg p-[1px] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 max-w-md w-full">
+            <div
+              class="relative rounded-lg p-[1px] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 max-w-md w-full">
               <div class="rounded-lg bg-gray-900 p-4">
-                <img src="../assets/control-unit2.png" 
-                     alt="Power Unit" 
-                     class="w-full h-auto rounded-lg transform transition-transform duration-700 hover:scale-[1.02]">
+                <img src="../assets/control-unit2.png" alt="Power Unit"
+                  class="w-full h-auto rounded-lg transform transition-transform duration-700 hover:scale-[1.02]">
               </div>
             </div>
           </div>
           <div class="order-2 md:order-2">
-            <div class="inline-flex items-center mb-4 md:mb-6 bg-blue-900/15 px-4 py-2 rounded-full border border-blue-800/20 text-blue-400 font-medium text-sm">
+            <div
+              class="inline-flex items-center mb-4 md:mb-6 bg-blue-900/15 px-4 py-2 rounded-full border border-blue-800/20 text-blue-400 font-medium text-sm">
               Smart Power Management
             </div>
             <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mb-4 md:mb-6 text-gray-300">Power Unit</h3>
             <p class="text-gray-400 leading-relaxed mb-6 md:mb-8 text-sm">
-              Our revolutionary power supply utilizes supercapacitor technology to eliminate dependency on 
-              high-voltage inputs, making professional testing accessible in any environment including trackside applications.
+              Our revolutionary power supply utilizes supercapacitor technology to eliminate dependency on
+              high-voltage inputs, making professional testing accessible in any environment including trackside
+              applications.
             </p>
             <div class="space-y-4 md:space-y-6">
-              <div class="bg-gray-800/30 border border-blue-900 p-3 md:p-4 rounded-lg hover:bg-gray-700/50 transition-colors">
+              <div
+                class="bg-gray-800/30 border border-blue-900 p-3 md:p-4 rounded-lg hover:bg-gray-700/50 transition-colors">
                 <div class="flex justify-between items-center">
                   <span class="font-medium text-sm text-gray-300">Standard Configuration</span>
                   <span class="text-blue-500 text-sm">3-phase 380/400 VAC 16 A</span>
                 </div>
               </div>
-              <div class="bg-gray-800/30 border border-blue-900 p-3 md:p-4 rounded-lg hover:bg-gray-700/50 transition-colors">
+              <div
+                class="bg-gray-800/30 border border-blue-900 p-3 md:p-4 rounded-lg hover:bg-gray-700/50 transition-colors">
                 <div class="flex justify-between items-center">
                   <span class="font-medium text-sm text-gray-300">Optional Configuration</span>
                   <span class="text-blue-500 text-sm">1-phase 220/240 VAC</span>
                 </div>
               </div>
-              <div class="bg-gray-800/30 border border-blue-900 p-3 md:p-4 rounded-lg hover:bg-gray-700/50 transition-colors">
+              <div
+                class="bg-gray-800/30 border border-blue-900 p-3 md:p-4 rounded-lg hover:bg-gray-700/50 transition-colors">
                 <div class="flex justify-between items-center">
                   <span class="font-medium text-sm text-gray-300">Power Reserve</span>
                   <span class="text-blue-500 text-sm">Supercapacitor backup system</span>
@@ -1187,13 +1327,14 @@
       <div class="animate-fade-in-up delay-800 opacity-0" style="animation-play-state: paused;">
         <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div class="order-2 md:order-1">
-            <div class="inline-flex items-center mb-4 md:mb-6 bg-blue-900/15 px-4 py-2 rounded-full border border-blue-800/20 text-blue-400 font-medium text-sm">
+            <div
+              class="inline-flex items-center mb-4 md:mb-6 bg-blue-900/15 px-4 py-2 rounded-full border border-blue-800/20 text-blue-400 font-medium text-sm">
               Intuitive Interface
             </div>
             <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mb-4 md:mb-6 text-gray-300">Software</h3>
             <p class="text-gray-400 leading-relaxed mb-6 md:mb-8 text-sm">
-              Designed for exceptional user experience with minimal learning curve. Our software enables 
-              comprehensive data analysis, track data trimming, and seamless integration with additional 
+              Designed for exceptional user experience with minimal learning curve. Our software enables
+              comprehensive data analysis, track data trimming, and seamless integration with additional
               testing equipment.
             </p>
             <div class="space-y-4 md:space-y-6">
@@ -1221,11 +1362,11 @@
             </div>
           </div>
           <div class="flex justify-center order-1 md:order-2 mb-8 md:mb-0">
-            <div class="relative rounded-lg p-[1px] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 max-w-md w-full">
+            <div
+              class="relative rounded-lg p-[1px] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900 max-w-md w-full">
               <div class="rounded-lg bg-gray-900 p-4">
-                <img src="../assets/control-unit3.png" 
-                     alt="Software Interface" 
-                     class="w-full h-auto rounded-lg transform transition-transform duration-700 hover:scale-[1.02]">
+                <img src="../assets/control-unit3.png" alt="Software Interface"
+                  class="w-full h-auto rounded-lg transform transition-transform duration-700 hover:scale-[1.02]">
               </div>
             </div>
           </div>
@@ -1238,48 +1379,76 @@
   <section class="py-12 md:py-20">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
       <div class="bg-blue-100 p-4 md:p-5 max-w-6xl mx-auto mb-6 md:mb-8 rounded-lg">
-        <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold mb-6 md:mb-8 animate-fade-in-up opacity-0 text-blue-500" style="animation-play-state: paused;">Expand Possibilities with Shock Dyno Adapters</h2>
-        <p class="text-sm md:text-base text-gray-600 max-w-4xl mx-auto mb-8 md:mb-14 animate-fade-in-up opacity-0" style="animation-play-state: paused;">
-          AP Measurements shock dyno adapters create a seamless link, allowing for the most accurate and insightful tests of your shock absorbers. The result – enhanced performance, efficiency, and a deeper understanding of your equipment's capabilities.
+        <h2
+          class="text-xl md:text-2xl lg:text-3xl font-semibold mb-6 md:mb-8 animate-fade-in-up opacity-0 text-blue-500"
+          style="animation-play-state: paused;">Expand Possibilities with Shock Dyno Adapters</h2>
+        <p class="text-sm md:text-base text-gray-600 max-w-4xl mx-auto mb-8 md:mb-14 animate-fade-in-up opacity-0"
+          style="animation-play-state: paused;">
+          AP Measurements shock dyno adapters create a seamless link, allowing for the most accurate and insightful
+          tests of your shock absorbers. The result – enhanced performance, efficiency, and a deeper understanding of
+          your equipment's capabilities.
         </p>
       </div>
-      
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12 mx-auto max-w-4xl adapter-buttons-grid">
-        <button class="bg-orange-500 rounded-xl p-2 text-white py-2 hover:bg-orange-600 transition-colors w-full">Adapter for MTB dampers</button>
-        <button class="bg-orange-500 rounded-xl p-2 text-white py-2 hover:bg-orange-600 transition-colors w-full">Adapter for Moto dampers</button>
-        <button class="bg-orange-500 rounded-xl p-2 text-white py-2 hover:bg-orange-600 transition-colors w-full sm:col-span-2 lg:col-span-1">Adapter for Auto dampers</button>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12 mx-auto max-w-4xl adapter-buttons-grid">
+        <button
+          class="bg-orange-500 rounded-xl p-2 text-white py-2 hover:bg-orange-600 transition-colors w-full">Adapter for
+          MTB dampers</button>
+        <button
+          class="bg-orange-500 rounded-xl p-2 text-white py-2 hover:bg-orange-600 transition-colors w-full">Adapter for
+          Moto dampers</button>
+        <button
+          class="bg-orange-500 rounded-xl p-2 text-white py-2 hover:bg-orange-600 transition-colors w-full sm:col-span-2 lg:col-span-1">Adapter
+          for Auto dampers</button>
       </div>
-      
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
         <div class="space-y-5 animate-fade-in-up opacity-0" style="animation-play-state: paused;">
-          <div class="adapter-box bg-gray-800 rounded-lg p-6 md:p-10 shadow-lg h-64 md:h-72 flex items-center justify-center relative overflow-hidden cursor-pointer border-2 border-blue-500">
+          <div
+            class="adapter-box bg-gray-800 rounded-lg p-6 md:p-10 shadow-lg h-64 md:h-72 flex items-center justify-center relative overflow-hidden cursor-pointer border-2 border-blue-500">
             <div class="absolute inset-0 bg-black/65 opacity-0 transition-opacity duration-500 rounded-lg"></div>
-            <div class="plus absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl opacity-0 scale-0 transition-all duration-500 z-10">+</div>
-            <img src="../assets/adapter1.png" alt="MTB Adapter" class="w-full h-full object-contain transition-transform duration-800">
+            <div
+              class="plus absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl opacity-0 scale-0 transition-all duration-500 z-10">
+              +</div>
+            <img src="../assets/adapter1.png" alt="MTB Adapter"
+              class="w-full h-full object-contain transition-transform duration-800">
           </div>
         </div>
-       
+
         <div class="space-y-5 animate-fade-in-up opacity-0" style="animation-play-state: paused; animation-delay: 0.2s">
-          <div class="adapter-box bg-gray-800 rounded-lg p-6 md:p-10 shadow-lg h-64 md:h-72 flex items-center justify-center relative overflow-hidden cursor-pointer border-2 border-blue-500">
+          <div
+            class="adapter-box bg-gray-800 rounded-lg p-6 md:p-10 shadow-lg h-64 md:h-72 flex items-center justify-center relative overflow-hidden cursor-pointer border-2 border-blue-500">
             <div class="absolute inset-0 bg-black/65 opacity-0 transition-opacity duration-500 rounded-lg"></div>
-            <div class="plus absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl opacity-0 scale-0 transition-all duration-500 z-10">+</div>
-            <img src="../assets/shock-dyno2.png" alt="Moto Adapter" class="w-full h-full object-contain transition-transform duration-800">
+            <div
+              class="plus absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl opacity-0 scale-0 transition-all duration-500 z-10">
+              +</div>
+            <img src="../assets/shock-dyno2.png" alt="Moto Adapter"
+              class="w-full h-full object-contain transition-transform duration-800">
           </div>
         </div>
-        
+
         <div class="space-y-5 animate-fade-in-up opacity-0" style="animation-play-state: paused; animation-delay: 0.4s">
-          <div class="adapter-box bg-gray-800 rounded-lg p-6 md:p-10 shadow-lg h-64 md:h-72 flex items-center justify-center relative overflow-hidden cursor-pointer border-2 border-blue-500">
+          <div
+            class="adapter-box bg-gray-800 rounded-lg p-6 md:p-10 shadow-lg h-64 md:h-72 flex items-center justify-center relative overflow-hidden cursor-pointer border-2 border-blue-500">
             <div class="absolute inset-0 bg-black/65 opacity-0 transition-opacity duration-500 rounded-lg"></div>
-            <div class="plus absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl opacity-0 scale-0 transition-all duration-500 z-10">+</div>
-            <img src="../assets/shock-dyno3.png" alt="Auto Adapter" class="w-full h-full object-contain transition-transform duration-800">
+            <div
+              class="plus absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl opacity-0 scale-0 transition-all duration-500 z-10">
+              +</div>
+            <img src="../assets/shock-dyno3.png" alt="Auto Adapter"
+              class="w-full h-full object-contain transition-transform duration-800">
           </div>
         </div>
-        
+
         <div class="space-y-5 animate-fade-in-up opacity-0" style="animation-play-state: paused; animation-delay: 0.6s">
-          <div class="adapter-box bg-gray-800 rounded-lg p-6 md:p-10 shadow-lg h-64 md:h-72 flex items-center justify-center relative overflow-hidden cursor-pointer border-2 border-blue-500">
+          <div
+            class="adapter-box bg-gray-800 rounded-lg p-6 md:p-10 shadow-lg h-64 md:h-72 flex items-center justify-center relative overflow-hidden cursor-pointer border-2 border-blue-500">
             <div class="absolute inset-0 bg-black/65 opacity-0 transition-opacity duration-500 rounded-lg"></div>
-            <div class="plus absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl opacity-0 scale-0 transition-all duration-500 z-10">+</div>
-            <img src="../assets/shock-dyno.png" alt="MTB Adapter" class="w-full h-full object-contain transition-transform duration-800">
+            <div
+              class="plus absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl opacity-0 scale-0 transition-all duration-500 z-10">
+              +</div>
+            <img src="../assets/shock-dyno.png" alt="MTB Adapter"
+              class="w-full h-full object-contain transition-transform duration-800">
           </div>
         </div>
       </div>
@@ -1295,11 +1464,13 @@
           <span class="block text-blue-500 mt-1">EMA vs Hydraulic Systems</span>
         </h2>
         <p class="text-gray-400 max-w-3xl mx-auto text-xs sm:text-sm">
-          Electromagnetic and hydraulic damper test systems are two distinct technologies used to evaluate and test dampers in various applications.
+          Electromagnetic and hydraulic damper test systems are two distinct technologies used to evaluate and test
+          dampers in various applications.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in-up delay-200 opacity-0" style="animation-play-state: paused;">
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in-up delay-200 opacity-0"
+        style="animation-play-state: paused;">
         <!-- Text Content -->
         <div class="order-2 md:order-1">
           <div class="space-y-6 md:space-y-8">
@@ -1311,7 +1482,10 @@
                 <h3 class="text-lg font-semibold text-gray-300">Electromagnetic Actuators</h3>
               </div>
               <p class="text-gray-400 text-sm leading-relaxed">
-                Electromagnetic actuators provide high precision in force control with quick response times. They excel in handling a wide range of frequencies and operate quietly, thanks to fewer moving parts and the absence of fluid dynamics. Additionally, these systems require less maintenance and experience minimal downtime, making them highly efficient.
+                Electromagnetic actuators provide high precision in force control with quick response times. They excel
+                in handling a wide range of frequencies and operate quietly, thanks to fewer moving parts and the
+                absence of fluid dynamics. Additionally, these systems require less maintenance and experience minimal
+                downtime, making them highly efficient.
               </p>
             </div>
 
@@ -1323,7 +1497,11 @@
                 <h3 class="text-lg font-semibold text-gray-300">Hydraulic Systems</h3>
               </div>
               <p class="text-gray-400 text-sm leading-relaxed">
-                On the other hand, hydraulic damper testing systems are designed to generate the higher forces needed for testing large or industrial dampers. Especially in lower-frequency testing. However, hydraulic systems demand regular maintenance due to potential leaks, fluid replacement needs, and the wear and tear of mechanical components. Moreover, they have more stringent health and safety requirements for operators compared to electromagnetic test systems.
+                On the other hand, hydraulic damper testing systems are designed to generate the higher forces needed
+                for testing large or industrial dampers. Especially in lower-frequency testing. However, hydraulic
+                systems demand regular maintenance due to potential leaks, fluid replacement needs, and the wear and
+                tear of mechanical components. Moreover, they have more stringent health and safety requirements for
+                operators compared to electromagnetic test systems.
               </p>
             </div>
           </div>
@@ -1334,13 +1512,13 @@
           <div class="relative max-w-md w-full">
             <div class="relative rounded-lg p-[1px] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900">
               <div class="rounded-lg bg-gray-900 p-4 md:p-6">
-                <img src="../assets/hydraulic-damper.png" 
-                     alt="Technology Comparison" 
-                     class="w-full h-auto rounded-lg transform transition-transform duration-700 hover:scale-[1.02]">
+                <img src="../assets/hydraulic-damper.png" alt="Technology Comparison"
+                  class="w-full h-auto rounded-lg transform transition-transform duration-700 hover:scale-[1.02]">
               </div>
             </div>
             <div class="absolute -top-3 -right-3">
-              <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-900 to-blue-500 rounded-full flex items-center justify-center">
+              <div
+                class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-900 to-blue-500 rounded-full flex items-center justify-center">
                 <i class="fas fa-balance-scale text-white text-base md:text-lg"></i>
               </div>
             </div>
@@ -1353,7 +1531,8 @@
   <!-- Features Grid -->
   <section class="relative py-12 md:py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-12 md:mb-16 animate-fade-in-up opacity-0 bg-blue-100 rounded-lg p-4 md:p-5 mx-auto" style="animation-play-state: paused;">
+      <div class="text-center mb-12 md:mb-16 animate-fade-in-up opacity-0 bg-blue-100 rounded-lg p-4 md:p-5 mx-auto"
+        style="animation-play-state: paused;">
         <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
           <span class="text-gray-600 mb-2">System Features</span>
           <span class="block text-blue-500 mt-1">Core Capabilities</span>
@@ -1362,13 +1541,16 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         <!-- Feature 1 -->
-        <div class="bg-gray-800 p-6 md:p-8 rounded-xl animate-fade-in-up delay-100 opacity-0 hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-1" style="animation-play-state: paused;">
-          <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-500 rounded-xl mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-105">
+        <div
+          class="bg-gray-800 p-6 md:p-8 rounded-xl animate-fade-in-up delay-100 opacity-0 hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-1"
+          style="animation-play-state: paused;">
+          <div
+            class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-500 rounded-xl mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-105">
             <i class="fas fa-bolt text-white text-base md:text-lg"></i>
           </div>
           <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4 text-white">Electromagnetic Actuation</h3>
           <p class="text-white text-xs md:text-sm">
-            Advanced electromagnetic technology enables precise control and high-frequency testing capabilities 
+            Advanced electromagnetic technology enables precise control and high-frequency testing capabilities
             with exceptional repeatability.
           </p>
           <div class="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-blue-900/30">
@@ -1380,13 +1562,16 @@
         </div>
 
         <!-- Feature 2 -->
-        <div class="bg-gray-800 p-6 md:p-8 rounded-xl animate-fade-in-up delay-200 opacity-0 hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-1" style="animation-play-state: paused;">
-          <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-500 rounded-xl mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-105">
+        <div
+          class="bg-gray-800 p-6 md:p-8 rounded-xl animate-fade-in-up delay-200 opacity-0 hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-1"
+          style="animation-play-state: paused;">
+          <div
+            class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-500 rounded-xl mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-105">
             <i class="fas fa-tachometer-alt text-white text-base md:text-lg"></i>
           </div>
           <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4 text-white">High-Speed Data Acquisition</h3>
           <p class="text-white text-xs md:text-sm">
-            Real-time data collection and analysis with sampling rates up to 100kHz for accurate performance 
+            Real-time data collection and analysis with sampling rates up to 100kHz for accurate performance
             measurement and validation.
           </p>
           <div class="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-blue-900/30">
@@ -1398,13 +1583,16 @@
         </div>
 
         <!-- Feature 3 -->
-        <div class="bg-gray-800 p-6 md:p-8 rounded-xl animate-fade-in-up delay-300 opacity-0 hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-1" style="animation-play-state: paused;">
-          <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-500 rounded-xl mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-105">
+        <div
+          class="bg-gray-800 p-6 md:p-8 rounded-xl animate-fade-in-up delay-300 opacity-0 hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-1"
+          style="animation-play-state: paused;">
+          <div
+            class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-500 rounded-xl mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-105">
             <i class="fas fa-sliders-h text-white text-base md:text-lg"></i>
           </div>
           <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4 text-white">Advanced Control System</h3>
           <p class="text-white text-xs md:text-sm">
-            Intuitive user interface with programmable test sequences and automated analysis routines for 
+            Intuitive user interface with programmable test sequences and automated analysis routines for
             efficient workflow.
           </p>
           <div class="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-blue-900/30">
@@ -1416,13 +1604,16 @@
         </div>
 
         <!-- Feature 4 -->
-        <div class="bg-gray-800 p-6 md:p-8 rounded-xl animate-fade-in-up delay-400 opacity-0 hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-1" style="animation-play-state: paused;">
-          <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-500 rounded-xl mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-105">
+        <div
+          class="bg-gray-800 p-6 md:p-8 rounded-xl animate-fade-in-up delay-400 opacity-0 hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-1"
+          style="animation-play-state: paused;">
+          <div
+            class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-500 rounded-xl mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-105">
             <i class="fas fa-wave-square text-white text-base md:text-lg"></i>
           </div>
           <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4 text-white">Wide Frequency Range</h3>
           <p class="text-white text-xs md:text-sm">
-            Comprehensive testing capabilities from ultra-low to high frequencies, simulating diverse road 
+            Comprehensive testing capabilities from ultra-low to high frequencies, simulating diverse road
             conditions and driving scenarios.
           </p>
           <div class="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-blue-900/30">
@@ -1434,13 +1625,16 @@
         </div>
 
         <!-- Feature 5 -->
-        <div class="bg-gray-800 p-6 md:p-8 rounded-xl animate-fade-in-up delay-500 opacity-0 hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-1" style="animation-play-state: paused;">
-          <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-500 rounded-xl mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-105">
+        <div
+          class="bg-gray-800 p-6 md:p-8 rounded-xl animate-fade-in-up delay-500 opacity-0 hover:bg-gray-700/50 transition-all duration-300 hover:-translate-y-1"
+          style="animation-play-state: paused;">
+          <div
+            class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-500 rounded-xl mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-105">
             <i class="fas fa-chart-line text-white text-base md:text-lg"></i>
           </div>
           <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4 text-white">Comprehensive Analysis</h3>
           <p class="text-white text-xs md:text-sm">
-            Detailed performance metrics including force-velocity analysis, force-displacement mapping, and 
+            Detailed performance metrics including force-velocity analysis, force-displacement mapping, and
             hysteresis evaluation.
           </p>
           <div class="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-blue-900/30">
@@ -1452,13 +1646,16 @@
         </div>
 
         <!-- Feature 6 -->
-        <div class="bg-gray-800 p-6 md:p-8 rounded-xl animate-fade-in-up delay-600 opacity-0 hover:bg-gray-900 transition-all duration-300 hover:-translate-y-1" style="animation-play-state: paused;">
-          <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-500 rounded-xl mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-105">
+        <div
+          class="bg-gray-800 p-6 md:p-8 rounded-xl animate-fade-in-up delay-600 opacity-0 hover:bg-gray-900 transition-all duration-300 hover:-translate-y-1"
+          style="animation-play-state: paused;">
+          <div
+            class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-500 rounded-xl mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-105">
             <i class="fas fa-cube text-white text-base md:text-lg"></i>
           </div>
           <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4 text-white">Modular Design</h3>
           <p class="text-white text-xs md:text-sm">
-            Flexible configuration options to accommodate various shock absorber sizes and specialized mounting 
+            Flexible configuration options to accommodate various shock absorber sizes and specialized mounting
             requirements.
           </p>
           <div class="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-blue-900/30">
@@ -1476,11 +1673,16 @@
   <div data-include="../Footer/footer.html"></div>
 
   <!-- Image Modal -->
-  <div id="imageModal" class="fixed inset-0 z-50 items-center justify-center hidden bg-black/95 opacity-0 transition-opacity duration-400">
-    <button id="closeModal" class="absolute top-4 md:top-8 right-4 md:right-8 text-white text-2xl md:text-4xl z-50 hover:scale-110 transition">✕</button>
-    <img id="modalImage" src="" alt="Enlarged Image" class="shadow-2xl max-w-[90%] max-h-[80vh] md:max-h-[90vh] rounded-xl scale-90 transition-transform duration-400">
-    <button id="prevBtn" class="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white text-2xl md:text-4xl bg-black/50 p-2 md:p-4 rounded-full hover:bg-black/70">←</button>
-    <button id="nextBtn" class="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white text-2xl md:text-4xl bg-black/50 p-2 md:p-4 rounded-full hover:bg-black/70">→</button>
+  <div id="imageModal"
+    class="fixed inset-0 z-50 items-center justify-center hidden bg-black/95 opacity-0 transition-opacity duration-400">
+    <button id="closeModal"
+      class="absolute top-4 md:top-8 right-4 md:right-8 text-white text-2xl md:text-4xl z-50 hover:scale-110 transition">✕</button>
+    <img id="modalImage" src="" alt="Enlarged Image"
+      class="shadow-2xl max-w-[90%] max-h-[80vh] md:max-h-[90vh] rounded-xl scale-90 transition-transform duration-400">
+    <button id="prevBtn"
+      class="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white text-2xl md:text-4xl bg-black/50 p-2 md:p-4 rounded-full hover:bg-black/70">←</button>
+    <button id="nextBtn"
+      class="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white text-2xl md:text-4xl bg-black/50 p-2 md:p-4 rounded-full hover:bg-black/70">→</button>
   </div>
 
   <!-- JavaScript -->
@@ -1520,7 +1722,7 @@
       card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-4px)';
       });
-      
+
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'translateY(0)';
       });
@@ -1528,22 +1730,22 @@
 
     // Add click animation to buttons
     document.querySelectorAll('a[href*="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
+      link.addEventListener('click', function (e) {
         if (this.getAttribute('href').startsWith('#')) {
           e.preventDefault();
           const targetId = this.getAttribute('href');
           const targetElement = document.querySelector(targetId);
-          
+
           if (targetElement) {
             targetElement.classList.add('animate-pulse-border');
-            
+
             setTimeout(() => {
               targetElement.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
               });
             }, 100);
-            
+
             setTimeout(() => {
               targetElement.classList.remove('animate-pulse-border');
             }, 1000);
@@ -1556,11 +1758,11 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
-        
+
         if (href !== '#' && href !== '#contact') {
           e.preventDefault();
           const target = document.querySelector(href);
-          
+
           if (target) {
             window.scrollTo({
               top: target.offsetTop - 80,
@@ -1572,9 +1774,9 @@
     });
 
     // Add loading animation to page load
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
       document.body.classList.add('loaded');
-      
+
       // Add subtle animation to all data points
       document.querySelectorAll('.data-point').forEach((point, index) => {
         setTimeout(() => {
@@ -1599,14 +1801,14 @@
       const img = box.querySelector('img');
       const plus = box.querySelector('.plus');
       const overlay = box.querySelector('.absolute.inset-0');
-      
+
       box.addEventListener('mouseenter', () => {
         img.style.transform = 'scale(1.2)';
         overlay.style.opacity = '1';
         plus.style.opacity = '1';
         plus.style.transform = 'translate(-50%, -50%) scale(1.1)';
       });
-      
+
       box.addEventListener('mouseleave', () => {
         img.style.transform = 'scale(1)';
         overlay.style.opacity = '0';
@@ -1662,4 +1864,5 @@
     });
   </script>
 </body>
+
 </html>

@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
-<link rel="manifest" href="/favicon_io/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
     <title>Sensor Products Catalog</title>
-     <script src="https://cdn.tailwindcss.com"></script>
-     <script src="./include.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./include.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./Header/header.css">
     <link rel="stylesheet" href="./Footer/footer.css">
 
-     <style>
-        
-        
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0a192f;
+            color: #e6f1ff;
+            padding-top: 80px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
         /* Animated orange square boxes */
         .background-boxes {
             position: fixed;
@@ -27,45 +42,87 @@
             z-index: -1;
             overflow: hidden;
         }
-        
+
         .box {
             position: absolute;
-            border: 2px solid rgba(209, 98, 8, 0.511); /* Orange-500 with transparency */
+            border: 2px solid rgba(209, 98, 8, 0.511);
             border-radius: 4px;
             pointer-events: none;
         }
-        
+
         /* Box animations */
         @keyframes float1 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(30px, -30px) rotate(180deg); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(30px, -30px) rotate(180deg);
+            }
         }
-        
+
         @keyframes float2 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-40px, 20px) rotate(-180deg); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-40px, 20px) rotate(-180deg);
+            }
         }
-        
+
         @keyframes float3 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(20px, 40px) scale(1.2); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(20px, 40px) scale(1.2);
+            }
         }
-        
+
         @keyframes float4 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-30px, -40px) rotate(90deg); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-30px, -40px) rotate(90deg);
+            }
         }
-        
+
         @keyframes float5 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(40px, -20px) scale(0.8); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(40px, -20px) scale(0.8);
+            }
         }
-        
+
         @keyframes pulse {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.4; }
+
+            0%,
+            100% {
+                opacity: 0.1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
         }
-        
+
         /* Custom animations for content */
         .fade-in {
             animation: fadeIn 1s ease-out forwards;
@@ -82,14 +139,19 @@
             opacity: 0;
         }
 
-      .slide-right {
-    animation: slideRight 1s ease-out forwards;
-    opacity: 0;
-}
+        .slide-right {
+            animation: slideRight 1s ease-out forwards;
+            opacity: 0;
+        }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideUp {
@@ -97,6 +159,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -108,6 +171,7 @@
                 opacity: 0;
                 transform: translateX(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -119,218 +183,11 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
-        }
-        
-        /* Feature dropdown animation */
-        .lawyer-feature-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.3s ease;
-        }
-
-        .lawyer-feature-content.open {
-            padding: 25px;
-            max-height: 500px;
-        }
-
-        .lawyer-feature-arrow {
-            transition: transform 0.3s ease;
-        }
-
-        .lawyer-feature-arrow.open {
-            transform: rotate(180deg);
-        }
-        
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Adjust text colors for dark background */
-        .text-gray-800 {
-            color: #e6f1ff;
-        }
-        
-        .text-gray-600 {
-            color: #a8b2d1;
-        }
-        
-        .text-gray-900 {
-            color: #ffffff;
-        }
-        
-        /* Section backgrounds */
-        .bg-gray-50 {
-            background-color: #112240;
-        }
-        
-        .bg-white {
-            background-color: #112240;
-            border: 1px solid #233554;
-        }
-        
-        .bg-gray-900 {
-            background-color: #0a192f;
-            border-top: 1px solid #233554;
-            border-bottom: 1px solid #233554;
-        }
-        
-        /* Table adjustments */
-        table tbody tr:hover {
-            background-color: #1a2d4d !important;
-        }
-        
-        .divide-gray-200 > * + * {
-            border-color: #233554;
-        }
-        
-        /* Card hover effects */
-        .hover\\:shadow-lg:hover {
-            box-shadow: 0 10px 25px rgba(251, 146, 60, 0.15) !important;
-        }
-        
-        .shadow-md {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
-        }
-    </style>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            padding: 20px;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-     
-
-        .subtitle {
-            color: #7f8c8d;
-            font-size: 1.1rem;
-        }
-
-        .main-content {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .categories-panel {
-            flex: 1;
-            min-width: 150px;
-            
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            padding: 8px;
-            height: fit-content;
-        }
-
-        .categories-panel h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-            gap: 2px;
-        }
-
-        .category-list {
-            list-style: none;
-        }
-
-        .category-item {
-            padding: 15px;
-            margin-bottom: 8px;
-            border-radius: 8px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
-        }
-
-        .category-item:hover {
-            background-color: #f8f9fa;
-            transform: translateX(5px);
-        }
-
-        .category-item.active {
-            background-color: #e8f4fc;
-            border-left-color: #3498db;
-            font-weight: 500;
-            color: #2c3e50;
-        }
-
-        .category-icon {
-            margin-right: 12px;
-            font-size: 1.2rem;
-            width: 16px;
-            text-align: center;
-        }
-
-        .products-panel {
-            flex: 3;
-            min-width: 300px;
-            /* background-color: #213448; */
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            padding: 25px;
-            min-height: 500px;
-            margin-bottom: 20px;
-        }
-
-        .products-panel h2 {
-            color: #2c3e50;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .category-description {
-            color: #7f8c8d;
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .product-card {
-            background-color: #F4F4F4;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid #eee;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.5s forwards;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
 
         @keyframes fadeInUp {
@@ -340,115 +197,715 @@
             }
         }
 
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        /* Header Styling */
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: rgb(41, 39, 39);
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .page-subtitle {
+            font-size: 1rem;
+            color: #a8b2d1;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+        }
+
+        /* Main Content Layout */
+        .main-content {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        /* Categories Panel */
+        .categories-panel {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background-color: #112240;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+            border: 1px solid #233554;
+        }
+
+        .categories-panel h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #233554;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-list {
+            list-style: none;
+            width: 100%;
+        }
+
+        .category-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            color: #a8b2d1;
+            width: 100%;
+        }
+
+        .category-item:hover {
+            background-color: #1a2d4d;
+            transform: translateX(5px);
+            color: #ffffff;
+        }
+
+        .category-item.active {
+            background-color: #1a2d4d;
+            border-left-color: #fb923c;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .category-icon {
+            margin-right: 12px;
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Products Panel */
+        .products-panel {
+            flex: 3;
+            min-width: 300px;
+            /* background-color: #112240; */
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            margin-bottom: 40px;
+            /* border: 1px solid #233554; */
+            width: 100%;
+        }
+
+        .products-panel h2 {
+            color: #2d2c2c;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            line-height: 1.3;
+        }
+
+        .category-description {
+            color: #a8b2d1;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-size: 1rem;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #233554;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+            height: 100%;
+            width: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(251, 146, 60, 0.2);
+            border-color: #fb923c;
+        }
+
         .product-image {
-            height: 160px;
-            background-color: #f8f9fa;
+
+            background-color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid gray;
+            width: 100%;
+            height: auto;
         }
 
         .product-image img {
-            max-width: 80%;
-            max-height: 80%;
+            max-width: 70%;
+            max-height: 70%;
             object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
         }
 
         .product-info {
-            padding: 18px;
+            padding: 20px;
+            width: 100%;
         }
 
         .product-code {
-            font-size: 0.9rem;
-            color: #3498db;
+            font-size: 1.2rem;
+            color: #fb923c;
             font-weight: 600;
             margin-bottom: 8px;
+            letter-spacing: 0.5px;
         }
 
         .product-name {
             font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 5px;
+            color: #555151;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            line-height: 1.4;
         }
 
         .product-type {
-            font-size: 0.85rem;
-            color: #7f8c8d;
+            font-size: 0.9rem;
+            color: #a8b2d1;
         }
 
-        @media (max-width: 768px) {
+        /* Mobile Menu Toggle */
+        .mobile-category-toggle {
+            display: none;
+            width: 100%;
+            background-color: #112240;
+            color: white;
+            border: 1px solid #233554;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .mobile-category-toggle i {
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-category-toggle.active i {
+            transform: rotate(180deg);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 1201px) {
+            .categories-panel {
+                display: block !important;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .categories-panel {
+                max-width: 300px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
             .main-content {
                 flex-direction: column;
             }
-            
-            .categories-panel, .products-panel {
+
+            .categories-panel {
+                position: relative;
+                top: 0;
+                max-width: 100%;
                 width: 100%;
+                margin-bottom: 20px;
+                display: none;
+            }
+
+            .categories-panel.active {
+                display: block;
+                animation: slideDown 0.3s ease-out;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .page-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .products-panel {
+                padding: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .mobile-category-toggle {
+                display: flex;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .main-container {
+                padding: 0 10px;
+            }
+
+            .page-header {
+                margin-bottom: 20px;
+            }
+
+            .page-title {
+                font-size: 1.6rem;
+                margin-bottom: 8px;
+            }
+
+            .page-subtitle {
+                font-size: 0.9rem;
+                padding: 0 5px;
+                margin-bottom: 15px;
+            }
+
+            .categories-panel {
+                padding: 15px;
+                margin-bottom: 15px;
+                display: none;
+            }
+
+            .categories-panel.active {
+                display: block;
+            }
+
+            .mobile-category-toggle {
+                display: flex;
+                margin-bottom: 10px;
+                padding: 12px;
+                font-size: 0.95rem;
+            }
+
+            .products-panel {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .products-panel h2 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            .category-description {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 15px;
+            }
+
+            .product-image {
+                height: 140px;
+            }
+
+            .product-info {
+                padding: 15px;
+            }
+
+            .product-name {
+                font-size: 1rem;
+            }
+
+            .category-item {
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 1.4rem;
+            }
+
+            .page-subtitle {
+                font-size: 0.85rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .product-card {
+                max-width: 100%;
+            }
+
+            .mobile-category-toggle {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            .categories-panel h2 {
+                font-size: 1.3rem;
+            }
+
+            .products-panel h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .page-title {
+                font-size: 1.3rem;
+            }
+
+            .products-panel h2 {
+                font-size: 1.2rem;
+            }
+
+            .category-item {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .product-image {
+                height: 130px;
+            }
+        }
+
+        /* Adjust box sizes for mobile */
+        @media (max-width: 768px) {
+            .box {
+                width: 40px !important;
+                height: 40px !important;
+            }
+
+            .box-1,
+            .box-2,
+            .box-3,
+            .box-4,
+            .box-5,
+            .box-6,
+            .box-7,
+            .box-8,
+            .box-9,
+            .box-10 {
+                animation-duration: 15s !important;
+            }
+        }
+
+        /* Download Brochure Button */
+        .download-brochure-btn {
+            position: absolute;
+            top: 230px;
+            right: 60px;
+            background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(251, 146, 60, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            animation: slideInRight 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .download-brochure-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(251, 146, 60, 0.4);
+            background: linear-gradient(135deg, #fdba74 0%, #fb923c 100%);
+        }
+
+        .download-brochure-btn:active {
+            transform: translateY(0);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Confirmation message styling */
+        .download-confirmation {
+            position: fixed;
+            top: 160px;
+            right: 20px;
+            background: #1a2d4d;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #fb923c;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            animation: slideInRight 0.3s ease-out;
+            max-width: 300px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .download-error {
+            position: fixed;
+            top: 160px;
+            right: 20px;
+            background: #7f1d1d;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #dc2626;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            animation: slideInRight 0.3s ease-out;
+            max-width: 300px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+        }
+
+        /* Responsive adjustments for download button */
+        @media (max-width: 992px) {
+            .download-brochure-btn {
+                top: 90px;
+                right: 15px;
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .download-brochure-btn {
+                top: 80px;
+                right: 10px;
+                padding: 8px 14px;
+                font-size: 0.8rem;
+            }
+
+            .download-brochure-btn span {
+                display: none;
+            }
+
+            .download-brochure-btn i {
+                margin-right: 0;
+                font-size: 1rem;
+            }
+
+            .download-confirmation,
+            .download-error {
+                top: 140px;
+                right: 10px;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .download-brochure-btn {
+                top: 75px;
+                padding: 6px 12px;
             }
         }
     </style>
 </head>
-<body class=" mt-32">
+
+<body>
 
     <!-- Animated Background Boxes -->
     <div class="background-boxes">
         <!-- Orange square boxes with different sizes and animations -->
-        <div class="box box-1" style="width: 80px; height: 80px; top: 10%; left: 5%; animation: float1 20s infinite ease-in-out, pulse 8s infinite;"></div>
-        <div class="box box-2" style="width: 120px; height: 120px; top: 30%; right: 10%; animation: float2 25s infinite ease-in-out, pulse 10s infinite 1s;"></div>
-        <div class="box box-3" style="width: 60px; height: 60px; bottom: 20%; left: 15%; animation: float3 18s infinite ease-in-out, pulse 7s infinite 2s;"></div>
-        <div class="box box-4" style="width: 100px; height: 100px; top: 15%; right: 20%; animation: float4 22s infinite ease-in-out, pulse 9s infinite 0.5s;"></div>
-        <div class="box box-5" style="width: 70px; height: 70px; bottom: 30%; right: 5%; animation: float5 30s infinite ease-in-out, pulse 12s infinite 1.5s;"></div>
-        <div class="box box-6" style="width: 90px; height: 90px; top: 60%; left: 5%; animation: float1 24s infinite ease-in-out reverse, pulse 11s infinite 0.8s;"></div>
-        <div class="box box-7" style="width: 110px; height: 110px; bottom: 10%; right: 20%; animation: float2 28s infinite ease-in-out, pulse 13s infinite 2.5s;"></div>
-        <div class="box box-8" style="width: 50px; height: 50px; top: 40%; left: 20%; animation: float3 16s infinite ease-in-out, pulse 6s infinite 3s;"></div>
-        <div class="box box-9" style="width: 130px; height: 130px; bottom: 40%; left: 30%; animation: float4 32s infinite ease-in-out, pulse 14s infinite 0.3s;"></div>
-        <div class="box box-10" style="width: 85px; height: 85px; top: 70%; right: 15%; animation: float5 26s infinite ease-in-out, pulse 15s infinite 1.8s;"></div>
+        <div class="box box-1"
+            style="width: 80px; height: 80px; top: 10%; left: 5%; animation: float1 20s infinite ease-in-out, pulse 8s infinite;">
+        </div>
+        <div class="box box-2"
+            style="width: 120px; height: 120px; top: 30%; right: 10%; animation: float2 25s infinite ease-in-out, pulse 10s infinite 1s;">
+        </div>
+        <div class="box box-3"
+            style="width: 60px; height: 60px; bottom: 20%; left: 15%; animation: float3 18s infinite ease-in-out, pulse 7s infinite 2s;">
+        </div>
+        <div class="box box-4"
+            style="width: 100px; height: 100px; top: 15%; right: 20%; animation: float4 22s infinite ease-in-out, pulse 9s infinite 0.5s;">
+        </div>
+        <div class="box box-5"
+            style="width: 70px; height: 70px; bottom: 30%; right: 5%; animation: float5 30s infinite ease-in-out, pulse 12s infinite 1.5s;">
+        </div>
+        <div class="box box-6"
+            style="width: 90px; height: 90px; top: 60%; left: 5%; animation: float1 24s infinite ease-in-out reverse, pulse 11s infinite 0.8s;">
+        </div>
+        <div class="box box-7"
+            style="width: 110px; height: 110px; bottom: 10%; right: 20%; animation: float2 28s infinite ease-in-out, pulse 13s infinite 2.5s;">
+        </div>
+        <div class="box box-8"
+            style="width: 50px; height: 50px; top: 40%; left: 20%; animation: float3 16s infinite ease-in-out, pulse 6s infinite 3s;">
+        </div>
+        <div class="box box-9"
+            style="width: 130px; height: 130px; bottom: 40%; left: 30%; animation: float4 32s infinite ease-in-out, pulse 14s infinite 0.3s;">
+        </div>
+        <div class="box box-10"
+            style="width: 85px; height: 85px; top: 70%; right: 15%; animation: float5 26s infinite ease-in-out, pulse 15s infinite 1.8s;">
+        </div>
     </div>
 
+    <!-- Header (will be included via JavaScript) -->
     <div data-include="/Header/header.html"></div>
-    <div class="container">
-       
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="page-header">
+            <h1 class="page-title slide-up">Sensor Products Catalog</h1>
+            <p class="page-subtitle slide-up" style="animation-delay: 0.2s;">
+                Explore our comprehensive range of high-precision sensors for various industrial and research
+                applications
+            </p>
+        </div>
+
+        <!-- Mobile Category Toggle - FIXED TO ALWAYS BE VISIBLE -->
+        <button class="mobile-category-toggle" id="mobileCategoryToggle">
+            <i class="fas fa-filter"></i> Browse Categories
+        </button>
+
+        <!-- Download Brochure Button -->
+        <button id="downloadBrochureBtn" class="download-brochure-btn">
+            <i class="fas fa-download"></i> Download Brochure
+        </button>
 
         <div class="main-content">
             <!-- Categories Panel -->
-            <div class="categories-panel bg-[#E6E6E6]">
+            <div class="categories-panel" id="categoriesPanel">
                 <h2><i class="fas fa-list"></i> Product Categories</h2>
                 <ul class="category-list">
                     <li class="category-item active" data-category="general-purpose">
-                        <span class="category-icon text-blue-500"><i class="fas fa-cogs"></i></span>
+                        <span class="category-icon"><i class="fas fa-cogs"></i></span>
                         General Purpose
                     </li>
                     <li class="category-item" data-category="miniature">
-                        <span class="category-icon text-blue-500"><i class="fas fa-compress-alt"></i></span>
+                        <span class="category-icon"><i class="fas fa-compress-alt"></i></span>
                         Miniature
                     </li>
                     <li class="category-item" data-category="triaxial">
-                        <span class="category-icon text-blue-500"><i class="fas fa-arrows-alt"></i></span>
+                        <span class="category-icon"><i class="fas fa-arrows-alt"></i></span>
                         Triaxial
                     </li>
                     <li class="category-item" data-category="teardrop">
-                        <span class="category-icon text-blue-500"><i class="fas fa-tint"></i></span>
+                        <span class="category-icon"><i class="fas fa-tint"></i></span>
                         Teardrop
                     </li>
                     <li class="category-item" data-category="low-frequency">
-                        <span class="category-icon text-blue-500"><i class="fas fa-wave-square"></i></span>
+                        <span class="category-icon"><i class="fas fa-wave-square"></i></span>
                         Low-Frequency
                     </li>
                     <li class="category-item" data-category="high-temperature">
-                        <span class="category-icon text-blue-500"><i class="fas fa-thermometer-full"></i></span>
+                        <span class="category-icon"><i class="fas fa-thermometer-full"></i></span>
                         High-Temperature
                     </li>
                 </ul>
             </div>
 
+
             <!-- Products Panel -->
-            <div class="products-panel">
-                <h2 id="category-title" class="text-3xl">General Purpose Sensors</h2>
-                <p id="category-description" class="category-description">
-                    Versatile sensors suitable for a wide range of applications with reliable performance and durability.
+            <div class="products-panel bg-white">
+                <h2 id="category-title" class="slide-right">General Purpose Sensors</h2>
+                <p id="category-description" class="category-description slide-right" style="animation-delay: 0.2s;">
+                    Versatile sensors suitable for a wide range of applications with reliable performance and
+                    durability.
                 </p>
-                
+
                 <div id="products-grid" class="products-grid">
                     <!-- Products will be dynamically loaded here -->
                 </div>
@@ -456,20 +913,21 @@
         </div>
     </div>
 
-    <!-- footer -->
-     <div data-include="/Footer/footer.html"></div>
+    <!-- Footer (will be included via JavaScript) -->
+    <div data-include="/Footer/footer.html"></div>
 
     <script>
         // Product data from the provided table
         const productData = {
             "general-purpose": [
-                { code: "B02BG2", name: "Base-Isolated IEPE Accelerometer", type: "Uniaxial", category: "General Purpose", img: "./assets/accelerometer/B02BG2.png.png"},
-                { code: "B06BG2", name: "General Purpose Sensor", type: "Standard Model", category: "General Purpose", img: "./assets/accelerometer/B06BG2.png.webp"},
+                { code: "B02BG2", name: "Base-Isolated IEPE Accelerometer", type: "Uniaxial", category: "General Purpose", img: "./assets/accelerometer/B02BG2.png.png" },
+                { code: "B06BG2", name: "General Purpose Sensor", type: "Standard Model", category: "General Purpose", img: "./assets/accelerometer/B06BG2.png.webp" },
                 { code: "B02A00", name: "Advanced General Sensor", type: "Enhanced Model", category: "General Purpose", img: "./assets/accelerometer/B02A00.png.webp" },
                 { code: "B06A00", name: "Basic General Sensor", type: "Entry Level", category: "General Purpose", img: "./assets/accelerometer/B06A00.png" },
                 { code: "B06A00", name: "Precision General Sensor", type: "High Accuracy", category: "General Purpose", img: "./assets/accelerometer/B02BG2.png.png" },
                 { code: "B02B00", name: "Industrial General Sensor", type: "Rugged Design", category: "General Purpose", img: "./assets/accelerometer/B02B00.png" },
-                { code: "B06B00", name: "Professional General Sensor", type: "Commercial Grade", category: "General Purpose", img: "./assets/accelerometer/B06B00.png.webp" }
+                { code: "B06B00", name: "Professional General Sensor", type: "Commercial Grade", category: "General Purpose", img: "./assets/accelerometer/B06B00.png.webp" },
+                { code: "B06H46", name: "Seat Cushion IEPE Accelerometer", type: "Triaxial", category: "General Purpose", img: "./assets/accelerometer/B06H46.png.webp" }
             ],
             "miniature": [
                 { code: "B02A01", name: "Miniature Sensor", type: "Compact Design", category: "Miniature", img: "./assets/accelerometer/B01A01.png.webp" },
@@ -486,23 +944,23 @@
                 { code: "B02Y36", name: "Professional Triaxial Sensor", type: "Laboratory Grade", category: "Triaxial", img: "./assets/accelerometer/B02Y36.png.webp" }
             ],
             "teardrop": [
-                { code: "B02BM1", name: "Teardrop Sensor", type: "Aerodynamic Design", category: "Teardrop" , img: "./assets/accelerometer/B05BM1.png.webp"},
-                { code: "B06BM1", name: "Advanced Teardrop Sensor", type: "High Flow", category: "Teardrop" , img: "./assets/accelerometer/B06BM1.png.webp"},
+                { code: "B02BM1", name: "Teardrop Sensor", type: "Aerodynamic Design", category: "Teardrop", img: "./assets/accelerometer/B05BM1.png.webp" },
+                { code: "B06BM1", name: "Advanced Teardrop Sensor", type: "High Flow", category: "Teardrop", img: "./assets/accelerometer/B06BM1.png.webp" },
                 { code: "B06CM1", name: "Precision Teardrop Sensor", type: "Calibrated", category: "Teardrop", img: "./assets/accelerometer/B06CM1.png" },
                 { code: "B01CM5", name: "Industrial Teardrop Sensor", type: "Heavy Duty", category: "Teardrop", img: "./assets/accelerometer/B01CM5.png" }
             ],
             "low-frequency": [
-                { code: "B12A00", name: "Low-Frequency Sensor", type: "Sub-Hz Range", category: "Low-Frequency" , img: "./assets/accelerometer/B12A00.png.webp"},
+                { code: "B12A00", name: "Low-Frequency Sensor", type: "Sub-Hz Range", category: "Low-Frequency", img: "./assets/accelerometer/B12A00.png.webp" },
                 { code: "B10Y35", name: "Advanced Low-Frequency Sensor", type: "Ultra Low Noise", category: "Low-Frequency", img: "./assets/accelerometer/B10Y35.png.webp" },
-                { code: "B12A53", name: "Precision Low-Frequency Sensor", type: "High Stability", category: "Low-Frequency" , img: "./assets/accelerometer/B12A53.png"}
+                { code: "B12A53", name: "Precision Low-Frequency Sensor", type: "High Stability", category: "Low-Frequency", img: "./assets/accelerometer/B12A53.png" }
             ],
             "high-temperature": [
-                { code: "B02A90", name: "High-Temperature Sensor", type: "Up to 200°C", category: "High-Temperature" , img: "./assets/accelerometer/B03A90.png.webp"},
+                { code: "B02A90", name: "High-Temperature Sensor", type: "Up to 200°C", category: "High-Temperature", img: "./assets/accelerometer/B03A90.png.webp" },
                 { code: "B06A90", name: "Advanced High-Temp Sensor", type: "Up to 300°C", category: "High-Temperature", img: "./assets/accelerometer/B05A90.png.webp" },
                 { code: "B02B90", name: "Extreme High-Temp Sensor", type: "Up to 500°C", category: "High-Temperature", img: "./assets/accelerometer/B06B90.png" },
-                { code: "B06B90", name: "Ultra High-Temp Sensor", type: "Up to 800°C", category: "High-Temperature" , img: "./assets/accelerometer/B06B90.png"},
+                { code: "B06B90", name: "Ultra High-Temp Sensor", type: "Up to 800°C", category: "High-Temperature", img: "./assets/accelerometer/B06B90.png" },
                 { code: "B02Y91", name: "Industrial High-Temp Sensor", type: "Rugged Design", category: "High-Temperature", img: "./assets/accelerometer/B06Y91.png.webp" },
-                { code: "B06Y91", name: "Professional High-Temp Sensor", type: "Laboratory Grade", category: "High-Temperature",img: "./assets/accelerometer/B06Y91.png.webp"}
+                { code: "B06Y91", name: "Professional High-Temp Sensor", type: "Laboratory Grade", category: "High-Temperature", img: "./assets/accelerometer/B06Y91.png.webp" }
             ]
         };
 
@@ -526,30 +984,71 @@
             "high-temperature": "High-Temperature Sensors"
         };
 
-        // Get DOM elements
+        // DOM Elements
         const categoryItems = document.querySelectorAll('.category-item');
         const productsGrid = document.getElementById('products-grid');
         const categoryTitle = document.getElementById('category-title');
         const categoryDescription = document.getElementById('category-description');
+        const mobileCategoryToggle = document.getElementById('mobileCategoryToggle');
+        const categoriesPanel = document.getElementById('categoriesPanel');
 
         // Initialize with first category
         loadCategoryProducts('general-purpose');
 
         // Add click event to category items
         categoryItems.forEach(item => {
-            item.addEventListener('click', function() {
+            item.addEventListener('click', function () {
                 // Remove active class from all categories
                 categoryItems.forEach(cat => cat.classList.remove('active'));
-                
+
                 // Add active class to clicked category
                 this.classList.add('active');
-                
+
                 // Get category from data attribute
                 const category = this.getAttribute('data-category');
-                
+
                 // Load products for this category
                 loadCategoryProducts(category);
+
+                // Close mobile categories panel after selection
+                if (window.innerWidth <= 992) {
+                    categoriesPanel.classList.remove('active');
+                    mobileCategoryToggle.classList.remove('active');
+                    mobileCategoryToggle.innerHTML = '<i class="fas fa-filter"></i> Browse Categories';
+                    // Ensure toggle button is still visible
+                    mobileCategoryToggle.style.display = 'flex';
+                }
             });
+        });
+
+        // Mobile category toggle functionality - FIXED
+        mobileCategoryToggle.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent event bubbling
+            categoriesPanel.classList.toggle('active');
+            this.classList.toggle('active');
+
+            if (categoriesPanel.classList.contains('active')) {
+                this.innerHTML = '<i class="fas fa-times"></i> Close Categories';
+            } else {
+                this.innerHTML = '<i class="fas fa-filter"></i> Browse Categories';
+            }
+
+            // Ensure toggle button remains visible
+            this.style.display = 'flex';
+        });
+
+        // Close categories panel when clicking outside on mobile
+        document.addEventListener('click', function (event) {
+            if (window.innerWidth <= 992) {
+                const isClickInsidePanel = categoriesPanel.contains(event.target);
+                const isClickOnToggle = mobileCategoryToggle.contains(event.target);
+
+                if (!isClickInsidePanel && !isClickOnToggle && categoriesPanel.classList.contains('active')) {
+                    categoriesPanel.classList.remove('active');
+                    mobileCategoryToggle.classList.remove('active');
+                    mobileCategoryToggle.innerHTML = '<i class="fas fa-filter"></i> Browse Categories';
+                }
+            }
         });
 
         // Function to load products for a category
@@ -557,16 +1056,40 @@
             // Update title and description
             categoryTitle.textContent = categoryTitles[category];
             categoryDescription.textContent = categoryDescriptions[category];
-            
+
+            // Add animation classes
+            categoryTitle.classList.remove('slide-right');
+            categoryDescription.classList.remove('slide-right');
+            void categoryTitle.offsetWidth; // Trigger reflow
+            void categoryDescription.offsetWidth; // Trigger reflow
+            categoryTitle.classList.add('slide-right');
+            categoryDescription.classList.add('slide-right');
+            categoryDescription.style.animationDelay = '0.2s';
+
             // Clear current products
             productsGrid.innerHTML = '';
-            
+
             // Get products for this category
             const products = productData[category];
-            
+
             // Add animation delay for each product
-            let animationDelay = 0;
-            
+            let animationDelay = 0.3;
+
+            // Check if there are products
+            if (products.length === 0) {
+                const noProducts = document.createElement('div');
+                noProducts.className = 'no-products';
+                noProducts.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: #a8b2d1;">
+                        <i class="fas fa-box-open" style="font-size: 3rem; margin-bottom: 20px;"></i>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px;">No Products Found</h3>
+                        <p>Check back soon for new products in this category.</p>
+                    </div>
+                `;
+                productsGrid.appendChild(noProducts);
+                return;
+            }
+
             // Add products to grid
             products.forEach((product, index) => {
                 // Create product card
@@ -575,13 +1098,13 @@
                 productCard.href = `accelerometer-productdetails.html?product=${product.code}&category=${category}`;
                 productCard.style.animationDelay = `${animationDelay}s`;
                 animationDelay += 0.1;
-                
-                // Generate a product image placeholder based on category
-                const imageUrl = getProductImage(category, index);
-                
+
+                // Use provided image or fallback
+                const imageUrl = product.img || getFallbackImage(category);
+
                 productCard.innerHTML = `
                     <div class="product-image">
-                        <img src="${product.img}" alt="${product.name}">
+                        <img src="${imageUrl}" alt="${product.name}" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop'">
                     </div>
                     <div class="product-info">
                         <div class="product-code">${product.code}</div>
@@ -589,26 +1112,291 @@
                         <div class="product-type">${product.type}</div>
                     </div>
                 `;
-                
+
                 // Append to grid
                 productsGrid.appendChild(productCard);
             });
         }
 
-        // Function to get product image based on category and index
-        function getProductImage(category, index) {
-            // Using Unsplash images for different sensor types
-            const imageMap = {
+        // Function to get fallback image based on category
+        function getFallbackImage(category) {
+            const fallbackImages = {
                 "general-purpose": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
                 "miniature": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
                 "triaxial": "https://images.unsplash.com/photo-1581091226825-c6ae736003b3?w=400&h=300&fit=crop",
                 "teardrop": "https://images.unsplash.com/photo-1581092580497-e0d4cb184827?w=400&h=300&fit=crop",
-                "low-frequency": "https://images.unsplash.com/photo-1581092580497-e0d4cb184827?w=400&h=300&fit=crop",
+                "low-frequency": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
                 "high-temperature": "https://images.unsplash.com/photo-1581092580497-e0d4cb184827?w=400&h=300&fit=crop"
             };
-            
-            return imageMap[category] || "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop";
+
+            return fallbackImages[category] || "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop";
         }
+
+        // Handle window resize
+        function handleResize() {
+            if (window.innerWidth > 992) {
+                // On larger screens, ensure categories panel is visible
+                categoriesPanel.style.display = 'block';
+                categoriesPanel.classList.remove('active');
+                mobileCategoryToggle.style.display = 'none';
+            } else {
+                // On smaller screens, hide categories panel by default
+                categoriesPanel.style.display = 'none';
+                categoriesPanel.classList.remove('active');
+                mobileCategoryToggle.style.display = 'flex'; // ALWAYS VISIBLE ON MOBILE
+                mobileCategoryToggle.classList.remove('active');
+                mobileCategoryToggle.innerHTML = '<i class="fas fa-filter"></i> Browse Categories';
+            }
+        }
+
+        // Initial check for screen size
+        handleResize();
+
+        // Add resize event listener
+        window.addEventListener('resize', handleResize);
+
+        // Add animation to boxes on load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animate boxes with staggered delays
+            const boxes = document.querySelectorAll('.box');
+            boxes.forEach((box, index) => {
+                box.style.animationDelay = `${index * 0.5}s`;
+            });
+
+            // Add scroll animation for product cards
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe product cards when they're added
+            const observeProducts = () => {
+                const productCards = document.querySelectorAll('.product-card');
+                productCards.forEach(card => {
+                    observer.observe(card);
+                });
+            };
+
+            // Initial observation
+            setTimeout(observeProducts, 100);
+
+            // Re-observe when category changes
+            const originalLoadCategoryProducts = loadCategoryProducts;
+            loadCategoryProducts = function (category) {
+                originalLoadCategoryProducts(category);
+                setTimeout(observeProducts, 300);
+            };
+        });
     </script>
+
+   <script>
+    // ================ PDF DOWNLOAD WITH YOUR SPECIFIC PATH ================ //
+
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Create download button if it doesn't exist
+    let downloadBtn = document.getElementById('downloadBrochureBtn');
+    
+    if (!downloadBtn) {
+        downloadBtn = document.createElement('button');
+        downloadBtn.id = 'downloadBrochureBtn';
+        downloadBtn.className = 'download-brochure-btn';
+        downloadBtn.innerHTML = '<i class="fas fa-download"></i> Download Brochure';
+        document.body.appendChild(downloadBtn);
+    }
+    
+    // Your specific PDF path - CHANGE ONLY THIS LINE IF NEEDED
+    const pdfFilePath = "/brochure.pdf";
+    const downloadFileName = "AP_Dynamics_Sensor_Catalog_Brochure.pdf";
+    
+    // Function to handle PDF download
+    function downloadPDF() {
+        try {
+            // Method 1: Direct download (works for local files in some browsers)
+            const link = document.createElement('a');
+            link.href = pdfFilePath;
+            link.download = downloadFileName;
+            
+            // For local file paths, we need to use a different approach
+            if (pdfFilePath.startsWith('D:/') || pdfFilePath.includes(':/')) {
+                // Local file system path - use file:// protocol
+                // const fileURL = 'file:///' + pdfFilePath.replace(/\\/g, '/').replace(':/', ':/');
+                
+                // Try different methods for local file download
+                // tryMethod1(fileURL);
+            } else {
+                // Web URL - use standard method
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                showSuccessMessage();
+            }
+            
+        } catch (error) {
+            console.error('Download error:', error);
+            showErrorMessage("Unable to download. Please save the file manually.");
+            provideAlternativeDownload();
+        }
+    }
+    
+    // Try different download methods for local files
+    function tryMethod1(fileURL) {
+        const link = document.createElement('a');
+        link.href = fileURL;
+        link.download = downloadFileName;
+        link.target = '_blank'; // Open in new tab as fallback
+        
+        document.body.appendChild(link);
+        
+        // Try click
+        link.click();
+        
+        setTimeout(() => {
+            document.body.removeChild(link);
+            showSuccessMessage();
+        }, 100);
+    }
+    
+    // Show success message
+    function showSuccessMessage() {
+        // Create a simple success notification
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 160px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+            animation: slideInRight 0.3s ease-out;
+            max-width: 300px;
+            font-size: 0.9rem;
+        `;
+        notification.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-check-circle" style="font-size: 1.2rem;"></i>
+                <div>
+                    <strong>Download Started!</strong>
+                    <div style="margin-top: 5px; opacity: 0.9;">
+                        Check your downloads folder
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Remove after 4 seconds
+        setTimeout(() => {
+            notification.style.animation = 'fadeOut 0.5s ease-out forwards';
+            setTimeout(() => notification.remove(), 500);
+        }, 4000);
+    }
+    
+    // Show error message
+    function showErrorMessage(message) {
+        const errorMsg = document.createElement('div');
+        errorMsg.style.cssText = `
+            position: fixed;
+            top: 160px;
+            right: 20px;
+            background: #ef4444;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+            animation: slideInRight 0.3s ease-out;
+            max-width: 300px;
+            font-size: 0.9rem;
+        `;
+        errorMsg.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-exclamation-triangle" style="font-size: 1.2rem;"></i>
+                <div>
+                    <strong>Download Issue</strong>
+                    <div style="margin-top: 5px; opacity: 0.9;">
+                        ${message}
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(errorMsg);
+        
+        setTimeout(() => {
+            errorMsg.style.animation = 'fadeOut 0.5s ease-out forwards';
+            setTimeout(() => errorMsg.remove(), 500);
+        }, 5000);
+    }
+    
+    // Provide alternative download method
+    function provideAlternativeDownload() {
+        // Create a visible link as alternative
+        const altLink = document.createElement('div');
+        altLink.style.cssText = `
+            position: fixed;
+            top: 220px;
+            right: 20px;
+            background: #1e40af;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+            animation: slideInRight 0.3s ease-out;
+            max-width: 300px;
+            font-size: 0.9rem;
+        `;
+        altLink.innerHTML = `
+            <div style="margin-bottom: 10px;">
+                <strong>Alternative:</strong>
+            </div>
+            <div style="word-break: break-all; font-size: 0.8rem; background: rgba(255,255,255,0.1); padding: 8px; border-radius: 4px; margin-bottom: 10px;">
+                ${pdfFilePath}
+            </div>
+            <div style="font-size: 0.8rem; opacity: 0.9;">
+                Copy this path and open in File Explorer
+            </div>
+        `;
+        
+        document.body.appendChild(altLink);
+        
+        setTimeout(() => {
+            altLink.style.animation = 'fadeOut 0.5s ease-out forwards';
+            setTimeout(() => altLink.remove(), 500);
+        }, 8000);
+    }
+    
+    // Add click event to button
+    downloadBtn.addEventListener('click', downloadPDF);
+    
+    // Add fadeOut animation
+    if (!document.querySelector('style[data-fadeout]')) {
+        const style = document.createElement('style');
+        style.setAttribute('data-fadeout', 'true');
+        style.textContent = `
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateX(0); }
+                to { opacity: 0; transform: translateX(20px); }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+});
+   </script>
 </body>
+
 </html>

@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
-<link rel="manifest" href="/favicon_io/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
     <title>Data Acquisition System - External DAQ Unit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../include.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="../Header/header.css">
     <link rel="stylesheet" href="../Footer/footer.css">
 
-     <style>
-        
-        
-        /* Animated orange square boxes */
+    <style>
+        /* Reset and base responsive styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #F9F8F6;
+            color: #374151;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animated Background Boxes */
         .background-boxes {
             position: fixed;
             top: 0;
@@ -29,45 +51,87 @@
             z-index: -1;
             overflow: hidden;
         }
-        
+
         .box {
             position: absolute;
-            border: 2px solid rgba(209, 98, 8, 0.511); /* Orange-500 with transparency */
+            border: 2px solid rgba(209, 98, 8, 0.511);
             border-radius: 4px;
             pointer-events: none;
         }
-        
+
         /* Box animations */
         @keyframes float1 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(30px, -30px) rotate(180deg); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(30px, -30px) rotate(180deg);
+            }
         }
-        
+
         @keyframes float2 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-40px, 20px) rotate(-180deg); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-40px, 20px) rotate(-180deg);
+            }
         }
-        
+
         @keyframes float3 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(20px, 40px) scale(1.2); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(20px, 40px) scale(1.2);
+            }
         }
-        
+
         @keyframes float4 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-30px, -40px) rotate(90deg); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-30px, -40px) rotate(90deg);
+            }
         }
-        
+
         @keyframes float5 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(40px, -20px) scale(0.8); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(40px, -20px) scale(0.8);
+            }
         }
-        
+
         @keyframes pulse {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.4; }
+
+            0%,
+            100% {
+                opacity: 0.1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
         }
-        
+
         /* Custom animations for content */
         .fade-in {
             animation: fadeIn 1s ease-out forwards;
@@ -84,14 +148,19 @@
             opacity: 0;
         }
 
-      .slide-right {
-    animation: slideRight 1s ease-out forwards;
-    opacity: 0;
-}
+        .slide-right {
+            animation: slideRight 1s ease-out forwards;
+            opacity: 0;
+        }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideUp {
@@ -99,6 +168,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -110,6 +180,7 @@
                 opacity: 0;
                 transform: translateX(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -121,12 +192,13 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
-        
+
         /* Feature dropdown animation */
         .lawyer-feature-content {
             max-height: 0;
@@ -146,81 +218,150 @@
         .lawyer-feature-arrow.open {
             transform: rotate(180deg);
         }
-        
+
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
-        
+
         /* Adjust text colors for dark background */
         .text-gray-800 {
             color: #e6f1ff;
         }
-        
+
         .text-gray-600 {
             color: #a8b2d1;
         }
-        
+
         .text-gray-900 {
             color: #ffffff;
         }
-        
+
         /* Section backgrounds */
         .bg-gray-50 {
             background-color: #112240;
         }
-        
+
         .bg-white {
             background-color: #112240;
             border: 1px solid #233554;
         }
-        
+
         .bg-gray-900 {
             background-color: #0a192f;
             border-top: 1px solid #233554;
             border-bottom: 1px solid #233554;
         }
-        
+
         /* Table adjustments */
         table tbody tr:hover {
             background-color: #1a2d4d !important;
         }
-        
-        .divide-gray-200 > * + * {
+
+        .divide-gray-200>*+* {
             border-color: #233554;
         }
-        
+
         /* Card hover effects */
         .hover\\:shadow-lg:hover {
             box-shadow: 0 10px 25px rgba(251, 146, 60, 0.15) !important;
         }
-        
+
         .shadow-md {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
         }
-    </style>
-    <style>
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .box {
+                display: none;
+                /* Hide animated boxes on mobile for performance */
+            }
+
+            .background-boxes {
+                display: none;
+            }
+
+            /* Touch-friendly button sizes */
+            button,
+            a[role="button"] {
+                min-height: 44px !important;
+                padding: 12px 20px !important;
+                font-size: 1rem !important;
+            }
+        }
+
+        /* Mobile responsive typography */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+
+            h2 {
+                font-size: 1.75rem !important;
+                line-height: 1.3 !important;
+            }
+
+            h3 {
+                font-size: 1.5rem !important;
+                line-height: 1.4 !important;
+            }
+
+            p,
+            li {
+                font-size: 1rem !important;
+                line-height: 1.6 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.75rem !important;
+            }
+
+            h2 {
+                font-size: 1.5rem !important;
+            }
+
+            h3 {
+                font-size: 1.25rem !important;
+            }
+
+            p,
+            li {
+                font-size: 0.95rem !important;
+            }
+        }
+
+        /* Page specific styles */
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
+
         .hero-gradient {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
         }
+
         .feature-gradient {
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
         }
+
         .spec-gradient {
             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
         }
+
         .price-gradient {
             background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
         }
+
         .section-divider {
             border-bottom: 3px solid #f97316;
             width: 80px;
             margin: 1rem auto;
         }
+
         .highlight-text {
             background: linear-gradient(90deg, #f97316, #fb923c);
             -webkit-background-clip: text;
@@ -228,21 +369,26 @@
             color: transparent;
             font-weight: 700;
         }
+
         .sensor-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #e2e8f0;
         }
+
         .sensor-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             border-color: #f97316;
         }
+
         .tech-spec {
             transition: all 0.2s ease;
         }
+
         .tech-spec:hover {
             background-color: #fef3c7;
         }
+
         .compatibility-badge {
             background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
             color: white;
@@ -252,10 +398,12 @@
             font-size: 0.875rem;
             display: inline-block;
         }
+
         .nav-link {
             position: relative;
             transition: all 0.3s ease;
         }
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -266,29 +414,38 @@
             background: #f97316;
             transition: width 0.3s ease;
         }
+
         .nav-link:hover::after {
             width: 100%;
         }
+
         .scroll-animate {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .scroll-animate.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         .pulse-animation {
             animation: pulse 2s infinite;
         }
+
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
             }
+
             50% {
                 box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
             }
         }
+
         /* Added new styles */
         .feature-icon {
             width: 60px;
@@ -299,6 +456,7 @@
             border-radius: 12px;
             margin: 0 auto 1.5rem;
         }
+
         .connector-type {
             display: inline-block;
             background-color: #f3f4f6;
@@ -308,26 +466,30 @@
             margin: 0.25rem;
             border: 1px solid #e5e7eb;
         }
+
         .benefit-highlight {
             border-left: 4px solid #f97316;
             background: linear-gradient(90deg, #fffbeb, #fff7ed);
         }
+
         .mobile-menu {
             display: none;
             position: fixed;
             top: 0;
             right: 0;
-            width: 300px;
+            width: 280px;
             height: 100vh;
             background: white;
             z-index: 1000;
-            box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
             transform: translateX(100%);
             transition: transform 0.3s ease;
         }
+
         .mobile-menu.active {
             transform: translateX(0);
         }
+
         .mobile-menu-overlay {
             display: none;
             position: fixed;
@@ -335,36 +497,330 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+
         .mobile-menu-overlay.active {
             display: block;
         }
+
+        /* Responsive grid adjustments */
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px !important;
+            }
+
+            .feature-grid .sensor-card {
+                padding: 20px !important;
+            }
+
+            .feature-icon {
+                width: 50px !important;
+                height: 50px !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .sensor-types-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px !important;
+            }
+
+            .sensor-types-grid div {
+                padding: 15px !important;
+            }
+
+            .tech-specs-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+
+            .tech-specs-grid .tech-spec {
+                margin-bottom: 20px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .sensor-types-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .section-padding {
+                padding: 40px 0 !important;
+            }
+        }
+
+        /* Responsive hero section */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0 40px !important;
+                min-height: auto !important;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
+
+            .hero-image {
+                order: 2 !important;
+                margin-top: 20px !important;
+            }
+
+            .hero-text {
+                order: 1 !important;
+                text-align: center !important;
+            }
+
+            .hero-text .inline-flex {
+                justify-content: center !important;
+                margin-bottom: 20px !important;
+            }
+        }
+
+        /* Responsive image handling */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .responsive-image {
+                width: 100% !important;
+                height: auto !important;
+                max-height: 300px !important;
+                object-fit: contain !important;
+            }
+
+            .rounded-2xl {
+                border-radius: 12px !important;
+            }
+
+            .p-8 {
+                padding: 20px !important;
+            }
+        }
+
+        /* Prevent horizontal overflow */
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden !important;
+            }
+
+            .container,
+            section {
+                max-width: 100% !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+
+            .px-4 {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+        }
+
+        /* Improved spacing for mobile */
+        @media (max-width: 768px) {
+            .mb-8 {
+                margin-bottom: 1.5rem !important;
+            }
+
+            .mb-16 {
+                margin-bottom: 2rem !important;
+            }
+
+            .py-20 {
+                padding-top: 40px !important;
+                padding-bottom: 40px !important;
+            }
+
+            .py-12 {
+                padding-top: 30px !important;
+                padding-bottom: 30px !important;
+            }
+
+            .gap-8 {
+                gap: 20px !important;
+            }
+
+            .gap-12 {
+                gap: 30px !important;
+            }
+        }
+
+        /* Responsive tables and lists */
+        @media (max-width: 768px) {
+            .flex.justify-between {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+
+            .flex.justify-between .py-2 {
+                padding: 10px 0 !important;
+            }
+
+            table {
+                display: block !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+            }
+        }
+
+        /* Mobile menu improvements */
         @media (max-width: 768px) {
             .mobile-menu {
                 display: block;
+                width: 85%;
+                max-width: 300px;
+            }
+
+            .mobile-menu nav a {
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+                display: flex !important;
+                align-items: center !important;
+            }
+
+            .mobile-menu .p-6 {
+                padding: 20px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-menu {
+                width: 90%;
+                max-width: 280px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 12pt !important;
+            }
+
+            .background-boxes,
+            .mobile-menu,
+            .mobile-menu-overlay {
+                display: none !important;
+            }
+
+            section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            h1,
+            h2,
+            h3 {
+                page-break-after: avoid;
+            }
+        }
+
+        /* Loading state for images */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #f97316;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .sensor-card {
+                border: 2px solid #000 !important;
+            }
+
+            button,
+            a[role="button"] {
+                border: 2px solid #000 !important;
             }
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+
+<body class="bg-gray-50 text-gray-800 pt-16 md:pt-20">
 
     <!-- Animated Background Boxes -->
     <div class="background-boxes">
         <!-- Orange square boxes with different sizes and animations -->
-        <div class="box box-1" style="width: 80px; height: 80px; top: 10%; left: 5%; animation: float1 20s infinite ease-in-out, pulse 8s infinite;"></div>
-        <div class="box box-2" style="width: 120px; height: 120px; top: 30%; right: 10%; animation: float2 25s infinite ease-in-out, pulse 10s infinite 1s;"></div>
-        <div class="box box-3" style="width: 60px; height: 60px; bottom: 20%; left: 15%; animation: float3 18s infinite ease-in-out, pulse 7s infinite 2s;"></div>
-        <div class="box box-4" style="width: 100px; height: 100px; top: 15%; right: 20%; animation: float4 22s infinite ease-in-out, pulse 9s infinite 0.5s;"></div>
-        <div class="box box-5" style="width: 70px; height: 70px; bottom: 30%; right: 5%; animation: float5 30s infinite ease-in-out, pulse 12s infinite 1.5s;"></div>
-        <div class="box box-6" style="width: 90px; height: 90px; top: 60%; left: 5%; animation: float1 24s infinite ease-in-out reverse, pulse 11s infinite 0.8s;"></div>
-        <div class="box box-7" style="width: 110px; height: 110px; bottom: 10%; right: 20%; animation: float2 28s infinite ease-in-out, pulse 13s infinite 2.5s;"></div>
-        <div class="box box-8" style="width: 50px; height: 50px; top: 40%; left: 20%; animation: float3 16s infinite ease-in-out, pulse 6s infinite 3s;"></div>
-        <div class="box box-9" style="width: 130px; height: 130px; bottom: 40%; left: 30%; animation: float4 32s infinite ease-in-out, pulse 14s infinite 0.3s;"></div>
-        <div class="box box-10" style="width: 85px; height: 85px; top: 70%; right: 15%; animation: float5 26s infinite ease-in-out, pulse 15s infinite 1.8s;"></div>
+        <div class="box box-1"
+            style="width: 80px; height: 80px; top: 10%; left: 5%; animation: float1 20s infinite ease-in-out, pulse 8s infinite;">
+        </div>
+        <div class="box box-2"
+            style="width: 120px; height: 120px; top: 30%; right: 10%; animation: float2 25s infinite ease-in-out, pulse 10s infinite 1s;">
+        </div>
+        <div class="box box-3"
+            style="width: 60px; height: 60px; bottom: 20%; left: 15%; animation: float3 18s infinite ease-in-out, pulse 7s infinite 2s;">
+        </div>
+        <div class="box box-4"
+            style="width: 100px; height: 100px; top: 15%; right: 20%; animation: float4 22s infinite ease-in-out, pulse 9s infinite 0.5s;">
+        </div>
+        <div class="box box-5"
+            style="width: 70px; height: 70px; bottom: 30%; right: 5%; animation: float5 30s infinite ease-in-out, pulse 12s infinite 1.5s;">
+        </div>
+        <div class="box box-6"
+            style="width: 90px; height: 90px; top: 60%; left: 5%; animation: float1 24s infinite ease-in-out reverse, pulse 11s infinite 0.8s;">
+        </div>
+        <div class="box box-7"
+            style="width: 110px; height: 110px; bottom: 10%; right: 20%; animation: float2 28s infinite ease-in-out, pulse 13s infinite 2.5s;">
+        </div>
+        <div class="box box-8"
+            style="width: 50px; height: 50px; top: 40%; left: 20%; animation: float3 16s infinite ease-in-out, pulse 6s infinite 3s;">
+        </div>
+        <div class="box box-9"
+            style="width: 130px; height: 130px; bottom: 40%; left: 30%; animation: float4 32s infinite ease-in-out, pulse 14s infinite 0.3s;">
+        </div>
+        <div class="box box-10"
+            style="width: 85px; height: 85px; top: 70%; right: 15%; animation: float5 26s infinite ease-in-out, pulse 15s infinite 1.8s;">
+        </div>
     </div>
-   <!-- header -->
+
+    <!-- header -->
     <div data-include="/Header/header.html"></div>
 
     <!-- Mobile Menu -->
@@ -383,52 +839,52 @@
                 </button>
             </div>
             <nav class="space-y-4">
-                <a href="#overview" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-orange-600">Overview</a>
-                <a href="#features" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-orange-600">Features</a>
-                <a href="#specs" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-orange-600">Specifications</a>
-                <a href="#benefits" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-orange-600">Why Use It</a>
-                <a href="#ecosystem" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-orange-600">Ecosystem</a>
-                <a href="#faq" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-orange-600">FAQ</a>
+                <a href="#overview"
+                    class="block py-3 border-b border-gray-100 text-gray-700 hover:text-orange-600">Overview</a>
+                <a href="#features"
+                    class="block py-3 border-b border-gray-100 text-gray-700 hover:text-orange-600">Features</a>
+                <a href="#specs"
+                    class="block py-3 border-b border-gray-100 text-gray-700 hover:text-orange-600">Specifications</a>
+                <a href="#benefits" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-orange-600">Why
+                    Use It</a>
+                <a href="#ecosystem"
+                    class="block py-3 border-b border-gray-100 text-gray-700 hover:text-orange-600">Ecosystem</a>
             </nav>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section id="overview" class="hero-gradient text-white py-20">
-        <div class="container mx-auto px-4">
+    <section id="overview" class="hero-gradient text-white py-12 md:py-20 hero-section">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="animate__animated animate__fadeInLeft">
-                        <div class="inline-flex items-center space-x-2 mb-6">
-                            <span class="px-3 py-1 bg-orange-500 rounded-full text-sm font-semibold">NEW</span>
-                            <span class="px-3 py-1 bg-blue-500 rounded-full text-sm font-semibold">EXTERNAL DAQ</span>
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center hero-content">
+                    <div class="animate__animated animate__fadeInLeft hero-text">
+                        <div class="inline-flex items-center space-x-2 mb-4 md:mb-6 flex-wrap">
+                            <span class="px-3 py-1 bg-orange-500 rounded-full text-sm font-semibold mb-2">NEW</span>
+                            <span class="px-3 py-1 bg-blue-500 rounded-full text-sm font-semibold mb-2">EXTERNAL
+                                DAQ</span>
                         </div>
-                        <h1 class="text-4xl md:text-4xl font-bold mb-6 leading-tight">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6 leading-tight">
                             <span class="text-blue-500">Data Acquisition System</span>
-                            <span class="block text-orange-400 mt-2">External DAQ for Scotch-Yoke Shock Dynos and EMAs</span>
+                            <span class="block text-orange-400 mt-2">External DAQ for Scotch-Yoke Shock Dynos and
+                                EMAs</span>
                         </h1>
-                        <p class="text-lg text-gray-300 mb-8">
-                           The LABA7 designed this compact Ethernet-based data acquisition (DAQ) system to enhance the functionality of your LABA7 shock dynos. Whether you operate a Scotch-Yoke Dyno (SYD) or an EMA, this system significantly expands your testing capabilities.
+                        <p class="text-base md:text-lg text-gray-300 mb-6 md:mb-8">
+                            The LABA7 designed this compact Ethernet-based data acquisition (DAQ) system to enhance the
+                            functionality of your LABA7 shock dynos. Whether you operate a Scotch-Yoke Dyno (SYD) or an
+                            EMA, this system significantly expands your testing capabilities.
                         </p>
-                         <p class="text-lg text-gray-300 mb-8">
-                          How does it work? With the LABA7 software, every signal is time-synchronized, providing a comprehensive view of damper behavior.   
+                        <p class="text-base md:text-lg text-gray-300 mb-6 md:mb-8">
+                            How does it work? With the LABA7 software, every signal is time-synchronized, providing a
+                            comprehensive view of damper behavior.
                         </p>
-                        <!-- <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="#pricing" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 text-center pulse-animation">
-                                <i class="fas fa-tags mr-2"></i>View Pricing
-                            </a>
-                            <a href="#specs" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 text-center">
-                                <i class="fas fa-cogs mr-2"></i>Technical Specs
-                            </a>
-                        </div> -->
                     </div>
-                    <div class="animate__animated animate__fadeInRight mt-10">
-                        <div class="bg-gray-800/50 p-8 rounded-2xl border border-gray-700">
-                          
-                               <img src="../assets/LABA7-Data-Aquisition-System-Back-980x980.webp" alt="" class="rounded-2xl shadow-xl h-auto w-full object-cover">
-                           
-                          
-                          
+                    <div class="animate__animated animate__fadeInRight mt-6 md:mt-10 hero-image">
+                        <div class="bg-gray-800/50 p-4 md:p-8 rounded-xl md:rounded-2xl border border-gray-700">
+                            <img src="../assets/LABA7-Data-Aquisition-System-Back-980x980.webp"
+                                alt="Data Acquisition System"
+                                class="rounded-xl md:rounded-2xl shadow-xl h-auto w-full object-cover responsive-image"
+                                loading="eager">
                         </div>
                     </div>
                 </div>
@@ -437,539 +893,604 @@
     </section>
 
     <!-- Key Features -->
-    <section id="features" class="py-20 feature-gradient">
-        <div class="container mx-auto px-4">
+    <section id="features" class="py-12 md:py-20 feature-gradient section-padding">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 scroll-animate">
-                    <h2 class="text-3xl md:text-3xl font-bold mb-4">Key Features of AP Measurement's Ethernet DAQ for <span class="text-blue-500">Suspension Testing</span></h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                       Take your damper testing beyond force-displacement curves. Connect any sensor, expand without limits, and unlock synchronized high-speed data.  
+                <div class="text-center mb-8 md:mb-16 scroll-animate">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Key Features of LABA7's Ethernet DAQ for <span
+                            class="text-blue-500">Suspension Testing</span></h2>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6 md:mb-8">
+                        Take your damper testing beyond force-displacement curves. Connect any sensor, expand without
+                        limits, and unlock synchronized high-speed data.
                     </p>
                     <div class="section-divider"></div>
                 </div>
-                
-                <div class="grid grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 feature-grid">
                     <!-- Feature 1 -->
-                    <div class="bg-white rounded-xl p-8 shadow-lg sensor-card scroll-animate">
+                    <div class="bg-white rounded-xl p-4 md:p-8 shadow-lg sensor-card scroll-animate">
                         <div class="feature-icon bg-orange-100">
                             <i class="fas fa-tachometer-alt text-orange-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-center">High-Speed Performance</h3>
-                        <p class="text-gray-600 text-center mb-4">16-bit resolution, up to 125 kHz sampling</p>
-                        <ul class="text-sm text-gray-500 space-y-2">
+                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-center">High-Speed Performance</h3>
+                        <p class="text-gray-600 text-center mb-3 md:mb-4 text-sm md:text-base">16-bit resolution, up to
+                            125 kHz sampling</p>
+                        <ul class="text-xs md:text-sm text-gray-500 space-y-1 md:space-y-2">
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Up to 125 kHz sampling</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>16-bit resolution</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Low-latency acquisition</li>
                         </ul>
                     </div>
-                    
+
                     <!-- Feature 2 -->
-                    <div class="bg-white rounded-xl p-8 shadow-lg sensor-card scroll-animate" style="animation-delay: 0.1s;">
+                    <div class="bg-white rounded-xl p-4 md:p-8 shadow-lg sensor-card scroll-animate"
+                        style="animation-delay: 0.1s;">
                         <div class="feature-icon bg-blue-100">
                             <i class="fas fa-ethernet text-blue-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-center">Ethernet Connectivity</h3>
-                        <p class="text-gray-600 text-center mb-4">Ethernet connectivity for remote logging and configuration</p>
-                        <ul class="text-sm text-gray-500 space-y-2">
+                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-center">Ethernet Connectivity</h3>
+                        <p class="text-gray-600 text-center mb-3 md:mb-4 text-sm md:text-base">Ethernet connectivity for
+                            remote logging and configuration</p>
+                        <ul class="text-xs md:text-sm text-gray-500 space-y-1 md:space-y-2">
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Remote data logging</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Network configuration</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Real-time monitoring</li>
                         </ul>
                     </div>
-                    
+
                     <!-- Feature 3 -->
-                    <div class="bg-white rounded-xl p-8 shadow-lg sensor-card scroll-animate" style="animation-delay: 0.2s;">
+                    <div class="bg-white rounded-xl p-4 md:p-8 shadow-lg sensor-card scroll-animate"
+                        style="animation-delay: 0.2s;">
                         <div class="feature-icon bg-green-100">
                             <i class="fas fa-bolt text-green-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-center">Integrated Power Supply</h3>
-                        <p class="text-gray-600 text-center mb-4">Integrated 45 W AC/DC power supply – no external adapters required</p>
-                        <ul class="text-sm text-gray-500 space-y-2">
+                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-center">Integrated Power Supply</h3>
+                        <p class="text-gray-600 text-center mb-3 md:mb-4 text-sm md:text-base">Integrated 45 W AC/DC
+                            power supply – no external adapters required</p>
+                        <ul class="text-xs md:text-sm text-gray-500 space-y-1 md:space-y-2">
                             <li><i class="fas fa-check text-green-500 mr-2"></i>45W integrated supply</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>No external adapters</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Clean power delivery</li>
                         </ul>
                     </div>
-                    
+
                     <!-- Feature 4 -->
-                    <div class="bg-white rounded-xl p-8 shadow-lg sensor-card scroll-animate" style="animation-delay: 0.3s;">
+                    <div class="bg-white rounded-xl p-4 md:p-8 shadow-lg sensor-card scroll-animate"
+                        style="animation-delay: 0.3s;">
                         <div class="feature-icon bg-purple-100">
                             <i class="fas fa-plug text-purple-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-center">Sensor Power Outputs</h3>
-                        <p class="text-gray-600 text-center mb-4">Regulated sensor power outputs: 5 × 12 V (500 mA each) + 3 × 5 V (500 mA each)</p>
-                        <ul class="text-sm text-gray-500 space-y-2">
+                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-center">Sensor Power Outputs</h3>
+                        <p class="text-gray-600 text-center mb-3 md:mb-4 text-sm md:text-base">Regulated sensor power
+                            outputs: 5 × 12 V (500 mA each) + 3 × 5 V (500 mA each)</p>
+                        <ul class="text-xs md:text-sm text-gray-500 space-y-1 md:space-y-2">
                             <li><i class="fas fa-check text-green-500 mr-2"></i>8 total power outputs</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>500mA per channel</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Regulated voltage</li>
                         </ul>
                     </div>
-                    
+
                     <!-- Feature 5 -->
-                    <div class="bg-white rounded-xl p-8 shadow-lg sensor-card scroll-animate" style="animation-delay: 0.4s;">
+                    <div class="bg-white rounded-xl p-4 md:p-8 shadow-lg sensor-card scroll-animate"
+                        style="animation-delay: 0.4s;">
                         <div class="feature-icon bg-red-100">
                             <i class="fas fa-wave-square text-red-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-center">Differential Input Reading</h3>
-                        <p class="text-gray-600 text-center mb-4">Dedicated connectors for each input/output channel</p>
-                        <ul class="text-sm text-gray-500 space-y-2">
+                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-center">Differential Input Reading
+                        </h3>
+                        <p class="text-gray-600 text-center mb-3 md:mb-4 text-sm md:text-base">Dedicated connectors for
+                            each input/output channel</p>
+                        <ul class="text-xs md:text-sm text-gray-500 space-y-1 md:space-y-2">
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Noise cancellation</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>High accuracy signals</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>EMI protection</li>
                         </ul>
                     </div>
-                    
+
                     <!-- Feature 6 -->
-                    <div class="bg-white rounded-xl p-8 shadow-lg sensor-card scroll-animate" style="animation-delay: 0.5s;">
+                    <div class="bg-white rounded-xl p-4 md:p-8 shadow-lg sensor-card scroll-animate"
+                        style="animation-delay: 0.5s;">
                         <div class="feature-icon bg-cyan-100">
                             <i class="fas fa-sync-alt text-cyan-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-center">RS-485 Synchronization</h3>
-                        <p class="text-gray-600 text-center mb-4">RS-485 synchronization for multi-system integration</p>
-                        <ul class="text-sm text-gray-500 space-y-2">
+                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-center">RS-485 Synchronization</h3>
+                        <p class="text-gray-600 text-center mb-3 md:mb-4 text-sm md:text-base">RS-485 synchronization
+                            for multi-system integration</p>
+                        <ul class="text-xs md:text-sm text-gray-500 space-y-1 md:space-y-2">
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Multi-system sync</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Long-distance communication</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Daisy-chain capability</li>
                         </ul>
                     </div>
                 </div>
-
-               
             </div>
         </div>
     </section>
 
-  
-
     <!-- Technical Specifications -->
-    <section id="specs" class="py-20 spec-gradient">
-        <div class="container mx-auto px-4">
+    <section id="specs" class="py-12 md:py-20 spec-gradient section-padding">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 scroll-animate">
-                    <h2 class="text-3xl md:text-3xl font-bold mb-4">Technical Specifications</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Complete technical details of the LABA7 Data Acquisition System</p>
+                <div class="text-center mb-8 md:mb-16 scroll-animate">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Technical Specifications</h2>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Complete technical details of the
+                        LABA7 Data Acquisition System</p>
                     <div class="section-divider"></div>
                 </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 tech-specs-grid">
                     <!-- Column 1 -->
-                    <div class="space-y-8">
+                    <div class="space-y-6 md:space-y-8">
                         <!-- Analog Inputs -->
-                        <div class="bg-white rounded-xl p-6 shadow-md tech-spec scroll-animate">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-signal-in text-blue-600"></i>
+                        <div class="bg-white rounded-xl p-4 md:p-6 shadow-md tech-spec scroll-animate">
+                            <div class="flex items-center mb-3 md:mb-4">
+                                <div
+                                    class="w-8 h-8 md:w-10 md:h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3 md:mr-4">
+                                    <i class="fas fa-signal-in text-blue-600 text-sm md:text-base"></i>
                                 </div>
-                                <h3 class="text-xl font-bold">Analog Inputs</h3>
+                                <h3 class="text-lg md:text-xl font-bold">Analog Inputs</h3>
                             </div>
                             <div class="space-y-2">
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Channels:</span>
-                                    <span class="font-semibold">8 single-ended or 4 differential</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Channels:</span>
+                                    <span class="font-semibold text-sm md:text-base">8 single-ended or 4
+                                        differential</span>
                                 </div>
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Resolution:</span>
-                                    <span class="font-semibold">16 bits</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Resolution:</span>
+                                    <span class="font-semibold text-sm md:text-base">16 bits</span>
                                 </div>
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Input Ranges:</span>
-                                    <span class="font-semibold">±10 V, ±5 V, ±2 V, ±1 V</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Input Ranges:</span>
+                                    <span class="font-semibold text-sm md:text-base">±10 V, ±5 V, ±2 V, ±1 V</span>
                                 </div>
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Max Throughput:</span>
-                                    <span class="font-semibold">125 kS/s (aggregate)</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Max Throughput:</span>
+                                    <span class="font-semibold text-sm md:text-base">125 kS/s (aggregate)</span>
                                 </div>
                                 <div class="flex justify-between py-2">
-                                    <span class="text-gray-600">Input Impedance:</span>
-                                    <span class="font-semibold">>1 MΩ</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Input Impedance:</span>
+                                    <span class="font-semibold text-sm md:text-base">>1 MΩ</span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Analog Outputs -->
-                        <div class="bg-white rounded-xl p-6 shadow-md tech-spec scroll-animate" style="animation-delay: 0.1s;">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-signal-out text-green-600"></i>
+                        <div class="bg-white rounded-xl p-4 md:p-6 shadow-md tech-spec scroll-animate"
+                            style="animation-delay: 0.1s;">
+                            <div class="flex items-center mb-3 md:mb-4">
+                                <div
+                                    class="w-8 h-8 md:w-10 md:h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3 md:mr-4">
+                                    <i class="fas fa-signal-out text-green-600 text-sm md:text-base"></i>
                                 </div>
-                                <h3 class="text-xl font-bold">Analog Outputs</h3>
+                                <h3 class="text-lg md:text-xl font-bold">Analog Outputs</h3>
                             </div>
                             <div class="space-y-2">
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Channels:</span>
-                                    <span class="font-semibold">2</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Channels:</span>
+                                    <span class="font-semibold text-sm md:text-base">2</span>
                                 </div>
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Resolution:</span>
-                                    <span class="font-semibold">16 bits</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Resolution:</span>
+                                    <span class="font-semibold text-sm md:text-base">16 bits</span>
                                 </div>
                                 <div class="flex justify-between py-2">
-                                    <span class="text-gray-600">Output Range:</span>
-                                    <span class="font-semibold">0-5 V</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Output Range:</span>
+                                    <span class="font-semibold text-sm md:text-base">0-5 V</span>
                                 </div>
                                 <div class="flex justify-between py-2">
-                                    <span class="text-gray-600">Update Rate:</span>
-                                    <span class="font-semibold">500 kS/s per channel</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Update Rate:</span>
+                                    <span class="font-semibold text-sm md:text-base">500 kS/s per channel</span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Counter -->
-                        <div class="bg-white rounded-xl p-6 shadow-md tech-spec scroll-animate" style="animation-delay: 0.2s;">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-calculator text-purple-600"></i>
+                        <div class="bg-white rounded-xl p-4 md:p-6 shadow-md tech-spec scroll-animate"
+                            style="animation-delay: 0.2s;">
+                            <div class="flex items-center mb-3 md:mb-4">
+                                <div
+                                    class="w-8 h-8 md:w-10 md:h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3 md:mr-4">
+                                    <i class="fas fa-calculator text-purple-600 text-sm md:text-base"></i>
                                 </div>
-                                <h3 class="text-xl font-bold">Counter</h3>
+                                <h3 class="text-lg md:text-xl font-bold">Counter</h3>
                             </div>
                             <div class="space-y-2">
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Channels:</span>
-                                    <span class="font-semibold">1, 32-bit resolution</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Channels:</span>
+                                    <span class="font-semibold text-sm md:text-base">1, 32-bit resolution</span>
                                 </div>
                                 <div class="flex justify-between py-2">
-                                    <span class="text-gray-600">Input Frequency:</span>
-                                    <span class="font-semibold">up to 10 MHz (TTL-level)</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Input Frequency:</span>
+                                    <span class="font-semibold text-sm md:text-base">up to 10 MHz (TTL-level)</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Column 2 -->
-                    <div class="space-y-8">
+                    <div class="space-y-6 md:space-y-8">
                         <!-- Digital I/O -->
-                        <div class="bg-white rounded-xl p-6 shadow-md tech-spec scroll-animate" style="animation-delay: 0.3s;">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-exchange-alt text-orange-600"></i>
+                        <div class="bg-white rounded-xl p-4 md:p-6 shadow-md tech-spec scroll-animate"
+                            style="animation-delay: 0.3s;">
+                            <div class="flex items-center mb-3 md:mb-4">
+                                <div
+                                    class="w-8 h-8 md:w-10 md:h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3 md:mr-4">
+                                    <i class="fas fa-exchange-alt text-orange-600 text-sm md:text-base"></i>
                                 </div>
-                                <h3 class="text-xl font-bold">Digital I/O</h3>
+                                <h3 class="text-lg md:text-xl font-bold">Digital I/O</h3>
                             </div>
                             <div class="space-y-2">
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Channels:</span>
-                                    <span class="font-semibold">8 bidirectional</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Channels:</span>
+                                    <span class="font-semibold text-sm md:text-base">8 bidirectional</span>
                                 </div>
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Logic Levels:</span>
-                                    <span class="font-semibold">3.3 V / 5 V compatible</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Logic Levels:</span>
+                                    <span class="font-semibold text-sm md:text-base">3.3 V / 5 V compatible</span>
                                 </div>
                                 <div class="flex justify-between py-2">
-                                    <span class="text-gray-600">Configuration:</span>
-                                    <span class="font-semibold">Individually configurable</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Configuration:</span>
+                                    <span class="font-semibold text-sm md:text-base">Individually configurable</span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Triggering & Synchronization -->
-                        <div class="bg-white rounded-xl p-6 shadow-md tech-spec scroll-animate" style="animation-delay: 0.4s;">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-clock text-red-600"></i>
+                        <div class="bg-white rounded-xl p-4 md:p-6 shadow-md tech-spec scroll-animate"
+                            style="animation-delay: 0.4s;">
+                            <div class="flex items-center mb-3 md:mb-4">
+                                <div
+                                    class="w-8 h-8 md:w-10 md:h-10 bg-red-100 rounded-lg flex items-center justify-center mr-3 md:mr-4">
+                                    <i class="fas fa-clock text-red-600 text-sm md:text-base"></i>
                                 </div>
-                                <h3 class="text-xl font-bold">Triggering & Synchronization</h3>
+                                <h3 class="text-lg md:text-xl font-bold">Triggering & Synchronization</h3>
                             </div>
                             <div class="space-y-2">
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">External Trigger Input:</span>
-                                    <span class="font-semibold">Differential (RS485)</span>
+                                    <span class="text-gray-600 text-sm md:text-base">External Trigger Input:</span>
+                                    <span class="font-semibold text-sm md:text-base">Differential (RS485)</span>
                                 </div>
                                 <div class="flex justify-between py-2">
-                                    <span class="text-gray-600">External Clock I/O:</span>
-                                    <span class="font-semibold">TTL compatible</span>
+                                    <span class="text-gray-600 text-sm md:text-base">External Clock I/O:</span>
+                                    <span class="font-semibold text-sm md:text-base">TTL compatible</span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Communication -->
-                        <div class="bg-white rounded-xl p-6 shadow-md tech-spec scroll-animate" style="animation-delay: 0.5s;">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-network-wired text-cyan-600"></i>
+                        <div class="bg-white rounded-xl p-4 md:p-6 shadow-md tech-spec scroll-animate"
+                            style="animation-delay: 0.5s;">
+                            <div class="flex items-center mb-3 md:mb-4">
+                                <div
+                                    class="w-8 h-8 md:w-10 md:h-10 bg-cyan-100 rounded-lg flex items-center justify-center mr-3 md:mr-4">
+                                    <i class="fas fa-network-wired text-cyan-600 text-sm md:text-base"></i>
                                 </div>
-                                <h3 class="text-xl font-bold">Communication</h3>
+                                <h3 class="text-lg md:text-xl font-bold">Communication</h3>
                             </div>
                             <div class="space-y-2">
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Interface:</span>
-                                    <span class="font-semibold">Ethernet 10/100BASE-T</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Interface:</span>
+                                    <span class="font-semibold text-sm md:text-base">Ethernet 10/100BASE-T</span>
                                 </div>
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Protocols:</span>
-                                    <span class="font-semibold">TCP/IP & UDP</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Protocols:</span>
+                                    <span class="font-semibold text-sm md:text-base">TCP/IP & UDP</span>
                                 </div>
                                 <div class="flex justify-between py-2">
-                                    <span class="text-gray-600">Software Compatibility:</span>
-                                    <span class="font-semibold">Fully compatible with LABA7 software</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Software Compatibility:</span>
+                                    <span class="font-semibold text-sm md:text-base">Fully compatible with LABA7
+                                        software</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Column 3 -->
-                    <div class="space-y-8">
+                    <div class="space-y-6 md:space-y-8">
                         <!-- Sensor Power Outputs -->
-                        <div class="bg-white rounded-xl p-6 shadow-md tech-spec scroll-animate" style="animation-delay: 0.6s;">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-plug text-amber-600"></i>
+                        <div class="bg-white rounded-xl p-4 md:p-6 shadow-md tech-spec scroll-animate"
+                            style="animation-delay: 0.6s;">
+                            <div class="flex items-center mb-3 md:mb-4">
+                                <div
+                                    class="w-8 h-8 md:w-10 md:h-10 bg-amber-100 rounded-lg flex items-center justify-center mr-3 md:mr-4">
+                                    <i class="fas fa-plug text-amber-600 text-sm md:text-base"></i>
                                 </div>
-                                <h3 class="text-xl font-bold">Sensor Power Outputs</h3>
+                                <h3 class="text-lg md:text-xl font-bold">Sensor Power Outputs</h3>
                             </div>
                             <div class="space-y-2">
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">12 V Outputs:</span>
-                                    <span class="font-semibold">5 × 12 V regulated (500 mA each)</span>
+                                    <span class="text-gray-600 text-sm md:text-base">12 V Outputs:</span>
+                                    <span class="font-semibold text-sm md:text-base">5 × 12 V regulated (500 mA
+                                        each)</span>
                                 </div>
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">5 V Outputs:</span>
-                                    <span class="font-semibold">3 × 5 V regulated (500 mA each)</span>
+                                    <span class="text-gray-600 text-sm md:text-base">5 V Outputs:</span>
+                                    <span class="font-semibold text-sm md:text-base">3 × 5 V regulated (500 mA
+                                        each)</span>
                                 </div>
                                 <div class="flex justify-between py-2">
-                                    <span class="text-gray-600">Protection:</span>
-                                    <span class="font-semibold">500 mA PTC fuse per channel</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Protection:</span>
+                                    <span class="font-semibold text-sm md:text-base">500 mA PTC fuse per channel</span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Power Supply -->
-                        <div class="bg-white rounded-xl p-6 shadow-md tech-spec scroll-animate" style="animation-delay: 0.7s;">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-lime-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-bolt text-lime-600"></i>
+                        <div class="bg-white rounded-xl p-4 md:p-6 shadow-md tech-spec scroll-animate"
+                            style="animation-delay: 0.7s;">
+                            <div class="flex items-center mb-3 md:mb-4">
+                                <div
+                                    class="w-8 h-8 md:w-10 md:h-10 bg-lime-100 rounded-lg flex items-center justify-center mr-3 md:mr-4">
+                                    <i class="fas fa-bolt text-lime-600 text-sm md:text-base"></i>
                                 </div>
-                                <h3 class="text-xl font-bold">Power Supply</h3>
+                                <h3 class="text-lg md:text-xl font-bold">Power Supply</h3>
                             </div>
                             <div class="space-y-2">
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Integrated AC/DC:</span>
-                                    <span class="font-semibold">45 W, 12 V output</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Integrated AC/DC:</span>
+                                    <span class="font-semibold text-sm md:text-base">45 W, 12 V output</span>
                                 </div>
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Input Voltage:</span>
-                                    <span class="font-semibold">85–264 VAC, 47–63 Hz</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Input Voltage:</span>
+                                    <span class="font-semibold text-sm md:text-base">85–264 VAC, 47–63 Hz</span>
                                 </div>
                                 <div class="flex justify-between py-2">
-                                    <span class="text-gray-600">DC Option:</span>
-                                    <span class="font-semibold">8–16 V external supply</span>
+                                    <span class="text-gray-600 text-sm md:text-base">DC Option:</span>
+                                    <span class="font-semibold text-sm md:text-base">8–16 V external supply</span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- General -->
-                        <div class="bg-white rounded-xl p-6 shadow-md tech-spec scroll-animate" style="animation-delay: 0.8s;">
-                            <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-info-circle text-gray-600"></i>
+                        <div class="bg-white rounded-xl p-4 md:p-6 shadow-md tech-spec scroll-animate"
+                            style="animation-delay: 0.8s;">
+                            <div class="flex items-center mb-3 md:mb-4">
+                                <div
+                                    class="w-8 h-8 md:w-10 md:h-10 bg-gray-100 rounded-lg flex items-center justify-center mr-3 md:mr-4">
+                                    <i class="fas fa-info-circle text-gray-600 text-sm md:text-base"></i>
                                 </div>
-                                <h3 class="text-xl font-bold">General</h3>
+                                <h3 class="text-lg md:text-xl font-bold">General</h3>
                             </div>
                             <div class="space-y-2">
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Dimensions:</span>
-                                    <span class="font-semibold">191 × 161 × 66 mm</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Dimensions:</span>
+                                    <span class="font-semibold text-sm md:text-base">191 × 161 × 66 mm</span>
                                 </div>
                                 <div class="flex justify-between py-2 border-b border-gray-100">
-                                    <span class="text-gray-600">Weight:</span>
-                                    <span class="font-semibold">~500 g</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Weight:</span>
+                                    <span class="font-semibold text-sm md:text-base">~500 g</span>
                                 </div>
                                 <div class="flex justify-between py-2">
-                                    <span class="text-gray-600">Operating Temp:</span>
-                                    <span class="font-semibold">0 °C to +30 °C</span>
+                                    <span class="text-gray-600 text-sm md:text-base">Operating Temp:</span>
+                                    <span class="font-semibold text-sm md:text-base">0 °C to +30 °C</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-               
             </div>
         </div>
     </section>
 
     <!-- Why Use Section -->
-    <section id="benefits" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
+    <section id="benefits" class="py-12 md:py-20 bg-white section-padding">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 scroll-animate">
-                    <h2 class="text-3xl md:text-3xl font-bold mb-4">Why Use the AP Measurement's <span class="text-blue-600">Data Acquisition System?</span> </h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                       Standard dynos capture force vs. displacement, but damper development requires more insight. The Ap Measurement External DAQ System expands your testing by synchronizing additional signals, such as:
+                <div class="text-center mb-8 md:mb-16 scroll-animate">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Why Use the LABA7's <span class="text-blue-600">Data
+                            Acquisition System?</span> </h2>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                        Standard dynos capture force vs. displacement, but damper development requires more insight. The
+                        Ap Measurement External DAQ System expands your testing by synchronizing additional signals,
+                        such as:
                     </p>
                     <div class="section-divider"></div>
                 </div>
-                
-                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-8 md:mb-16">
                     <div class="scroll-animate">
-                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl">
-                            <h3 class="text-2xl font-bold mb-6">Expand Your Testing Capabilities</h3>
-                            <p class="text-gray-700 mb-6">
-                                The AP Measurements External DAQ System expands your testing by synchronizing additional signals, providing a complete dynamic profile of damper performance under real-world conditions.
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 md:p-8 rounded-xl md:rounded-2xl">
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6">Expand Your Testing Capabilities</h3>
+                            <p class="text-gray-700 mb-4 md:mb-6">
+                                The AP Measurements External DAQ System expands your testing by synchronizing additional
+                                signals, providing a complete dynamic profile of damper performance under real-world
+                                conditions.
                             </p>
-                            <div class="bg-white p-6 rounded-xl border border-blue-200">
-                                <p class="text-gray-800 font-medium">
+                            <div class="bg-white p-4 md:p-6 rounded-xl border border-blue-200">
+                                <p class="text-gray-800 font-medium text-sm md:text-base">
                                     <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                    Data from all sensors is aggregated and consolidated within the AP Measurements software. It’s aligned in time with force, displacement, and other “native” curves to create a full dynamic profile of damper performance under real-world conditions.
+                                    Data from all sensors is aggregated and consolidated within the AP Measurements
+                                    software. It's aligned in time with force, displacement, and other "native" curves
+                                    to create a full dynamic profile of damper performance under real-world conditions.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="scroll-animate" style="animation-delay: 0.2s;">
-                        <div class="bg-gradient-to-br from-gray-100 to-gray-200 p-8 rounded-2xl">
-                           <img src="../assets/LABA7-Data-Aquisition-System-Back-980x980.webp" alt="">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Sensor Types -->
-                <div class="scroll-animate" style="animation-delay: 0.4s;">
-                    <h3 class="text-2xl font-bold mb-8 text-center">Connect Any Sensor Type</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                        <div class="bg-gray-50 p-6 rounded-xl text-center sensor-card">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-vibration text-blue-600"></i>
-                            </div>
-                            <h4 class="font-bold mb-2">Accelerometers</h4>
-                            <p class="text-sm text-gray-600">Accelerometers for vibration analysis on a damper housing or test rig</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 p-6 rounded-xl text-center sensor-card">
-                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-tachometer-alt text-green-600"></i>
-                            </div>
-                            <h4 class="font-bold mb-2">Pressure Sensors</h4>
-                            <p class="text-sm text-gray-600">Pressure sensors for real-time oil chamber pressure for flow studies</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 p-6 rounded-xl text-center sensor-card">
-                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-magnet text-purple-600"></i>
-                            </div>
-                            <h4 class="font-bold mb-2">Hall-effect Sensors</h4>
-                            <p class="text-sm text-gray-600">Hall-effect sensors for piston position and shaft speed tracking</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 p-6 rounded-xl text-center sensor-card">
-                            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-ruler-combined text-red-600"></i>
-                            </div>
-                            <h4 class="font-bold mb-2">LVDTs / Potentiometers</h4>
-                            <p class="text-sm text-gray-600">LVDTs / potentiometers for precise displacement and stroke measurement</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 p-6 rounded-xl text-center sensor-card">
-                            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-thermometer-half text-amber-600"></i>
-                            </div>
-                            <h4 class="font-bold mb-2">Temperature Sensors</h4>
-                            <p class="text-sm text-gray-600">Temperature sensors to track oil and component heat for fade and viscosity analysis</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 p-6 rounded-xl text-center sensor-card">
-                            <div class="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-volume-up text-cyan-600"></i>
-                            </div>
-                            <h4 class="font-bold mb-2">Noise Sensors</h4>
-                            <p class="text-sm text-gray-600">Noise sensors for NVH testing</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 p-6 rounded-xl text-center sensor-card">
-                            <div class="w-12 h-12 bg-lime-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-wave-square text-lime-600"></i>
-                            </div>
-                            <h4 class="font-bold mb-2">Strain Gauges</h4>
-                            <p class="text-sm text-gray-600">Structural stress and load measurement</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 p-6 rounded-xl text-center sensor-card">
-                            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-plus-circle text-pink-600"></i>
-                            </div>
-                            <h4 class="font-bold mb-2">And Any Other Sensor</h4>
-                            <p class="text-sm text-gray-600">And any other sensor</p>
+                        <div class="bg-gradient-to-br from-gray-100 to-gray-200 p-6 md:p-8 rounded-xl md:rounded-2xl">
+                            <img src="../assets/LABA7-Data-Aquisition-System-Back-980x980.webp"
+                                alt="Data Acquisition System Back"
+                                class="rounded-xl md:rounded-2xl w-full h-auto responsive-image" loading="lazy">
                         </div>
                     </div>
                 </div>
 
-               
+                <!-- Sensor Types -->
+                <div class="scroll-animate" style="animation-delay: 0.4s;">
+                    <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-center">Connect Any Sensor Type</h3>
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 sensor-types-grid">
+                        <div class="bg-gray-50 p-4 md:p-6 rounded-xl text-center sensor-card">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                                <i class="fas fa-vibration text-blue-600"></i>
+                            </div>
+                            <h4 class="font-bold mb-2 text-sm md:text-base">Accelerometers</h4>
+                            <p class="text-xs md:text-sm text-gray-600">Accelerometers for vibration analysis on a
+                                damper housing or test rig</p>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 md:p-6 rounded-xl text-center sensor-card">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                                <i class="fas fa-tachometer-alt text-green-600"></i>
+                            </div>
+                            <h4 class="font-bold mb-2 text-sm md:text-base">Pressure Sensors</h4>
+                            <p class="text-xs md:text-sm text-gray-600">Pressure sensors for real-time oil chamber
+                                pressure for flow studies</p>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 md:p-6 rounded-xl text-center sensor-card">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                                <i class="fas fa-magnet text-purple-600"></i>
+                            </div>
+                            <h4 class="font-bold mb-2 text-sm md:text-base">Hall-effect Sensors</h4>
+                            <p class="text-xs md:text-sm text-gray-600">Hall-effect sensors for piston position and
+                                shaft speed tracking</p>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 md:p-6 rounded-xl text-center sensor-card">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                                <i class="fas fa-ruler-combined text-red-600"></i>
+                            </div>
+                            <h4 class="font-bold mb-2 text-sm md:text-base">LVDTs / Potentiometers</h4>
+                            <p class="text-xs md:text-sm text-gray-600">LVDTs / potentiometers for precise displacement
+                                and stroke measurement</p>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 md:p-6 rounded-xl text-center sensor-card">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                                <i class="fas fa-thermometer-half text-amber-600"></i>
+                            </div>
+                            <h4 class="font-bold mb-2 text-sm md:text-base">Temperature Sensors</h4>
+                            <p class="text-xs md:text-sm text-gray-600">Temperature sensors to track oil and component
+                                heat for fade and viscosity analysis</p>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 md:p-6 rounded-xl text-center sensor-card">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                                <i class="fas fa-volume-up text-cyan-600"></i>
+                            </div>
+                            <h4 class="font-bold mb-2 text-sm md:text-base">Noise Sensors</h4>
+                            <p class="text-xs md:text-sm text-gray-600">Noise sensors for NVH testing</p>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 md:p-6 rounded-xl text-center sensor-card">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-lime-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                                <i class="fas fa-wave-square text-lime-600"></i>
+                            </div>
+                            <h4 class="font-bold mb-2 text-sm md:text-base">Strain Gauges</h4>
+                            <p class="text-xs md:text-sm text-gray-600">Structural stress and load measurement</p>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 md:p-6 rounded-xl text-center sensor-card">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                                <i class="fas fa-plus-circle text-pink-600"></i>
+                            </div>
+                            <h4 class="font-bold mb-2 text-sm md:text-base">And Any Other Sensor</h4>
+                            <p class="text-xs md:text-sm text-gray-600">And any other sensor</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Ecosystem Integration -->
-    <section id="ecosystem" class="py-20 feature-gradient">
-        <div class="container mx-auto px-4">
+    <section id="ecosystem" class="py-12 md:py-20 feature-gradient section-padding">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 scroll-animate">
-                    <h2 class="text-3xl md:text-3xl font-bold mb-4">Ecosystem Integration</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Seamlessly integrated with the complete AP measurements testing ecosystem</p>
+                <div class="text-center mb-8 md:mb-16 scroll-animate">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Ecosystem Integration</h2>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Seamlessly integrated with the
+                        complete AP measurements testing ecosystem</p>
                     <div class="section-divider"></div>
                 </div>
-                
-               <div class="scroll-animate" style="animation-delay: 0.4s;">
-                   
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
-                        <div class="bg-gray-50 p-6 rounded-xl text-center sensor-card">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+
+                <div class="scroll-animate" style="animation-delay: 0.4s;">
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
+                        <div class="bg-gray-50 p-4 md:p-6 rounded-xl text-center sensor-card">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
                                 <i class="fas fa-angle-double-right text-blue-600"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Scotch-Yock Shock Dyno</h4>
-                            <p class="text-sm text-gray-600">Works with all AP Measurements Scotch-Yoke Shock Dynos: Featherlight, Light, Mid, Heavy, Super Heavy</p>
+                            <h4 class="font-bold mb-2 text-sm md:text-base">Scotch-Yock Shock Dyno</h4>
+                            <p class="text-xs md:text-sm text-gray-600">Works with all LABA7 Scotch-Yoke Shock Dynos:
+                                Featherlight, Light, Mid, Heavy, Super Heavy</p>
                         </div>
-                        
-                        <div class="bg-gray-50 p-6 rounded-xl text-center sensor-card">
-                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+
+                        <div class="bg-gray-50 p-4 md:p-6 rounded-xl text-center sensor-card">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
                                 <i class="fas fa-tachometer-alt text-green-600"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Electromagnetic Damper</h4>
-                            <p class="text-sm text-gray-600">Fully compatible with the AP Measurement EMA Electromagnetic Damper Test System</p>
+                            <h4 class="font-bold mb-2 text-sm md:text-base">Electromagnetic Damper</h4>
+                            <p class="text-xs md:text-sm text-gray-600">Fully compatible with the AP Measurement EMA
+                                Electromagnetic Damper Test System</p>
                         </div>
-                        
-                        <div class="bg-gray-50 p-6 rounded-xl text-center sensor-card">
-                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+
+                        <div class="bg-gray-50 p-4 md:p-6 rounded-xl text-center sensor-card">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
                                 <i class="fas fa-magnet text-purple-600"></i>
                             </div>
-                            <h4 class="font-bold mb-2">EMA rigs</h4>
-                            <p class="text-sm text-gray-600">From compact dynos to high-power EMA rigs, every sensor channel is synchronized in the same LABA7 software environment</p>
+                            <h4 class="font-bold mb-2 text-sm md:text-base">EMA rigs</h4>
+                            <p class="text-xs md:text-sm text-gray-600">From compact dynos to high-power EMA rigs, every
+                                sensor channel is synchronized in the same LABA7 software environment</p>
                         </div>
-                        
-                        <div class="bg-gray-50 p-6 rounded-xl text-center sensor-card">
-                            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+
+                        <div class="bg-gray-50 p-4 md:p-6 rounded-xl text-center sensor-card">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
                                 <i class="fas fa-ruler-combined text-red-600"></i>
                             </div>
-                            <h4 class="font-bold mb-2">DAQ Systems</h4>
-                            <p class="text-sm text-gray-600">Multiple DAQ Systems can be connected to scale your setup to an unlimited, lab-grade test system</p>
+                            <h4 class="font-bold mb-2 text-sm md:text-base">DAQ Systems</h4>
+                            <p class="text-xs md:text-sm text-gray-600">Multiple DAQ Systems can be connected to scale
+                                your setup to an unlimited, lab-grade test system</p>
                         </div>
                     </div>
                 </div>
-                
-               
 
                 <!-- Software Integration -->
-                <div class="mt-16 scroll-animate" style="animation-delay: 0.6s;">
-                    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-8 rounded-2xl">
-                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="mt-8 md:mt-16 scroll-animate" style="animation-delay: 0.6s;">
+                    <div
+                        class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 md:p-8 rounded-xl md:rounded-2xl">
+                        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                             <div>
-                                <h3 class="text-2xl font-bold mb-8">Who Benefits Most from the Damper Data Acquisition System?</h3>
-                                
+                                <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Who Benefits Most from the Damper
+                                    Data Acquisition System?</h3>
+
                                 <ul class="space-y-3">
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check-circle text-green-300 mr-3"></i>
-                                        <span>OEM engineers can validate prototypes with multi-sensor correlation</span>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-300 mr-3 mt-1"></i>
+                                        <span class="text-sm md:text-base">OEM engineers can validate prototypes with
+                                            multi-sensor correlation</span>
                                     </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check-circle text-green-300 mr-3"></i>
-                                        <span>Motorsport teams can advance tuning and setup optimization with expanded sensor data</span>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-300 mr-3 mt-1"></i>
+                                        <span class="text-sm md:text-base">Motorsport teams can advance tuning and setup
+                                            optimization with expanded sensor data</span>
                                     </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check-circle text-green-300 mr-3"></i>
-                                        <span>Damper manufacturers can develop shock absorbers with deeper insights into internal dynamics</span>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-300 mr-3 mt-1"></i>
+                                        <span class="text-sm md:text-base">Damper manufacturers can develop shock
+                                            absorbers with deeper insights into internal dynamics</span>
                                     </li>
                                 </ul>
                             </div>
                             <div class="text-center">
-                                <img src="../assets/LABA7-DAQ-System-2-980x735.webp" alt="" class="rounded-xl shadow-lg border-orange-500">
+                                <img src="../assets/LABA7-DAQ-System-2-980x735.webp" alt="DAQ System Integration"
+                                    class="rounded-xl shadow-lg border border-orange-500 responsive-image"
+                                    loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -978,39 +1499,62 @@
         </div>
     </section>
 
- 
-
     <!-- Footer -->
-   <div data-include="/Footer/footer.html"></div>
+    <div data-include="/Footer/footer.html"></div>
 
     <!-- JavaScript -->
     <script>
+        // Mobile menu functionality
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (closeMobileMenuBtn) {
+            closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+        }
+
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        }
+
         // Scroll animations
         function animateOnScroll() {
             const elements = document.querySelectorAll('.scroll-animate');
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const elementVisible = 150;
-                
+
                 if (elementTop < window.innerHeight - elementVisible) {
                     element.classList.add('visible');
                 }
             });
         }
-        
+
         // Initialize scroll animations
         window.addEventListener('scroll', animateOnScroll);
         document.addEventListener('DOMContentLoaded', animateOnScroll);
-        
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
+                if (targetId === '#') return;
+
                 const targetElement = document.querySelector(targetId);
-                if(targetElement) {
+                if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -1020,56 +1564,85 @@
                 }
             });
         });
-        
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
-        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        function openMobileMenu() {
-            mobileMenu.classList.add('active');
-            mobileMenuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('active');
-            mobileMenuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        
-        if(mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', openMobileMenu);
-        }
-        
-        if(closeMobileMenuBtn) {
-            closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
-        }
-        
-        if(mobileMenuOverlay) {
-            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-        }
-        
+
         // Add pulse animation to call-to-action buttons on hover
         document.querySelectorAll('.pulse-animation').forEach(button => {
-            button.addEventListener('mouseenter', function() {
+            button.addEventListener('mouseenter', function () {
                 this.classList.add('pulse-animation');
             });
-            button.addEventListener('mouseleave', function() {
+            button.addEventListener('mouseleave', function () {
                 this.classList.remove('pulse-animation');
             });
         });
 
         // Handle button clicks
         document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                if(this.textContent.includes('Add to Quote')) {
+            button.addEventListener('click', function (e) {
+                if (this.textContent.includes('Add to Quote')) {
                     e.preventDefault();
                     alert('Quote request added! Our sales team will contact you shortly.');
                 }
             });
         });
+
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                        }
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '50px 0px',
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                // Close mobile menu when switching to desktop
+                if (window.innerWidth >= 768 && mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            }, 250);
+        });
+
+        // Touch support for mobile
+        document.addEventListener('touchstart', function () { }, { passive: true });
+
+        // Prevent horizontal scroll on mobile
+        document.addEventListener('touchmove', function (e) {
+            if (e.target.type === 'range' || e.target.classList.contains('no-touch-scroll')) {
+                return;
+            }
+            e.preventDefault();
+        }, { passive: false });
+
+        // Add loading state for images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function () {
+                this.classList.add('loaded');
+            });
+
+            img.addEventListener('error', function () {
+                console.error('Failed to load image:', this.src);
+                this.style.display = 'none';
+            });
+        });
     </script>
 </body>
+
 </html>

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
-<link rel="manifest" href="/favicon_io/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
     <title>Impact Hammers</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../include.js"></script>
@@ -17,10 +17,40 @@
     <link rel="stylesheet" href="../Header/header.css">
     <link rel="stylesheet" href="../Footer/footer.css">
 
-     <style>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
         
+        body {
+            background-color: #F9F8F6;
+            color: #374151;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
         
-        /* Animated orange square boxes */
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+
+        /* Product Container Styling */
+        .product-container {
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .product-container:last-child {
+            margin-bottom: 60px;
+        }
+
+        /* Animated Background Boxes */
         .background-boxes {
             position: fixed;
             top: 0;
@@ -33,7 +63,7 @@
         
         .box {
             position: absolute;
-            border: 2px solid rgba(209, 98, 8, 0.511); /* Orange-500 with transparency */
+            border: 2px solid rgba(209, 98, 8, 0.511);
             border-radius: 4px;
             pointer-events: none;
         }
@@ -68,7 +98,7 @@
             0%, 100% { opacity: 0.1; }
             50% { opacity: 0.4; }
         }
-        
+
         /* Custom animations for content */
         .fade-in {
             animation: fadeIn 1s ease-out forwards;
@@ -85,10 +115,10 @@
             opacity: 0;
         }
 
-      .slide-right {
-    animation: slideRight 1s ease-out forwards;
-    opacity: 0;
-}
+        .slide-right {
+            animation: slideRight 1s ease-out forwards;
+            opacity: 0;
+        }
 
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -127,7 +157,62 @@
                 transform: translateX(0);
             }
         }
-        
+
+        /* Typewriter effect with cursor */
+        .typewriter-container {
+            overflow: hidden;
+            white-space: normal;
+            text-align: center;
+            width: 100%;
+        }
+
+        .typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3.5s steps(40, end) forwards,
+                       blink-caret 0.75s step-end infinite;
+            animation-delay: 0.5s;
+            border-right: 3px solid #111827;
+            white-space: nowrap;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #111827; }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .product-container {
+                margin-bottom: 60px;
+            }
+            
+            .box {
+                display: none; /* Hide animated boxes on mobile for performance */
+            }
+            
+            .background-boxes {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-container {
+                margin-bottom: 40px;
+            }
+        }
+
         /* Feature dropdown animation */
         .lawyer-feature-content {
             max-height: 0;
@@ -146,11 +231,6 @@
 
         .lawyer-feature-arrow.open {
             transform: rotate(180deg);
-        }
-        
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
         }
         
         /* Adjust text colors for dark background */
@@ -199,70 +279,208 @@
         .shadow-md {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
         }
+
+        /* Responsive hero section */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 500px !important;
+            }
+            
+            .hero-text {
+                padding: 0 15px !important;
+            }
+            
+            .hero-text h2 {
+                font-size: 2rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .hero-text p {
+                font-size: 1rem !important;
+                line-height: 1.5 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                height: 400px !important;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.75rem !important;
+                padding: 15px !important;
+            }
+            
+            .hero-text p {
+                font-size: 0.9rem !important;
+            }
+        }
+
+        /* Responsive product grid */
+        @media (max-width: 768px) {
+            .product-grid {
+                gap: 40px !important;
+            }
+            
+            .product-info {
+                padding: 15px !important;
+                margin-left: 0 !important;
+            }
+            
+            .specs-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px !important;
+            }
+            
+            .specs-grid div {
+                padding: 15px !important;
+            }
+            
+            .action-buttons {
+                flex-direction: column !important;
+                gap: 12px !important;
+            }
+            
+            .action-buttons a,
+            .action-buttons button {
+                width: 100% !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .specs-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .product-container {
+                padding: 0 10px !important;
+            }
+        }
+
+        /* Responsive image containers */
+        @media (max-width: 768px) {
+            .image-container {
+                max-width: 100% !important;
+                margin: 0 auto 30px !important;
+            }
+            
+            .image-container img {
+                height: 250px !important;
+            }
+            
+            .hover-overlay {
+                position: relative !important;
+                opacity: 1 !important;
+                background: rgba(161, 141, 109, 0.9) !important;
+                padding: 20px !important;
+                margin-top: 20px !important;
+                border-radius: 10px !important;
+            }
+            
+            .hover-overlay h4 {
+                font-size: 1.25rem !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .tech-specs {
+                max-height: 200px !important;
+                overflow-y: auto !important;
+            }
+        }
+
+        /* Responsive typography */
+        @media (max-width: 768px) {
+            h2.text-4xl {
+                font-size: 2rem !important;
+                margin-bottom: 2rem !important;
+            }
+            
+            h3.text-xl {
+                font-size: 1.25rem !important;
+            }
+            
+            .text-md {
+                font-size: 0.95rem !important;
+            }
+        }
+
+        /* Touch-friendly buttons */
+        @media (max-width: 768px) {
+            button, a[role="button"] {
+                min-height: 44px !important;
+                padding: 12px 20px !important;
+                font-size: 1rem !important;
+            }
+        }
+
+        /* Prevent horizontal overflow */
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden !important;
+            }
+            
+            .container, section {
+                max-width: 100% !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+        }
+
+        /* Improved mobile navigation */
+        @media (max-width: 768px) {
+            main {
+                margin-top: 20px !important;
+            }
+        }
+
+        /* Loading state */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #f97316;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .background-boxes {
+                display: none !important;
+            }
+            
+            .product-container {
+                break-inside: avoid;
+                margin-bottom: 30px;
+            }
+        }
     </style>
 
     <!-- Link to products data -->
     <script src="products-data.js"></script>
-    
-    <style>
-        /* Typewriter effect with cursor */
-        .typewriter-container {
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .typewriter-text {
-            display: inline-block;
-            overflow: hidden;
-            width: 0;
-            animation: typing 3.5s steps(40, end) forwards,
-                       blink-caret 0.75s step-end infinite;
-            animation-delay: 0.5s;
-            border-right: 3px solid #111827;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #111827; }
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        body {
-            background-color: #F9F8F6;
-            color: #374151;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 20px; 
-        }
-
-        /* Product Container Styling */
-        .product-container {
-            margin-bottom: 120px;
-            position: relative;
-        }
-        
-        .product-container:last-child {
-            margin-bottom: 60px;
-        }
-    </style>
 </head>
-<body class="min-h-screen bg-[#EFE9E3]">
+<body class="min-h-screen bg-[#EFE9E3] pt-16 md:pt-20">
 
     <!-- Animated Background Boxes -->
     <div class="background-boxes">
@@ -278,36 +496,46 @@
         <div class="box box-9" style="width: 130px; height: 130px; bottom: 40%; left: 30%; animation: float4 32s infinite ease-in-out, pulse 14s infinite 0.3s;"></div>
         <div class="box box-10" style="width: 85px; height: 85px; top: 70%; right: 15%; animation: float5 26s infinite ease-in-out, pulse 15s infinite 1.8s;"></div>
     </div>
+    
     <div data-include="/Header/header.html"></div>
 
-    <section class="relative h-[700px] overflow-hidden">
+    <!-- Hero Section -->
+    <section class="relative hero-section h-[500px] md:h-[700px] overflow-hidden">
         <!-- Typewriter Text -->
-        <div class="absolute inset-0 z-20 flex items-center justify-center">
-            <div class="text-center px-4">
+        <div class="absolute inset-0 z-20 flex items-center justify-center px-4">
+            <div class="text-center hero-text w-full max-w-6xl px-4 md:px-8">
                 <div class="relative">
-                    <h2 class="text-4xl md:text-5xl font-bold text-orange-600 mb-16 
-                               px-8 py-6 rounded-xl  
-                               shadow-xl inline-block typewriter-container">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-orange-600 mb-8 md:mb-16 
+                               px-6 md:px-8 py-4 md:py-6 rounded-xl  
+                               shadow-xl inline-block typewriter-container bg-white/90 backdrop-blur-sm">
                         <span class="typewriter-text">Our Impact Hammers</span>
                     </h2>
-                    <div class="text-3xl font-semibold text-white mt-4">
-                        <p>Impact hammers deliver controlled force inputs to structures, enabling precise vibration and modal analysis for testing and research applications</p>
+                    <div class="text-lg md:text-xl lg:text-3xl font-semibold text-gray-800 mt-4 md:mt-6 px-4">
+                        <p class="leading-relaxed md:leading-normal">Impact hammers deliver controlled force inputs to structures, enabling precise vibration and modal analysis for testing and research applications</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Large Image -->
-        <div class="relative z-10 h-full">
-            <img src="../assets/technician-checking-car-transmission.jpg" alt="Impact Hammers" class="w-full h-full object-cover">
+        <!-- <div class="relative z-10 h-full">
+            <img src="../assets/technician-checking-car-transmission.jpg" 
+                 alt="Impact Hammers" 
+                 class="w-full h-full object-cover"
+                 loading="eager">
             <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/20"></div>
-        </div>
+        </div> -->
     </section>
 
-    <section class="container mx-auto px-4 py-12 bg-gray-50">
-        <h2 class="text-4xl font-bold text-center text-gray-700 mb-16" id="products">Our Products</h2>
+    <!-- Products Section -->
+    <section class="container mx-auto px-4 md:px-6 py-8 md:py-12 bg-gray-50">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-700 mb-8 md:mb-16" id="products">Our Products</h2>
 
-        <div class="space-y-24" id="products-container">
+        <div class="space-y-12 md:space-y-24 product-grid" id="products-container">
+            <!-- Loading State -->
+            <div class="loading hidden">
+                <div class="loading-spinner"></div>
+            </div>
             <!-- Products will be dynamically loaded here -->
         </div>
     </section>
@@ -317,86 +545,168 @@
     <script>
         // Initialize the page when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Show loading state
+            const productsContainer = document.getElementById('products-container');
+            const loadingElement = productsContainer.querySelector('.loading');
+            if (loadingElement) {
+                loadingElement.classList.remove('hidden');
+            }
+            
             // Load products on the main page
-            loadProducts();
+            setTimeout(() => {
+                loadProducts();
+            }, 500); // Small delay for better UX
         });
 
         // Function to load products on main page
         function loadProducts() {
             const productsContainer = document.getElementById('products-container');
+            const loadingElement = productsContainer.querySelector('.loading');
             
-            if (!productsContainer || !window.productsData) return;
+            if (!productsContainer) return;
+            
+            // Hide loading
+            if (loadingElement) {
+                loadingElement.classList.add('hidden');
+            }
+            
+            // Check if products data exists
+            if (!window.productsData || !window.productsData.products) {
+                productsContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <div class="w-16 h-16 mx-auto mb-4 text-orange-500">
+                            <svg fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">No Products Found</h3>
+                        <p class="text-gray-600">Please check your products data file.</p>
+                    </div>
+                `;
+                return;
+            }
             
             let productsHTML = '';
             
-            window.productsData.products.forEach(product => {
+            window.productsData.products.forEach((product, index) => {
                 // Generate technical specs HTML for hover overlay
                 const techSpecsHTML = product.technicalSpecs.map(spec => `
-                    <div class="flex items-center justify-between border-b border-white/20 pb-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 bg-orange-500/60 rounded-lg flex items-center justify-center">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/20 pb-3 mb-3">
+                        <div class="flex items-center gap-3 mb-2 sm:mb-0">
+                            <div class="w-8 h-8 bg-orange-500/60 rounded-lg flex items-center justify-center flex-shrink-0">
                                 <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <span class="text-white font-medium">${spec.name}</span>
+                            <span class="text-white font-medium text-sm sm:text-base">${spec.name}</span>
                         </div>
-                        <span class="text-white font-bold text-lg">${spec.value}</span>
+                        <span class="text-white font-bold text-base sm:text-lg ml-11 sm:ml-0">${spec.value}</span>
                     </div>
                 `).join('');
                 
                 productsHTML += `
-                    <div class="product-container grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center relative">
-                        <!-- Vertical Divider -->
+                    <div class="product-container grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-16 items-center relative">
+                        <!-- Vertical Divider for Desktop -->
                         <div class="hidden lg:block absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-transparent via-orange-300 to-transparent -translate-x-1/2"></div>
 
-                        <!-- Left Side - Information -->
-                        <div class="info-side order-2 lg:order-1 p-4 rounded-xl">
-                            <div class="pr-4 ${product.id !== 1 ? 'ml-12' : ''}">
+                        <!-- Mobile Order: Image First, Info Second -->
+                        <!-- Image Side - Order 1 on mobile, Order 2 on desktop -->
+                        <div class="image-side order-1 lg:order-2 relative group w-full max-w-[500px] lg:max-w-[600px] mx-auto shadow-lg md:shadow-2xl rounded-xl">
+                            <div class="relative overflow-hidden rounded-xl md:rounded-2xl shadow-lg md:shadow-xl transition-all duration-500 
+                                        hover:scale-[1.02] hover:shadow-2xl border border-gray-100">
+                                
+                                <!-- Image Container -->
+                                <div class="relative bg-[#D9CFC7] p-6 md:p-8">
+                                    <!-- Main Image -->
+                                    <div class="relative z-10">
+                                        <img src="${product.thumbnail}" 
+                                             alt="${product.model} Impact Hammer" 
+                                             class="w-full h-[200px] sm:h-[250px] md:h-[320px] object-contain transition-transform duration-700 
+                                                    group-hover:scale-105 drop-shadow-lg md:drop-shadow-2xl"
+                                             loading="lazy"
+                                             onerror="this.src='https://placehold.co/600x400/ffa726/ffffff?text=${product.model}+Impact+Hammer'">
+                                    </div>
+                                    
+                                    <!-- Decorative Elements -->
+                                    <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-50 rounded-full blur-xl opacity-60"></div>
+                                    <div class="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-tr from-blue-100 to-blue-50 rounded-full blur-xl opacity-40"></div>
+                                </div>
+                                
+                                <!-- Hover Overlay - Desktop Only -->
+                                <div class="hidden lg:block absolute inset-0 bg-gradient-to-t from-[#A18D6D] to-transparent 
+                                            opacity-0 group-hover:opacity-100 transition-all duration-500 
+                                            flex flex-col justify-end p-6 md:p-8 z-50">
+                                    <div class="space-y-4 md:space-y-5 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                                        <h4 class="text-xl md:text-2xl font-bold text-orange-600 mb-2 md:mb-4">Technical Highlights</h4>
+                                        
+                                        <div class="space-y-3 md:space-y-4 tech-specs">
+                                            ${techSpecsHTML}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Mobile Technical Specs (Always Visible) -->
+                                <div class="lg:hidden hover-overlay mt-4">
+                                    <div class="space-y-4">
+                                        <h4 class="text-xl font-bold text-orange-600 mb-4">Technical Highlights</h4>
+                                        
+                                        <div class="space-y-4 tech-specs">
+                                            ${techSpecsHTML}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Information Side - Order 2 on mobile, Order 1 on desktop -->
+                        <div class="info-side order-2 lg:order-1 p-4 md:p-6 rounded-xl">
+                            <div class="lg:pr-4 ${product.id !== 1 ? 'lg:ml-12' : ''}">
                                 <div class="inline-flex items-center gap-2 mb-3">
                                     <div class="w-3 h-8 bg-orange-500 rounded-sm"></div>
                                     <span class="text-sm font-semibold text-orange-600 uppercase tracking-wider">Premium Product</span>
                                 </div>
                                 
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">${product.model}</h3>
-                                <p class="text-gray-600 mb-8 text-md">${product.title}</p>
+                                <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">${product.model}</h3>
+                                <p class="text-gray-600 mb-6 md:mb-8 text-sm md:text-md leading-relaxed">${product.title}</p>
 
-                                <div class="grid grid-cols-2 gap-4 mb-10">
-                                    <div class="bg-gradient-to-br from-gray-50 to-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                        <span class="block text-sm font-medium text-gray-500 mb-1">Sensitivity</span>
-                                        <span class="block text-md font-bold text-orange-600">${product.sensitivity}</span>
+                                <!-- Specifications Grid -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-10 specs-grid">
+                                    <div class="bg-gradient-to-br from-gray-50 to-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                        <span class="block text-xs md:text-sm font-medium text-gray-500 mb-1">Sensitivity</span>
+                                        <span class="block text-sm md:text-md font-bold text-orange-600">${product.sensitivity}</span>
                                     </div>
-                                    <div class="bg-gradient-to-br from-gray-50 to-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                        <span class="block text-sm font-medium text-gray-500 mb-1">Range</span>
-                                        <span class="block text-md font-bold text-orange-600">${product.range}</span>
+                                    <div class="bg-gradient-to-br from-gray-50 to-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                        <span class="block text-xs md:text-sm font-medium text-gray-500 mb-1">Range</span>
+                                        <span class="block text-sm md:text-md font-bold text-orange-600">${product.range}</span>
                                     </div>
-                                    <div class="bg-gradient-to-br from-gray-50 to-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                        <span class="block text-sm font-medium text-gray-500 mb-1">Temp Range</span>
-                                        <span class="block text-md font-bold text-orange-600">${product.tempRange}</span>
+                                    <div class="bg-gradient-to-br from-gray-50 to-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                        <span class="block text-xs md:text-sm font-medium text-gray-500 mb-1">Temp Range</span>
+                                        <span class="block text-sm md:text-md font-bold text-orange-600">${product.tempRange}</span>
                                     </div>
-                                    <div class="bg-gradient-to-br from-gray-50 to-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                        <span class="block text-sm font-medium text-gray-500 mb-1">Connector</span>
-                                        <span class="block text-md font-bold text-orange-600">${product.connector}</span>
+                                    <div class="bg-gradient-to-br from-gray-50 to-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                        <span class="block text-xs md:text-sm font-medium text-gray-500 mb-1">Connector</span>
+                                        <span class="block text-sm md:text-md font-bold text-orange-600">${product.connector}</span>
                                     </div>
                                 </div>
 
-                                <div class="flex flex-col sm:flex-row gap-4">
+                                <!-- Action Buttons -->
+                                <div class="flex flex-col sm:flex-row gap-3 md:gap-4 action-buttons">
                                     <a href="product-details.html?product=${product.id}"
                                         class="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 
-                                               text-white font-semibold py-2 px-8 rounded-xl transition-all duration-300 
-                                               transform hover:-translate-y-1 hover:shadow-xl flex items-center justify-center gap-3 text-center">
+                                               text-white font-semibold py-3 px-4 md:py-3 md:px-8 rounded-xl transition-all duration-300 
+                                               transform hover:-translate-y-1 hover:shadow-xl flex items-center justify-center gap-3 text-center text-sm md:text-base">
                                         <span>View Details</span>
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                         </svg>
                                     </a>
                                     
                                     <button onclick="downloadDatasheet('${product.model}')"
                                         class="flex-1 bg-white border-2 border-gray-200 hover:border-orange-500 
-                                               text-gray-700 hover:text-orange-600 font-semibold py-2 px-8 rounded-xl 
+                                               text-gray-700 hover:text-orange-600 font-semibold py-3 px-4 md:py-3 md:px-8 rounded-xl 
                                                transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md 
-                                               flex items-center justify-center gap-2 group/download">
-                                        <svg class="w-5 h-5 group-hover/download:animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+                                               flex items-center justify-center gap-2 text-sm md:text-base group/download">
+                                        <svg class="w-4 h-4 md:w-5 md:h-5 group-hover/download:animate-bounce" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
                                         </svg>
                                         <span>Download Brochure</span>
@@ -404,58 +714,42 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Right Side - Image with Hover Overlay -->
-                        <div class="image-side order-1 lg:order-2 relative group max-w-[600px] mx-auto shadow-2xl rounded-xl">
-                            <div class="relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 
-                                        group-hover:scale-[1.02] group-hover:shadow-2xl border border-gray-100">
-                                
-                                <!-- Image Container -->
-                                <div class="relative bg-[#D9CFC7] border-2xl p-8">
-                                    <!-- Main Image -->
-                                    <div class="relative z-10">
-                                        <img src="${product.thumbnail}" 
-                                             alt="${product.model} Impact Hammer" 
-                                             class="w-full h-[320px] object-contain transition-transform duration-700 
-                                                    group-hover:scale-105 drop-shadow-2xl"
-                                             onerror="this.src='https://placehold.co/600x400/ffa726/ffffff?text=${product.model}+Impact+Hammer'">
-                                    </div>
-                                    
-                                    <!-- Decorative Elements -->
-                                    <div class="absolute top-6 right-6 w-16 h-16 bg-gradient-to-br from-orange-100 to-orange-50 rounded-full blur-xl opacity-60"></div>
-                                    <div class="absolute bottom-6 left-6 w-24 h-24 bg-gradient-to-tr from-blue-100 to-blue-50 rounded-full blur-xl opacity-40"></div>
-                                </div>
-                                
-                                <!-- Hover Overlay -->
-                                <div class="absolute inset-0 bg-gradient-to-t from-[#A18D6D] to-transparent 
-                                            opacity-0 group-hover:opacity-100 transition-all duration-500 
-                                            flex flex-col justify-end p-8 z-50">
-                                    <div class="space-y-5 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                                        <h4 class="text-2xl font-bold text-orange-600 mb-4">Technical Highlights</h4>
-                                        
-                                        <div class="space-y-4">
-                                            ${techSpecsHTML}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 `;
             });
             
-            productsContainer.innerHTML = productsHTML;
+            productsContainer.insertAdjacentHTML('afterbegin', productsHTML);
         }
 
         // Download datasheet function
         function downloadDatasheet(model) {
-            alert(`Downloading brochure for ${model}...\nIn a real implementation, this would download the PDF.`);
+            // Check if we're on mobile
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             
-            // Simulate download
-            const link = document.createElement('a');
-            link.href = `#`; // Replace with actual PDF URL
-            link.download = `${model}_Datasheet.pdf`;
-            link.click();
+            if (isMobile) {
+                // Mobile friendly alert
+                if (window.confirm(`Download brochure for ${model}?`)) {
+                    // Simulate download
+                    const link = document.createElement('a');
+                    link.href = `#`; // Replace with actual PDF URL
+                    link.download = `${model.replace(/\s+/g, '_')}_Datasheet.pdf`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    // Show success message
+                    alert('Download started!');
+                }
+            } else {
+                // Desktop notification
+                alert(`Downloading brochure for ${model}...\nIn a real implementation, this would download the PDF.`);
+                
+                // Simulate download
+                const link = document.createElement('a');
+                link.href = `#`; // Replace with actual PDF URL
+                link.download = `${model.replace(/\s+/g, '_')}_Datasheet.pdf`;
+                link.click();
+            }
         }
 
         // Smooth scrolling for internal links
@@ -474,6 +768,57 @@
                 }
             });
         });
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                // Recalculate any dynamic layouts if needed
+                console.log('Window resized to:', window.innerWidth);
+            }, 250);
+        });
+
+        // Add touch support for mobile
+        document.addEventListener('touchstart', function() {}, {passive: true});
+
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Add animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.product-container');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('slide-up');
+                }
+            });
+        }
+
+        // Initial animation check
+        animateOnScroll();
+        
+        // Check animation on scroll
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
 </html>
