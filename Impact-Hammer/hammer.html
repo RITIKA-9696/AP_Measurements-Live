@@ -731,7 +731,7 @@
                 if (window.confirm(`Download brochure for ${model}?`)) {
                     // Simulate download
                     const link = document.createElement('a');
-                    link.href = `#`; // Replace with actual PDF URL
+                    link.href = `N1.pdf`; // Replace with actual PDF URL
                     link.download = `${model.replace(/\s+/g, '_')}_Datasheet.pdf`;
                     document.body.appendChild(link);
                     link.click();
@@ -746,7 +746,7 @@
                 
                 // Simulate download
                 const link = document.createElement('a');
-                link.href = `#`; // Replace with actual PDF URL
+                link.href = `N1.pdf`; // Replace with actual PDF URL
                 link.download = `${model.replace(/\s+/g, '_')}_Datasheet.pdf`;
                 link.click();
             }
@@ -820,5 +820,6 @@
         // Check animation on scroll
         window.addEventListener('scroll', animateOnScroll);
     </script>
+    
 </body>
 </html>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
-<link rel="manifest" href="/favicon_io/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
     <title>About Us - AP Measurements</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../include.js"></script>
@@ -17,32 +18,68 @@
     <link rel="stylesheet" href="/Header/header.css">
     <link rel="stylesheet" href="/Footer/footer.css">
     <style>
-        * { font-family: 'Inter', sans-serif; }
-        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
-        
+
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
         }
-        
+
         @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
         }
-        
-        .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
-        .animate-float { animation: float 3s ease-in-out infinite; }
-        .animate-pulse-slow { animation: pulse 2s ease-in-out infinite; }
-        
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-slow {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
         .shimmer-text {
             background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 50%, #3b82f6 100%);
             background-size: 200% auto;
@@ -51,24 +88,26 @@
             background-clip: text;
             animation: shimmer 3s linear infinite;
         }
-        
+
         .hover-grow {
             transition: transform 0.3s ease;
         }
+
         .hover-grow:hover {
             transform: scale(1.05);
         }
-        
+
         .gradient-border {
             border: 2px solid transparent;
             background: linear-gradient(white, white) padding-box,
-                        linear-gradient(135deg, #3b82f6, #10b981) border-box;
+                linear-gradient(135deg, #3b82f6, #10b981) border-box;
         }
-        
+
         .stat-card {
             position: relative;
             overflow: hidden;
         }
+
         .stat-card::after {
             content: '';
             position: absolute;
@@ -80,11 +119,13 @@
             transform: translateX(-100%);
             transition: transform 0.5s ease;
         }
+
         .stat-card:hover::after {
             transform: translateX(0);
         }
     </style>
 </head>
+
 <body class="bg-gray-50 min-h-screen mt-16">
     <!-- Navigation Header -->
     <div data-include="/Header/header.html"></div>
@@ -100,8 +141,10 @@
                 </p>
                 <div class="flex justify-center gap-3 animate-fade-in-up" style="animation-delay: 0.4s;">
                     <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse-slow"></div>
-                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse-slow" style="animation-delay: 0.1s;"></div>
-                    <div class="w-2 h-2 bg-orange-400 rounded-full animate-pulse-slow" style="animation-delay: 0.2s;"></div>
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse-slow" style="animation-delay: 0.1s;">
+                    </div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full animate-pulse-slow" style="animation-delay: 0.2s;">
+                    </div>
                 </div>
             </div>
         </section>
@@ -117,22 +160,28 @@
                         </div>
                         <h2 class="text-2xl font-bold text-gray-800 mb-4">From Vision to Industry Leader</h2>
                         <p class="text-gray-600 mb-4">
-                            Founded in 2015 by racing engineers, AP Measurements started with a simple goal: better suspension testing equipment.
+                            For over 10 years, we have delivered precision instrumentation for vehicle testing,
+                            specializing in sensors and systems that quantify dynamic performance under extreme
+                            conditions. Our portfolio includes pressure transducers displacement LVDTs, acceleration
+                            sensors.
                         </p>
                         <p class="text-gray-600 mb-6">
-                            Today, we serve professional racing teams and workshops worldwide with precision tools that deliver real results.
+                            We also provide testing solutions for automotive OEMs . From ADAS, durability, milage ,
+                            Benchmarking , Dynamic testing, subjective-objective testing etc as per ISO standard.
                         </p>
                         <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
                             <p class="text-gray-700 font-medium">
-                                "Empowering performance through precise measurement"
+                                Our commitment to technical excellence ensures reliable, customizable solutions for
+                                India’s automotive sector.
                             </p>
                         </div>
                     </div>
                     <div class="animate-fade-in-up" style="animation-delay: 0.2s;">
                         <div class="relative group">
-                            <img src="./assets/IMAGES/about.png" alt="Our Facility" 
-                                 class="rounded-xl shadow-lg w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-xl"></div>
+                            <img src="./assets/IMAGES/about.png" alt="Our Facility"
+                                class="rounded-xl shadow-lg w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-xl">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -170,7 +219,7 @@
                     <h2 class="text-2xl font-bold text-gray-800 mb-3">Our Core Values</h2>
                     <p class="text-gray-600 max-w-xl mx-auto">Principles guiding our innovation</p>
                 </div>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <!-- Value 1 -->
                     <div class="bg-white gradient-border rounded-xl p-5 hover-grow">
@@ -180,7 +229,7 @@
                         <h3 class="font-bold text-gray-800 mb-2">Precision</h3>
                         <p class="text-gray-600 text-sm">Millimeter-perfect accuracy in every measurement</p>
                     </div>
-                    
+
                     <!-- Value 2 -->
                     <div class="bg-white gradient-border rounded-xl p-5 hover-grow">
                         <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
@@ -189,7 +238,7 @@
                         <h3 class="font-bold text-gray-800 mb-2">Reliability</h3>
                         <p class="text-gray-600 text-sm">Built to last with premium materials</p>
                     </div>
-                    
+
                     <!-- Value 3 -->
                     <div class="bg-white gradient-border rounded-xl p-5 hover-grow">
                         <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
@@ -198,7 +247,7 @@
                         <h3 class="font-bold text-gray-800 mb-2">Innovation</h3>
                         <p class="text-gray-600 text-sm">Pushing suspension testing boundaries</p>
                     </div>
-                    
+
                     <!-- Value 4 -->
                     <div class="bg-white gradient-border rounded-xl p-5 hover-grow">
                         <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
@@ -207,7 +256,7 @@
                         <h3 class="font-bold text-gray-800 mb-2">Partnership</h3>
                         <p class="text-gray-600 text-sm">Customers as partners in performance</p>
                     </div>
-                    
+
                     <!-- Value 5 -->
                     <div class="bg-white gradient-border rounded-xl p-5 hover-grow">
                         <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
@@ -216,7 +265,7 @@
                         <h3 class="font-bold text-gray-800 mb-2">Education</h3>
                         <p class="text-gray-600 text-sm">Sharing knowledge with customers</p>
                     </div>
-                    
+
                     <!-- Value 6 -->
                     <div class="bg-white gradient-border rounded-xl p-5 hover-grow">
                         <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
@@ -235,9 +284,11 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     <div class="order-2 lg:order-1">
                         <div class="relative group">
-                            <img src="./assets/IMAGES/about3.png" alt="Our Facility" 
-                                 class="rounded-xl shadow-lg w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 to-green-400 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+                            <img src="./assets/IMAGES/about3.png" alt="Our Facility"
+                                class="rounded-xl shadow-lg w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute -inset-1 bg-gradient-to-r from-blue-400 to-green-400 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+                            </div>
                         </div>
                     </div>
                     <div class="order-1 lg:order-2">
@@ -252,11 +303,12 @@
                         <div class="grid grid-cols-2 gap-4">
                             <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow transition-shadow">
                                 <i class="fas fa-industry text-blue-500 mb-2"></i>
-                                <p class="text-sm text-gray-700">CNC Precision</p>
+                                <p class="text-sm text-gray-700">EMA SHOCK ABSORBER </p>
                             </div>
                             <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow transition-shadow">
                                 <i class="fas fa-flask text-green-500 mb-2"></i>
-                                <p class="text-sm text-gray-700">R&D Labs</p>
+                                <p class="text-sm text-gray-700">SCOTCH YOKE DYNO
+</p>
                             </div>
                         </div>
                     </div>
@@ -271,12 +323,13 @@
                 <p class="text-blue-100 mb-6 animate-fade-in-up" style="animation-delay: 0.2s;">
                     Ready to optimize your suspension performance?
                 </p>
-                <button onclick="window.location.href='../contact.html'" 
-                        class="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-6 py-3 rounded-lg transition transform hover:scale-105 shadow-lg animate-fade-in-up" 
-                        style="animation-delay: 0.4s;">
+                <button onclick="window.location.href='../contact.html'"
+                    class="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-6 py-3 rounded-lg transition transform hover:scale-105 shadow-lg animate-fade-in-up"
+                    style="animation-delay: 0.4s;">
                     Contact Our Team <i class="fas fa-arrow-right ml-2"></i>
                 </button>
-                <div class="mt-6 flex justify-center gap-4 text-sm text-blue-200 animate-fade-in-up" style="animation-delay: 0.6s;">
+                <div class="mt-6 flex justify-center gap-4 text-sm text-blue-200 animate-fade-in-up"
+                    style="animation-delay: 0.6s;">
                     <span><i class="fas fa-phone mr-2"></i>+91 8793505677</span>
                     <span><i class="fas fa-envelope mr-2 ml-4"></i>ashish@apmeasurements.com</span>
                 </div>
@@ -303,7 +356,7 @@
                 }
             }, 16);
         }
-        
+
         // Start counters when in view
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -312,7 +365,7 @@
                         animateCounter(document.getElementById('stat1'), 40, 1500);
                         animateCounter(document.getElementById('stat2'), 500, 1500);
                         animateCounter(document.getElementById('stat3'), 25, 1500);
-                        
+
                         let percentElement = document.getElementById('stat4');
                         let percent = 0;
                         const percentTimer = setInterval(() => {
@@ -328,12 +381,12 @@
                 }
             });
         }, { threshold: 0.3 });
-        
+
         // Observe stats section
         document.querySelectorAll('.stat-card').forEach(card => {
             observer.observe(card);
         });
-        
+
         // Add animation to elements on scroll
         const fadeObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -343,12 +396,12 @@
                 }
             });
         }, { threshold: 0.1 });
-        
+
         // Observe all sections
         document.querySelectorAll('section > div').forEach(section => {
             fadeObserver.observe(section);
         });
-        
+
         // Hover effects
         document.querySelectorAll('.hover-grow').forEach(card => {
             card.addEventListener('mouseenter', () => {
@@ -358,15 +411,15 @@
                 card.style.transform = 'scale(1)';
             });
         });
-        
+
         // Button click handler
-        document.querySelector('button').addEventListener('click', function() {
+        document.querySelector('button').addEventListener('click', function () {
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 this.style.transform = 'scale(1)';
             }, 150);
         });
-        
+
         // Add floating animation to some elements
         setTimeout(() => {
             document.querySelectorAll('.gradient-border').forEach((card, index) => {
@@ -375,4 +428,5 @@
         }, 500);
     </script>
 </body>
+
 </html>
